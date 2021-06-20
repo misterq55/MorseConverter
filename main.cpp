@@ -17,4 +17,6 @@ int main()
   // Result = MorseConverter::Get().ConvertToMorseCode(MorseStr);
 
   std::cout << Result << std::endl;
+
+  return 0;
 }
