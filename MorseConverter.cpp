@@ -1,4 +1,6 @@
 #include "MorseConverter.h"
+#include <cstdio> 
+#include <cstdlib>
 
 MorseConverter::MorseConverter()
 {
