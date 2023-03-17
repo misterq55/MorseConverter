@@ -3,20 +3,26 @@
 
 #include <iostream>
 #include <string>
-#include "MorseConverter.h"
+#include "flutter_interface.h"
 
 int main()
 {
   string MorseStr;
 
-  std::getline(std::cin, MorseStr);
+  // std::getline(std::cin, MorseStr);
 
-  string Result;
+  char* result = native_ConvertToMorseCode((char*)"Test");
+  std::cout << result << std::endl;
+  delete_allocated(result);
 
-  Result = MorseConverter::Get().ConvertFromMorseCode(MorseStr);
-  // Result = MorseConverter::Get().ConvertToMorseCode(MorseStr);
+  //std::getline(std::cin, MorseStr);
 
-  std::cout << Result << std::endl;
+  //string Result;
+
+  //Result = MorseConverter::Get().ConvertFromMorseCode(MorseStr);
+  //// Result = MorseConverter::Get().ConvertToMorseCode(MorseStr);
+
+  //std::cout << Result << std::endl;
 
   return 0;
 }

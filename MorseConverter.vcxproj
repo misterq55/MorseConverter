@@ -139,11 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="flutter_interface.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MorseConverter.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="flutter_interface.h" />
     <ClInclude Include="MorseConverter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

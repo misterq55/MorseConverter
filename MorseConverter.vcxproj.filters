@@ -26,5 +26,8 @@
     <ClInclude Include="MorseConverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="flutter_interface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
