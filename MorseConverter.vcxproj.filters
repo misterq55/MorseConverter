@@ -21,12 +21,24 @@
     <ClCompile Include="MorseConverter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CodeConverter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FHangulParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MorseConverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="flutter_interface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CodeConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FHangulParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

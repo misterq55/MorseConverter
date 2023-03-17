@@ -3,26 +3,30 @@
 
 #include <iostream>
 #include <string>
-#include "flutter_interface.h"
+// #include "FHangulParser.h"
+#include "FMorseConverter.h"
+
+using namespace std;
 
 int main()
 {
-  string MorseStr;
+  wcin.imbue(locale("korean"));
+  wcout.imbue(locale("korean"));
 
-  // std::getline(std::cin, MorseStr);
+  // FCodeConverter *CodeInverter = new FHangulParser();
+  FCodeConverter* CodeInverter = new FMorseConverter();
+  // CodeInverter->SetInputType(FCodeConverter::EInputType::IT_Engish);
+  CodeInverter->SetInputType(FCodeConverter::EInputType::IT_Korean);
 
-  char* result = native_ConvertToMorseCode((char*)"Test");
-  std::cout << result << std::endl;
-  delete_allocated(result);
+  wstring str;
 
-  //std::getline(std::cin, MorseStr);
+  getline(wcin, str);
 
-  //string Result;
+  wstring Code = CodeInverter->ConvertStringToCode(str);
+  wstring ConvertedString = CodeInverter->ConvertCodeToString(Code);
 
-  //Result = MorseConverter::Get().ConvertFromMorseCode(MorseStr);
-  //// Result = MorseConverter::Get().ConvertToMorseCode(MorseStr);
+  wcout << Code << endl;
+  wcout << ConvertedString << endl;
 
-  //std::cout << Result << std::endl;
-
-  return 0;
+  delete CodeInverter;
 }

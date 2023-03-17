@@ -5,7 +5,7 @@
 using std::map;
 
 class FMorseConverter :
-  public FCodeConverter
+    public FCodeConverter
 {
   typedef map<int, wstring> KoreanLetterDictionary;
   typedef map<int, wchar_t> FromMorseDirctionary;

@@ -139,10 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CodeConverter.cpp" />
+    <ClCompile Include="FHangulParser.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MorseConverter.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CodeConverter.h" />
+    <ClInclude Include="FHangulParser.h" />
     <ClInclude Include="flutter_interface.h" />
     <ClInclude Include="MorseConverter.h" />
   </ItemGroup>
