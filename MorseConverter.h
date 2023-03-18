@@ -27,20 +27,20 @@ private:
   wstring InnerConvertStringToCode(wstring InString, const ToMorseDictionary& InToCodeDictionary);
   wstring BlankConvertCodeToString(wstring InCode, const wstring& LetterInterval, const wstring& WordInterval);
   wstring BlankConvertStringToCode(wstring InString, const wstring& LetterInterval, const wstring& WordInterval);
-  
 
 private:
-  KoreanCodeToLetterDictionary FirstConsonantCodeToLetter;
-  KoreanCodeToLetterDictionary MiddleVowerCodeToLetter;
-  KoreanCodeToLetterDictionary LastConsonantCodeToLetter;
+  KoreanCodeToLetterDictionary *FirstConsonantCodeToLetter;
+  KoreanCodeToLetterDictionary *MiddleVowerCodeToLetter;
+  KoreanCodeToLetterDictionary *LastConsonantCodeToLetter;
 
-  KoreanLetterToCodeDictionary FirstConsonantLetterToCode;
-  KoreanLetterToCodeDictionary MiddleVowerLetterToCode;
-  KoreanLetterToCodeDictionary LastConsonantLetterToCode;
+  KoreanLetterToCodeDictionary *FirstConsonantLetterToCode;
+  KoreanLetterToCodeDictionary *MiddleVowerLetterToCode;
+  KoreanLetterToCodeDictionary *LastConsonantLetterToCode;
 
-  FromMorseDirctionary FromMorseToEngStringDictionary;
-  FromMorseDirctionary FromMorseToKoreanStringDictionary;
-  ToMorseDictionary EngStringToMorseDictionary;
-  ToMorseDictionary KoreanStringToMorseDictionary;
+  FromMorseDirctionary *FromMorseToEngStringDictionary;
+  FromMorseDirctionary *FromMorseToKoreanStringDictionary;
+
+  ToMorseDictionary *EngStringToMorseDictionary;
+  ToMorseDictionary *KoreanStringToMorseDictionary;
 };
 
