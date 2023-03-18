@@ -2,7 +2,7 @@
 
 FMorseConverter::FMorseConverter()
 {
-	FirstConsonantLetter = {
+	FirstConsonantCodeToLetter = {
 		{0xAC00, L"丑"},
 		{0xAE4C, L"丑丑"},
 		{0xB098, L"中"},
@@ -24,7 +24,29 @@ FMorseConverter::FMorseConverter()
 		{0xD558, L"冗"},
 	};
 
-	MiddleVowerLetter = {
+	FirstConsonantLetterToCode = {
+		{L"丑", 0xAC00},
+		{L"丑丑", 0xAE4C},
+		{L"中", 0xB098},
+		{L"之", 0xB2E4},
+		{L"之之", 0xB530},
+		{L"予", 0xB77C},
+		{L"仃", 0xB9C8},
+		{L"仆", 0xBC14},
+		{L"仆仆", 0xBE60},
+		{L"今", 0xC0AC},
+		{L"今今", 0xC2F8},
+		{L"仄", 0xC544},
+		{L"元", 0xC790},
+		{L"元元", 0xC9DC},
+		{L"內", 0xCC28},
+		{L"六", 0xCE74},
+		{L"兮", 0xD0C0},
+		{L"公", 0xD30C},
+		{L"冗", 0xD558},
+	};
+
+	MiddleVowerCodeToLetter = {
 		{0x00, L"凶"},
 		{0x1C, L"分"},
 		{0x38, L"切"},
@@ -48,10 +70,34 @@ FMorseConverter::FMorseConverter()
 		{0x230, L"太"},
 	};
 
-	LastConsonantLetter = {
+	MiddleVowerLetterToCode = {
+		{L"凶", 0x00},
+		{L"分", 0x1C},
+		{L"切", 0x38},
+		{L"刈", 0x54},
+		{L"勻", 0x70},
+		{L"勾", 0x8C},
+		{L"勿", 0xA8},
+		{L"化", 0xC4},
+		{L"匹", 0xE0},
+		{L"匹凶", 0xFC},
+		{L"匹分", 0x118},
+		{L"匹太", 0x134},
+		{L"卞", 0x150},
+		{L"厄", 0x16C},
+		{L"厄勻", 0x188},
+		{L"厄勾", 0x1A4},
+		{L"厄太", 0x1C0},
+		{L"壬", 0x1DC},
+		{L"天", 0x1F8},
+		{L"天太", 0x214},
+		{L"太", 0x230},
+	};
+
+	LastConsonantCodeToLetter = {
 		{0x1, L"丑"},
 		{0x2, L"丑丑"},
-		{0x3, L"不"},
+		{0x3, L"丑今"},
 		{0x4, L"中"},
 		{0x5, L"中元"},
 		{0x6, L"中冗"},
@@ -76,6 +122,36 @@ FMorseConverter::FMorseConverter()
 		{0x19, L"兮"},
 		{0x1A, L"公"},
 		{0x1B, L"冗"},
+	};
+
+	LastConsonantLetterToCode = {
+		{L"丑", 0x1},
+		{L"丑丑", 0x2},
+		{L"丑今", 0x3},
+		{L"中", 0x4},
+		{L"中元", 0x5},
+		{L"中冗", 0x6},
+		{L"之", 0x7},
+		{L"予", 0x8},
+		{L"予丑", 0x9},
+		{L"予仃", 0xA},
+		{L"予仆", 0xB},
+		{L"予今", 0xC},
+		{L"予兮", 0xD},
+		{L"予公", 0xE},
+		{L"予冗", 0xF},
+		{L"仃", 0x10},
+		{L"仆", 0x11},
+		{L"仆今", 0x12},
+		{L"今", 0x13},
+		{L"今今", 0x14},
+		{L"仄", 0x15},
+		{L"元", 0x16},
+		{L"內", 0x17},
+		{L"六", 0x18},
+		{L"兮", 0x19},
+		{L"公", 0x1A},
+		{L"冗", 0x1B},
 	};
 
 	FromMorseToEngStringDictionary = {
@@ -261,6 +337,17 @@ FMorseConverter::FMorseConverter()
 	};
 }
 
+FMorseConverter::~FMorseConverter()
+{
+	FirstConsonantCodeToLetter.clear();
+	MiddleVowerCodeToLetter.clear();
+	LastConsonantCodeToLetter.clear();
+	
+	FirstConsonantLetterToCode.clear();
+	MiddleVowerLetterToCode.clear();
+	LastConsonantLetterToCode.clear();
+}
+
 wstring FMorseConverter::ConvertCodeToString(const wstring& InCode)
 {
 	if (InputType == IT_None)
@@ -276,8 +363,9 @@ wstring FMorseConverter::ConvertCodeToString(const wstring& InCode)
 
 	if (InputType == IT_Korean)
 	{
-		ResultString = BlankConvertCodeToString(InCode, L"   ", L"       ");
+		ResultString = BlankConvertCodeToString(InCode, L"     ", L"       ");
 		ResultString = InnerConvertCodeToString(ResultString, FromMorseToKoreanStringDictionary);
+		ResultString = HangulStringfy(ResultString);
 	}
 
 	return ResultString;
@@ -341,7 +429,7 @@ wstring FMorseConverter::HangulParser(wstring InString)
 		int PureNum = ConvertedNum - StartNumber;
 		int Quotient = PureNum / Divider;
 		int Range = Quotient * Divider + StartNumber;
-		Result += FirstConsonantLetter[Range];
+		Result += FirstConsonantCodeToLetter[Range];
 
 		StartNumber = Range;
 		Divider = 0x1C;
@@ -350,11 +438,47 @@ wstring FMorseConverter::HangulParser(wstring InString)
 		Quotient = PureNum / Divider;
 		int Ramnant = PureNum % Divider;
 		Range = Quotient * Divider;
-		Result += MiddleVowerLetter[Range];
-		Result += LastConsonantLetter[Ramnant];
+		Result += MiddleVowerCodeToLetter[Range];
+		Result += LastConsonantCodeToLetter[Ramnant];
 	}
 
 	return Result;
+}
+
+wstring FMorseConverter::HangulStringfy(wstring InParsedHangulStr)
+{
+	wstring StringfiedResult;
+
+	unsigned int Index = 0;
+
+	wstring FirstConsonantLetter;
+	wstring MiddleVowerLetter;
+	wstring LastConsonantLetter;
+
+	// while (Index < InParsedHangulStr.size())
+	{
+		while (InParsedHangulStr[Index] >= L'丑' && InParsedHangulStr[Index] <= L'冗')
+			FirstConsonantLetter += InParsedHangulStr[Index++];
+
+		int FirstConsonantValue = FirstConsonantLetterToCode[FirstConsonantLetter];
+
+		while (InParsedHangulStr[Index] >= L'凶' && InParsedHangulStr[Index] <= L'太')
+			MiddleVowerLetter += InParsedHangulStr[Index++];
+
+		int MiddleVowerValue = MiddleVowerLetterToCode[MiddleVowerLetter];
+
+		while (InParsedHangulStr[Index] >= L'丑' && InParsedHangulStr[Index] <= L'冗')
+			LastConsonantLetter += InParsedHangulStr[Index++];
+
+		int LastConsonantValue = LastConsonantLetterToCode[LastConsonantLetter];
+
+		int Result = FirstConsonantValue + MiddleVowerValue + LastConsonantValue;
+
+		StringfiedResult += Result;
+	}
+	// StringfiedResult = InParsedHangulStr;
+
+	return StringfiedResult;
 }
 
 wstring FMorseConverter::InnerConvertCodeToString(wstring InCode, const FromMorseDirctionary& InToStringDictionary)
@@ -368,25 +492,20 @@ wstring FMorseConverter::InnerConvertCodeToString(wstring InCode, const FromMors
 	for (unsigned int i = 0; i < GivenCode.size(); i++)
 	{
 		int value = -1;
-		if (GivenCode.at(i) == '.')
+
+		if (GivenCode.at(i) == L'.')
 			value = 1;
-		else if (GivenCode.at(i) == '-')
+		else if (GivenCode.at(i) == L'-')
 			value = 2;
-		else if (GivenCode.at(i) == ' ')
+		else // ' ' or '/'
 		{
 			ConvertedString += InToStringDictionary.at(wordValue);
-
+			if (GivenCode.at(i) == L'/')
+				ConvertedString += L' ';
 			wordIndex = 0;
 			wordValue = 0;
 
 			continue;
-		}
-		else if (GivenCode.at(i) == '/')
-		{
-			ConvertedString += ' ';
-
-			wordIndex = 0;
-			wordValue = 0;
 		}
 
 		wordValue += value * (int)(pow(3, wordIndex++));
@@ -397,45 +516,60 @@ wstring FMorseConverter::InnerConvertCodeToString(wstring InCode, const FromMors
 
 wstring FMorseConverter::InnerConvertStringToCode(wstring InString, const ToMorseDictionary& InToCodeDictionary)
 {
-	wstring ConvertedCode;
+	wstring ConvertedResult;
 
-	for (unsigned int i = 0; i < InString.size(); i++)
-		ConvertedCode += InToCodeDictionary.at(InString[i]) + L' ';
+	ConvertedResult += InToCodeDictionary.at(InString[0]);
 
-	return ConvertedCode;
+	for (unsigned int i = 1; i < InString.size(); i++)
+	{
+		wstring ContertedCode = InToCodeDictionary.at(InString[i]);
+		
+		if (ContertedCode != L"/" && ConvertedResult.back() != L'/')
+		{
+			ConvertedResult += L' ';
+		}
+
+		ConvertedResult += ContertedCode;
+	}
+
+	return ConvertedResult;
 }
 
 wstring FMorseConverter::BlankConvertCodeToString(wstring InCode, const wstring& LetterInterval, const wstring& WordInterval)
 {
 	wstring BlankConvertedString;
 	
-	int LetterIntervalSize = LetterInterval.size();
-	int WordIntervalSize = WordInterval.size();
+	size_t LetterIntervalSize = LetterInterval.size();
+	size_t WordIntervalSize = WordInterval.size();
 
 	int BlankCounter = 0;
 
-	for (size_t i = 0; i < InCode.size();)
+	for (unsigned int i = 0; i < InCode.size();)
 	{
 		if (InCode[i] == L' ')
 		{
-			if (i % 2 == 1)
-				i++;
-
 			BlankCounter = i;
-			
+
+			int BlankInterval = 0;
+
 			while (InCode[BlankCounter] == L' ')
 			{
-				if (BlankCounter - i == WordIntervalSize * 2)
-					int temp = 0;
-
+				BlankInterval = BlankCounter - i;
 				BlankCounter++;
 			}
+
+			if (BlankInterval == LetterIntervalSize - 1)
+				BlankConvertedString += L' ';
+			else if (BlankInterval == WordIntervalSize - 1)
+				BlankConvertedString += L'/';
 
 			i = BlankCounter;
 		}
 		else
-			i+=2;
+			BlankConvertedString += InCode[i++];
 	}
+
+	BlankConvertedString += L' ';
 
 	return BlankConvertedString;
 }
@@ -444,7 +578,9 @@ wstring FMorseConverter::BlankConvertStringToCode(wstring InString, const wstrin
 {
 	wstring BlankConvertedCode;
 
-	for (unsigned int i = 0; i < InString.size(); i++)
+	BlankConvertedCode += InString[0];
+
+	for (unsigned int i = 1; i < InString.size(); i++)
 	{
 		if (InString[i] == L' ')
 		{
@@ -456,8 +592,9 @@ wstring FMorseConverter::BlankConvertStringToCode(wstring InString, const wstrin
 		}
 		else
 		{
+			if (BlankConvertedCode.back() != L' ')
+				BlankConvertedCode += L" ";
 			BlankConvertedCode += InString[i];
-			BlankConvertedCode += L" ";
 		}
 	}
 

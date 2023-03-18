@@ -2,7 +2,7 @@
 
 FHangulParser::FHangulParser()
 {
-	FirstConsonantLetter = {
+	FirstConsonantCodeToLetter = {
 		{0xAC00, L"¤¡"},
 		{0xAE4C, L"¤¡¤¡"},
 		{0xB098, L"¤¤"},
@@ -24,7 +24,7 @@ FHangulParser::FHangulParser()
 		{0xD558, L"¤¾"},
 	};
 
-	MiddleVowerLetter = {
+	MiddleVowerCodeToLetter = {
 		{0x00, L"¤¿"},
 		{0x1C, L"¤À"},
 		{0x38, L"¤Á"},
@@ -48,7 +48,7 @@ FHangulParser::FHangulParser()
 		{0x230, L"¤Ó"},
 	};
 
-	LastConsonantLetter = {
+	LastConsonantCodeToLetter = {
 		{0x1, L"¤¡"},
 		{0x2, L"¤¡¤¡"},
 		{0x3, L"¤£"},
@@ -96,7 +96,7 @@ wstring FHangulParser::ConvertStringToCode(const wstring& InString)
 		int PureNum = ConvertedNum - StartNumber;
 		int Quotient = PureNum / Divider;
 		int Range = Quotient * Divider + StartNumber;
-		Result += FirstConsonantLetter[Range];
+		Result += FirstConsonantCodeToLetter[Range];
 
 		StartNumber = Range;
 		Divider = 0x1C;
@@ -105,8 +105,8 @@ wstring FHangulParser::ConvertStringToCode(const wstring& InString)
 		Quotient = PureNum / Divider;
 		int Ramnant = PureNum % Divider;
 		Range = Quotient * Divider;
-		Result += MiddleVowerLetter[Range];
-		Result += LastConsonantLetter[Ramnant];
+		Result += MiddleVowerCodeToLetter[Range];
+		Result += LastConsonantCodeToLetter[Ramnant];
 	}
 
 	return Result;

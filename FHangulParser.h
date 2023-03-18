@@ -18,8 +18,8 @@ public:
   virtual wstring ConvertCodeToString(const wstring& InCode);
   virtual wstring ConvertStringToCode(const wstring& InString);
 
-  KoreanLetterDictionary FirstConsonantLetter;
-  KoreanLetterDictionary MiddleVowerLetter;
-  KoreanLetterDictionary LastConsonantLetter;
+  KoreanLetterDictionary FirstConsonantCodeToLetter;
+  KoreanLetterDictionary MiddleVowerCodeToLetter;
+  KoreanLetterDictionary LastConsonantCodeToLetter;
 };
 

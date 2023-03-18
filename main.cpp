@@ -29,4 +29,9 @@ int main()
   wcout << ConvertedString << endl;
 
   delete CodeInverter;
+
+  /*wcout << int(L'¤¡') << endl;
+  wcout << int(L'¤¾') << endl;
+  wcout << int(L'¤¿') << endl;
+  wcout << int(L'¤Ó') << endl;*/
 }

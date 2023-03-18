@@ -7,13 +7,14 @@ using std::map;
 class FMorseConverter :
   public FCodeConverter
 {
-  typedef map<int, wstring> KoreanLetterDictionary;
+  typedef map<int, wstring> KoreanCodeToLetterDictionary;
+  typedef map<wstring, int> KoreanLetterToCodeDictionary;
   typedef map<int, wchar_t> FromMorseDirctionary;
   typedef map<wchar_t, wstring> ToMorseDictionary;
 
 public:
   FMorseConverter();
-  virtual ~FMorseConverter() {}
+  virtual ~FMorseConverter();
 
 public:
   virtual wstring ConvertCodeToString(const wstring& InCode);
@@ -21,6 +22,7 @@ public:
 
 private:
   wstring HangulParser(wstring InString);
+  wstring HangulStringfy(wstring InParsedHangulStr);
   wstring InnerConvertCodeToString(wstring InCode, const FromMorseDirctionary& InToStringDictionary);
   wstring InnerConvertStringToCode(wstring InString, const ToMorseDictionary& InToCodeDictionary);
   wstring BlankConvertCodeToString(wstring InCode, const wstring& LetterInterval, const wstring& WordInterval);
@@ -28,9 +30,13 @@ private:
   
 
 private:
-  KoreanLetterDictionary FirstConsonantLetter;
-  KoreanLetterDictionary MiddleVowerLetter;
-  KoreanLetterDictionary LastConsonantLetter;
+  KoreanCodeToLetterDictionary FirstConsonantCodeToLetter;
+  KoreanCodeToLetterDictionary MiddleVowerCodeToLetter;
+  KoreanCodeToLetterDictionary LastConsonantCodeToLetter;
+
+  KoreanLetterToCodeDictionary FirstConsonantLetterToCode;
+  KoreanLetterToCodeDictionary MiddleVowerLetterToCode;
+  KoreanLetterToCodeDictionary LastConsonantLetterToCode;
 
   FromMorseDirctionary FromMorseToEngStringDictionary;
   FromMorseDirctionary FromMorseToKoreanStringDictionary;
