@@ -1,4 +1,4 @@
-#include "FMorseConverter.h"
+#include "MorseConverter.h"
 
 FMorseConverter::FMorseConverter()
 {
@@ -34,17 +34,17 @@ FMorseConverter::FMorseConverter()
 		{0xA8, L"づ"},
 		{0xC4, L"て"},
 		{0xE0, L"で"},
-		{0xFC, L"と"},
-		{0x118, L"ど"},
-		{0x134, L"な"},
+		{0xFC, L"でた"},
+		{0x118, L"でだ"},
+		{0x134, L"でび"},
 		{0x150, L"に"},
 		{0x16C, L"ぬ"},
-		{0x188, L"ね"},
-		{0x1A4, L"の"},
-		{0x1C0, L"は"},
+		{0x188, L"ぬっ"},
+		{0x1A4, L"ぬつ"},
+		{0x1C0, L"ぬび"},
 		{0x1DC, L"ば"},
 		{0x1F8, L"ぱ"},
-		{0x214, L"ひ"},
+		{0x214, L"ぱび"},
 		{0x230, L"び"},
 	};
 
@@ -204,6 +204,14 @@ FMorseConverter::FMorseConverter()
 		{134, L'8'}, // 2 2 2 1 1
 		{161, L'9'}, // 2 2 2 2 1
 		{242, L'0'}, // 2 2 2 2 2
+
+		// - 2 1 1 1 1 2
+		// . 1 2 1 2 1 2
+		// , 2 2 1 1 2 2
+		// ( 2 1 2 2 1
+		// ) 2 1 2 2 1 2
+		// ? 1 1 2 2 1 1
+		// / 2 1 1 2 1
 	};
 
 	KoreanStringToMorseDictionary = {
@@ -261,10 +269,16 @@ wstring FMorseConverter::ConvertCodeToString(const wstring& InCode)
 	wstring ResultString;
 
 	if (InputType == IT_Engish)
-		ResultString = InnerConvertCodeToString(InCode, FromMorseToEngStringDictionary);
+	{
+		ResultString = BlankConvertCodeToString(InCode, L"   ", L"       ");
+		ResultString = InnerConvertCodeToString(ResultString, FromMorseToEngStringDictionary);
+	}
 
 	if (InputType == IT_Korean)
-		ResultString = InnerConvertCodeToString(InCode, FromMorseToKoreanStringDictionary);
+	{
+		ResultString = BlankConvertCodeToString(InCode, L"   ", L"       ");
+		ResultString = InnerConvertCodeToString(ResultString, FromMorseToKoreanStringDictionary);
+	}
 
 	return ResultString;
 }
@@ -297,12 +311,13 @@ wstring FMorseConverter::ConvertStringToCode(const wstring& InString)
 	if (EngCount && !KoreanCount)
 	{
 		ResultCode = InnerConvertStringToCode(GivenString, EngStringToMorseDictionary);
+		ResultCode = BlankConvertStringToCode(ResultCode, L"   ", L"       ");
 	}
 
 	if (!EngCount && KoreanCount)
 	{
-		wstring ParsedHangulStr = HangulParser(GivenString);
-		ResultCode = InnerConvertStringToCode(ParsedHangulStr, KoreanStringToMorseDictionary);
+		ResultCode = InnerConvertStringToCode(HangulParser(GivenString), KoreanStringToMorseDictionary);
+		ResultCode = BlankConvertStringToCode(ResultCode, L"     ", L"       ");
 	}
 
 	return ResultCode;
@@ -314,6 +329,12 @@ wstring FMorseConverter::HangulParser(wstring InString)
 
 	for (unsigned int i = 0; i < InString.size(); i++)
 	{
+		if (InString[i] == L' ')
+		{
+			Result += L' ';
+			continue;
+		}
+
 		int StartNumber = 0xAC00;
 		int Divider = 0x24C;
 		int ConvertedNum = int(InString[i]);
@@ -382,4 +403,63 @@ wstring FMorseConverter::InnerConvertStringToCode(wstring InString, const ToMors
 		ConvertedCode += InToCodeDictionary.at(InString[i]) + L' ';
 
 	return ConvertedCode;
+}
+
+wstring FMorseConverter::BlankConvertCodeToString(wstring InCode, const wstring& LetterInterval, const wstring& WordInterval)
+{
+	wstring BlankConvertedString;
+	
+	int LetterIntervalSize = LetterInterval.size();
+	int WordIntervalSize = WordInterval.size();
+
+	int BlankCounter = 0;
+
+	for (size_t i = 0; i < InCode.size();)
+	{
+		if (InCode[i] == L' ')
+		{
+			if (i % 2 == 1)
+				i++;
+
+			BlankCounter = i;
+			
+			while (InCode[BlankCounter] == L' ')
+			{
+				if (BlankCounter - i == WordIntervalSize * 2)
+					int temp = 0;
+
+				BlankCounter++;
+			}
+
+			i = BlankCounter;
+		}
+		else
+			i+=2;
+	}
+
+	return BlankConvertedString;
+}
+
+wstring FMorseConverter::BlankConvertStringToCode(wstring InString, const wstring& LetterInterval, const wstring& WordInterval)
+{
+	wstring BlankConvertedCode;
+
+	for (unsigned int i = 0; i < InString.size(); i++)
+	{
+		if (InString[i] == L' ')
+		{
+			BlankConvertedCode += LetterInterval;
+		}
+		else if (InString[i] == L'/')
+		{
+			BlankConvertedCode += WordInterval;
+		}
+		else
+		{
+			BlankConvertedCode += InString[i];
+			BlankConvertedCode += L" ";
+		}
+	}
+
+	return BlankConvertedCode;
 }

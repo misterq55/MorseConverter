@@ -23,6 +23,9 @@ private:
   wstring HangulParser(wstring InString);
   wstring InnerConvertCodeToString(wstring InCode, const FromMorseDirctionary& InToStringDictionary);
   wstring InnerConvertStringToCode(wstring InString, const ToMorseDictionary& InToCodeDictionary);
+  wstring BlankConvertCodeToString(wstring InCode, const wstring& LetterInterval, const wstring& WordInterval);
+  wstring BlankConvertStringToCode(wstring InString, const wstring& LetterInterval, const wstring& WordInterval);
+  
 
 private:
   KoreanLetterDictionary FirstConsonantLetter;
