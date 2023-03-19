@@ -387,13 +387,13 @@ wstring FMorseConverter::ConvertCodeToString(const wstring& InCode)
 
 	if (InputType == IT_Engish)
 	{
-		ResultString = BlankConvertCodeToString(InCode, L"   ", L"       ");
+		ResultString = BlankConvertCodeToString(InCode, L"   ", L"", L"       ");
 		ResultString = InnerConvertCodeToString(ResultString, *FromMorseToEngStringDictionary);
 	}
 
 	if (InputType == IT_Korean)
 	{
-		ResultString = BlankConvertCodeToString(InCode, L"     ", L"       ");
+		ResultString = BlankConvertCodeToString(InCode, L"   ", L"     ", L"       ");
 		ResultString = InnerConvertCodeToString(ResultString, *FromMorseToKoreanStringDictionary);
 		ResultString = HangulStringfy(ResultString);
 	}
@@ -419,7 +419,9 @@ wstring FMorseConverter::ConvertStringToCode(const wstring& InString)
 			EngCount++;
 		}
 
-		if (0xAC00 <= GivenString[i] && 0xD7A3 >= GivenString[i])
+		if ((L'°¡' <= GivenString[i] && L'ÆR' >= GivenString[i]) ||
+			(L'¤¡' <= GivenString[i] && L'¤¾' >= GivenString[i]) ||
+			(L'¤¿' <= GivenString[i] && L'¤Ó' >= GivenString[i]))
 			KoreanCount++;
 
 		if (EngCount && KoreanCount)
@@ -429,13 +431,13 @@ wstring FMorseConverter::ConvertStringToCode(const wstring& InString)
 	if (EngCount && !KoreanCount)
 	{
 		ResultCode = InnerConvertStringToCode(GivenString, *EngStringToMorseDictionary);
-		ResultCode = BlankConvertStringToCode(ResultCode, L"   ", L"       ");
+		ResultCode = BlankConvertStringToCode(ResultCode, L"   ", L"", L"       ");
 	}
 
 	if (!EngCount && KoreanCount)
 	{
 		ResultCode = InnerConvertStringToCode(HangulParser(GivenString), *KoreanStringToMorseDictionary);
-		ResultCode = BlankConvertStringToCode(ResultCode, L"     ", L"       ");
+		ResultCode = BlankConvertStringToCode(ResultCode, L"   ", L"     ", L"       ");
 	}
 
 	ResultCode += L'\0';
@@ -452,8 +454,12 @@ wstring FMorseConverter::HangulParser(wstring InString)
 		if (!(InString[i] >= L'°¡' && InString[i] <= L'ÆR'))
 		{
 			Result += InString[i];
+			if (InString[i] != L' ')
+				Result += L'|';
 			continue;
 		}
+
+		// ÃÊ¼º/Áß¼º¸¸ ÀÖ´Â°Í Ã³¸®
 
 		int StartNumber = 0xAC00;
 		int Divider = 0x24C;
@@ -472,14 +478,19 @@ wstring FMorseConverter::HangulParser(wstring InString)
 		Range = Quotient * Divider;
 		Result += MiddleVowerCodeToLetter->at(Range);
 		Result += LastConsonantCodeToLetter->at(Ramnant);
+		Result += L'|';
 	}
 
 	return Result;
 }
 
-wstring FMorseConverter::HangulStringfy(wstring InParsedHangulStr)
+wstring FMorseConverter::HangulStringfy(const wstring& InParsedHangulStr)
 {
 	wstring StringfiedResult;
+
+	wstring GivenParsedString = InParsedHangulStr;
+	GivenParsedString.pop_back();
+	GivenParsedString += L"|\0";
 
 	unsigned int Index = 0;
 
@@ -494,7 +505,11 @@ wstring FMorseConverter::HangulStringfy(wstring InParsedHangulStr)
 
 		int SubIndex = 0;
 
-		while (InParsedHangulStr[Index + SubIndex] >= L'¤¡' && InParsedHangulStr[Index + SubIndex] <= L'¤¾' && SubIndex < 2)
+		int FirstConsonantValue = 0;
+		int MiddleVowerValue = 0;
+
+
+		/*while (InParsedHangulStr[Index + SubIndex] >= L'¤¡' && InParsedHangulStr[Index + SubIndex] <= L'¤¾' && SubIndex < 2)
 			FirstConsonantLetter += InParsedHangulStr[Index + SubIndex++];
 
 		Index = Index + SubIndex;
@@ -514,7 +529,7 @@ wstring FMorseConverter::HangulStringfy(wstring InParsedHangulStr)
 			LastConsonantLetter += InParsedHangulStr[Index + SubIndex++];
 
 		Index = Index + SubIndex;
-		SubIndex = 0;
+		SubIndex = 0;*/
 
 		int LastConsonantValue = LastConsonantLetterToCode->at(LastConsonantLetter);
 		int Result = FirstConsonantValue + MiddleVowerValue + LastConsonantValue;
@@ -547,6 +562,9 @@ wstring FMorseConverter::InnerConvertCodeToString(wstring InCode, const FromMors
 			if (GivenCode.at(i) == L'/')
 				ConvertedString += L' ';
 
+			if (GivenCode.at(i) == L'|')
+				ConvertedString += GivenCode.at(i);
+
 			wordIndex = 0;
 			wordValue = 0;
 
@@ -569,10 +587,19 @@ wstring FMorseConverter::InnerConvertStringToCode(wstring InString, const ToMors
 
 	for (unsigned int i = 1; i < InString.size(); i++)
 	{
+		if (InString[i] == L'|')
+		{
+			ConvertedResult += InString[i];
+			continue;
+		}
+
 		wstring ContertedCode = InToCodeDictionary.at(InString[i]);
 		
-		if (ContertedCode != L"/" && ConvertedResult.back() != L'/')
+		if ((ContertedCode != L"/" && ConvertedResult.back() != L'/') && ConvertedResult.back() != L'|')
 			ConvertedResult += L' ';
+
+		if (ContertedCode == L"/" && ConvertedResult.back() == L'|')
+			ConvertedResult.pop_back();
 
 		ConvertedResult += ContertedCode;
 	}
@@ -580,11 +607,12 @@ wstring FMorseConverter::InnerConvertStringToCode(wstring InString, const ToMors
 	return ConvertedResult;
 }
 
-wstring FMorseConverter::BlankConvertCodeToString(wstring InCode, const wstring& LetterInterval, const wstring& WordInterval)
+wstring FMorseConverter::BlankConvertCodeToString(wstring InCode, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval)
 {
 	wstring BlankConvertedString;
 	
 	size_t LetterIntervalSize = LetterInterval.size();
+	size_t SyllableIntervalSize = SyllableInterval.size();
 	size_t WordIntervalSize = WordInterval.size();
 
 	int BlankCounter = 0;
@@ -605,6 +633,8 @@ wstring FMorseConverter::BlankConvertCodeToString(wstring InCode, const wstring&
 
 			if (BlankInterval == LetterIntervalSize - 1)
 				BlankConvertedString += L' ';
+			else if (BlankInterval == SyllableIntervalSize - 1)
+				BlankConvertedString += L'|';
 			else if (BlankInterval == WordIntervalSize - 1)
 				BlankConvertedString += L'/';
 
@@ -617,7 +647,7 @@ wstring FMorseConverter::BlankConvertCodeToString(wstring InCode, const wstring&
 	return BlankConvertedString;
 }
 
-wstring FMorseConverter::BlankConvertStringToCode(wstring InString, const wstring& LetterInterval, const wstring& WordInterval)
+wstring FMorseConverter::BlankConvertStringToCode(wstring InString, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval)
 {
 	wstring BlankConvertedCode;
 
@@ -632,6 +662,11 @@ wstring FMorseConverter::BlankConvertStringToCode(wstring InString, const wstrin
 		else if (InString[i] == L'/')
 		{
 			BlankConvertedCode += WordInterval;
+		}
+		else if (InString[i] == L'|')
+		{
+			if (i != InString.size() - 1)
+				BlankConvertedCode += SyllableInterval;
 		}
 		else
 		{
