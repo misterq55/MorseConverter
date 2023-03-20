@@ -507,9 +507,6 @@ wstring FMorseConverter::ConvertStringToCode(const wstring& InString)
 	int EngCount = 0;
 	int KoreanCount = 0;
 
-	if (GivenString.back() != L'\0')
-		GivenString += L'\0';
-
 	for (unsigned int i = 0; i < GivenString.size(); i++)
 	{
 		if (L'A' <= GivenString[i] && L'Z' >= GivenString[i])
@@ -531,12 +528,18 @@ wstring FMorseConverter::ConvertStringToCode(const wstring& InString)
 
 	if (EngCount && !KoreanCount)
 	{
+		if (InputType != IT_Engish)
+			return L"현재 모드와 입력된 언어가가 다릅니다.";
+
 		ResultCode = InnerConvertStringToCode(GivenString, *EngStringToMorseDictionary);
 		ResultCode = BlankConvertStringToCode(ResultCode, L"   ", L"", L"       ");
 	}
 
-	if (!EngCount && KoreanCount)
+	if (!EngCount && KoreanCount && InputType == IT_Korean)
 	{
+		if (InputType != IT_Korean)
+			return L"현재 모드와 입력된 언어가가 다릅니다.";
+
 		ResultCode = InnerConvertStringToCode(HangulParser(GivenString), *KoreanStringToMorseDictionary);
 		ResultCode = BlankConvertStringToCode(ResultCode, L"   ", L"     ", L"       ");
 	}
