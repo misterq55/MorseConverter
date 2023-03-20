@@ -79,6 +79,39 @@ FMorseConverter::FMorseConverter()
 		{0x1B, L"¤¾"},
 	});
 
+	JaeumOnlyCodeToLetter = new KoreanCodeToLetterDictionary({
+		{L'¤¡', L"¤¡"},
+		{L'¤¢', L"¤¡¤¡"},
+		{L'¤£', L"¤¡¤µ"},
+		{L'¤¤', L"¤¤"},
+		{L'¤¥', L"¤¤¤¸"},
+		{L'¤¦', L"¤¤¤¾"},
+		{L'¤§', L"¤§"},
+		{L'¤¨', L"¤§¤§"},
+		{L'¤©', L"¤©"},
+		{L'¤ª', L"¤©¤¡"},
+		{L'¤«', L"¤©¤±"},
+		{L'¤¬', L"¤©¤²"},
+		{L'¤­', L"¤©¤µ"},
+		{L'¤®', L"¤©¤¼"},
+		{L'¤¯', L"¤©¤½"},
+		{L'¤°', L"¤©¤¾"},
+		{L'¤±', L"¤±"},
+		{L'¤²', L"¤²"},
+		{L'¤³', L"¤²¤²"},
+		{L'¤´', L"¤²¤µ"},
+		{L'¤µ', L"¤µ"},
+		{L'¤¶', L"¤µ¤µ"},
+		{L'¤·', L"¤·"},
+		{L'¤¸', L"¤¸"},
+		{L'¤¹', L"¤¸¤¸"},
+		{L'¤º', L"¤º"},
+		{L'¤»', L"¤»"},
+		{L'¤¼', L"¤¼"},
+		{L'¤½', L"¤½"},
+		{L'¤¾', L"¤¾"},
+	});
+
 	FirstConsonantLetterToCode = new KoreanLetterToCodeDictionary({
 		{L"¤¡", 0xAC00},
 		{L"¤¡¤¡", 0xAE4C},
@@ -155,6 +188,63 @@ FMorseConverter::FMorseConverter()
 		{L"¤½", 0x1A},
 		{L"¤¾", 0x1B},
 	});
+
+	JaeumOnlyLetterCode = new KoreanLetterToCodeDictionary({
+		{L"¤¡", L'¤¡'},
+		{L"¤¡¤¡", L'¤¢'},
+		{L"¤¡¤µ", L'¤£'},
+		{L"¤¤", L'¤¤'},
+		{L"¤¤¤¸", L'¤¥'},
+		{L"¤¤¤¾", L'¤¦'},
+		{L"¤§", L'¤§'},
+		{L"¤§¤§", L'¤¨'},
+		{L"¤©", L'¤©'},
+		{L"¤©¤¡", L'¤ª'},
+		{L"¤©¤±", L'¤«'},
+		{L"¤©¤²", L'¤¬'},
+		{L"¤©¤µ", L'¤­'},
+		{L"¤©¤¼", L'¤®'},
+		{L"¤©¤½", L'¤¯'},
+		{L"¤©¤¾", L'¤°'},
+		{L"¤±", L'¤±'},
+		{L"¤²", L'¤²'},
+		{L"¤²¤²", L'¤³'},
+		{L"¤²¤µ", L'¤´'},
+		{L"¤µ", L'¤µ'},
+		{L"¤µ¤µ", L'¤¶'},
+		{L"¤·", L'¤·'},
+		{L"¤¸", L'¤¸'},
+		{L"¤¸¤¸", L'¤¹'},
+		{L"¤º", L'¤º'},
+		{L"¤»", L'¤»'},
+		{L"¤¼", L'¤¼'},
+		{L"¤½", L'¤½'},
+		{L"¤¾", L'¤¾'},
+	});
+
+	MoeumOnlyLetterCode = new KoreanLetterToCodeDictionary({
+		{L"¤¿", L'¤¿'},
+		{L"¤À", L'¤À'},
+		{L"¤Á", L'¤Á'},
+		{L"¤Â", L'¤Â'},
+		{L"¤Ã", L'¤Ã'},
+		{L"¤Ä", L'¤Ä'},
+		{L"¤Å", L'¤Å'},
+		{L"¤Æ", L'¤Æ'},
+		{L"¤Ç", L'¤Ç'},
+		{L"¤Ç¤¿", L'¤È'},
+		{L"¤Ç¤À", L'¤É'},
+		{L"¤Ç¤Ó", L'¤Ê'},
+		{L"¤Ë", L'¤Ë'},
+		{L"¤Ì", L'¤Ì'},
+		{L"¤Ì¤Ã", L'¤Í'},
+		{L"¤Ì¤Ä", L'¤Î'},
+		{L"¤Ì¤Ó", L'¤Ï'},
+		{L"¤Ð", L'¤Ð'},
+		{L"¤Ñ", L'¤Ñ'},
+		{L"¤Ñ¤Ó", L'¤Ò'},
+		{L"¤Ó", L'¤Ó'},
+		});
 
 	FromMorseToEngStringDictionary = new FromMorseDirctionary({
 		{7, L'A'}, // 1 2
@@ -367,9 +457,13 @@ FMorseConverter::~FMorseConverter()
 	delete MiddleVowerCodeToLetter;
 	delete LastConsonantCodeToLetter;
 
+	delete JaeumOnlyCodeToLetter;
+
 	delete FirstConsonantLetterToCode;
 	delete MiddleVowerLetterToCode;
 	delete LastConsonantLetterToCode;
+
+	delete JaeumOnlyLetterCode;
 
 	delete FromMorseToEngStringDictionary;
 	delete FromMorseToKoreanStringDictionary;
@@ -384,16 +478,20 @@ wstring FMorseConverter::ConvertCodeToString(const wstring& InCode)
 		return L"ÀÔ·Â ¾ð¾î°¡ ¼³Á¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.";
 
 	wstring ResultString;
+	wstring GivenCode = InCode;
+	
+	if (GivenCode.back() != L'\0')
+		GivenCode += L'\0';
 
 	if (InputType == IT_Engish)
 	{
-		ResultString = BlankConvertCodeToString(InCode, L"   ", L"", L"       ");
+		ResultString = BlankConvertCodeToString(GivenCode, L"   ", L"", L"       ");
 		ResultString = InnerConvertCodeToString(ResultString, *FromMorseToEngStringDictionary);
 	}
 
 	if (InputType == IT_Korean)
 	{
-		ResultString = BlankConvertCodeToString(InCode, L"   ", L"     ", L"       ");
+		ResultString = BlankConvertCodeToString(GivenCode, L"   ", L"     ", L"       ");
 		ResultString = InnerConvertCodeToString(ResultString, *FromMorseToKoreanStringDictionary);
 		ResultString = HangulStringfy(ResultString);
 	}
@@ -408,6 +506,9 @@ wstring FMorseConverter::ConvertStringToCode(const wstring& InString)
 
 	int EngCount = 0;
 	int KoreanCount = 0;
+
+	if (GivenString.back() != L'\0')
+		GivenString += L'\0';
 
 	for (unsigned int i = 0; i < GivenString.size(); i++)
 	{
@@ -451,89 +552,145 @@ wstring FMorseConverter::HangulParser(wstring InString)
 
 	for (unsigned int i = 0; i < InString.size(); i++)
 	{
-		if (!(InString[i] >= L'°¡' && InString[i] <= L'ÆR'))
+		int Range = 0;
+		int Ramnant = 0;
+
+		if (InString[i] == L' ')
 		{
 			Result += InString[i];
-			if (InString[i] != L' ')
-				Result += L'|';
+
 			continue;
 		}
 
-		// ÃÊ¼º/Áß¼º¸¸ ÀÖ´Â°Í Ã³¸®
+		if (InString[i] >= L'°¡' && InString[i] <= L'ÆR')
+		{
+			HanguleJamoParser(int(InString[i]) - L'°¡', L'±î' - L'°¡', Range, Ramnant);
 
-		int StartNumber = 0xAC00;
-		int Divider = 0x24C;
-		int ConvertedNum = int(InString[i]);
-		int PureNum = ConvertedNum - StartNumber;
-		int Quotient = PureNum / Divider;
-		int Range = Quotient * Divider + StartNumber;
-		Result += FirstConsonantCodeToLetter->at(Range);
+			Range += L'°¡';
+			KoreanCodeToLetterDictionary::iterator FinderIterator = FirstConsonantCodeToLetter->find(Range);
+			if (FinderIterator != FirstConsonantCodeToLetter->end())
+				Result += FirstConsonantCodeToLetter->at(Range);
 
-		StartNumber = Range;
-		Divider = 0x1C;
-		ConvertedNum = int(InString[i]);
-		PureNum = ConvertedNum - StartNumber;
-		Quotient = PureNum / Divider;
-		int Ramnant = PureNum % Divider;
-		Range = Quotient * Divider;
-		Result += MiddleVowerCodeToLetter->at(Range);
-		Result += LastConsonantCodeToLetter->at(Ramnant);
+			HanguleJamoParser(int(InString[i]) - Range, L'°³' - L'°¡', Range, Ramnant);
+
+			Result += MiddleVowerCodeToLetter->at(Range);
+			Result += LastConsonantCodeToLetter->at(Ramnant);
+		}
+		else if (InString[i] >= L'¤¡' && InString[i] <= L'¤¾')
+		{
+			HanguleJamoParser(int(InString[i]) - L'¤¡', L'¤¢' - L'¤¡', Range, Ramnant);
+			Range *= (L'¤¢' - L'¤¡');
+			Range += L'¤¡';
+			Result += JaeumOnlyCodeToLetter->at(Range);
+		}
+		else if (InString[i] >= L'¤¿' && InString[i] <= L'¤Ó')
+		{
+			HanguleJamoParser(int(InString[i]) - L'¤¿', L'¤À' - L'¤¿', Range, Ramnant);
+			Range *= (L'°³' - L'°¡');
+			Result += MiddleVowerCodeToLetter->at(Range);
+		}
+		else
+			Result += InString[i];
+
 		Result += L'|';
 	}
 
 	return Result;
 }
 
+void FMorseConverter::HanguleJamoParser(int ConvertedNum, int Divider, int& OutRange, int& OutRamnant)
+{
+	int Quotient = ConvertedNum / Divider;
+	OutRange = Quotient * Divider;
+	OutRamnant = ConvertedNum % Divider;
+}
+
 wstring FMorseConverter::HangulStringfy(const wstring& InParsedHangulStr)
 {
+	if (InParsedHangulStr == L"Àß¸øµÈ ÄÚµåÀÔ´Ï´Ù")
+		return InParsedHangulStr;
+
 	wstring StringfiedResult;
 
 	wstring GivenParsedString = InParsedHangulStr;
-	GivenParsedString.pop_back();
-	GivenParsedString += L"|\0";
 
 	unsigned int Index = 0;
+	unsigned int SubIndex = 0;
 
 	while (Index < InParsedHangulStr.size())
 	{
-		if (InParsedHangulStr[Index] == L'\0')
-			break;
+		if (InParsedHangulStr[Index] == L' ' ||
+			InParsedHangulStr[Index] == L'|' ||
+			InParsedHangulStr[Index] == L'\0')
+		{
+			wstring FirstConsonantLetter;
+			wstring MiddleVowerLetter;
+			wstring LastConsonantLetter;
 
-		wstring FirstConsonantLetter;
-		wstring MiddleVowerLetter;
-		wstring LastConsonantLetter;
+			int FirstConsonantValue = 0;
+			int MiddleVowerValue = 0;
+			int LastConsonantValue = 0;
+			
+			while (InParsedHangulStr[SubIndex] >= L'(' && InParsedHangulStr[SubIndex] <= L'?')
+				StringfiedResult += InParsedHangulStr[SubIndex++];
 
-		int SubIndex = 0;
+			while (InParsedHangulStr[SubIndex] >= L'¤¡' && InParsedHangulStr[SubIndex] <= L'¤¾')
+				FirstConsonantLetter += InParsedHangulStr[SubIndex++];
 
-		int FirstConsonantValue = 0;
-		int MiddleVowerValue = 0;
+			if (FirstConsonantLetterToCode->find(FirstConsonantLetter) != FirstConsonantLetterToCode->end())
+				FirstConsonantValue = FirstConsonantLetterToCode->at(FirstConsonantLetter);
 
+			while (InParsedHangulStr[SubIndex] >= L'¤¿' && InParsedHangulStr[SubIndex] <= L'¤Ó')
+				MiddleVowerLetter += InParsedHangulStr[SubIndex++];
+			
+			// ÃÊ¼ºÀÌ ¾ø´Ù¸é Áß¼º¸¸ ÀÔ·Â
+			if (FirstConsonantLetter == L"")
+			{
+				if (MoeumOnlyLetterCode->find(MiddleVowerLetter) != MoeumOnlyLetterCode->end())
+					StringfiedResult += MoeumOnlyLetterCode->at(MiddleVowerLetter);
 
-		/*while (InParsedHangulStr[Index + SubIndex] >= L'¤¡' && InParsedHangulStr[Index + SubIndex] <= L'¤¾' && SubIndex < 2)
-			FirstConsonantLetter += InParsedHangulStr[Index + SubIndex++];
+				if (InParsedHangulStr[Index] == L' ')
+					StringfiedResult += L' ';
 
-		Index = Index + SubIndex;
-		SubIndex = 0;
+				SubIndex = Index++ + 1;
 
-		int FirstConsonantValue = FirstConsonantLetterToCode->at(FirstConsonantLetter);
+				continue;
+			}
 
-		while (InParsedHangulStr[Index + SubIndex] >= L'¤¿' && InParsedHangulStr[Index + SubIndex] <= L'¤Ó' && SubIndex < 2)
-			MiddleVowerLetter += InParsedHangulStr[Index + SubIndex++];
+			if (MiddleVowerLetterToCode->find(MiddleVowerLetter) != MiddleVowerLetterToCode->end())
+				MiddleVowerValue = MiddleVowerLetterToCode->at(MiddleVowerLetter);
 
-		Index = Index + SubIndex;
-		SubIndex = 0;
+			// Áß¼ºÀÌ ¾ø´Ù¸é ÃÊ¼º¸¸ ÀÔ·Â
+			if (MiddleVowerLetter == L"")
+			{
+				if (MoeumOnlyLetterCode->find(FirstConsonantLetter) != JaeumOnlyLetterCode->end())
+					StringfiedResult += JaeumOnlyLetterCode->at(FirstConsonantLetter);
 
-		int MiddleVowerValue = MiddleVowerLetterToCode->at(MiddleVowerLetter);
+				if (InParsedHangulStr[Index] == L' ')
+					StringfiedResult += L' ';
 
-		while (InParsedHangulStr[Index + SubIndex] >= L'¤¡' && InParsedHangulStr[Index + SubIndex] <= L'¤¾' && SubIndex < 2)
-			LastConsonantLetter += InParsedHangulStr[Index + SubIndex++];
+				SubIndex = Index++ + 1;
 
-		Index = Index + SubIndex;
-		SubIndex = 0;*/
+				continue;
+			}
 
-		int LastConsonantValue = LastConsonantLetterToCode->at(LastConsonantLetter);
-		int Result = FirstConsonantValue + MiddleVowerValue + LastConsonantValue;
-		StringfiedResult += Result;
+			while (InParsedHangulStr[SubIndex] >= L'¤¡' && InParsedHangulStr[SubIndex] <= L'¤¾')
+				LastConsonantLetter += InParsedHangulStr[SubIndex++];
+			
+			if (LastConsonantLetterToCode->find(LastConsonantLetter) != LastConsonantLetterToCode->end())
+				LastConsonantValue = LastConsonantLetterToCode->at(LastConsonantLetter);
+			
+			int Result = FirstConsonantValue + MiddleVowerValue + LastConsonantValue;
+
+			StringfiedResult += Result;
+			
+			if (InParsedHangulStr[Index] == L' ')
+				StringfiedResult += L' ';
+
+			SubIndex = Index + 1;
+		}
+
+		Index++;
 	}
 
 	return StringfiedResult;
@@ -551,12 +708,19 @@ wstring FMorseConverter::InnerConvertCodeToString(wstring InCode, const FromMors
 	{
 		int value = -1;
 
+		FromMorseDirctionary::const_iterator FinderIterator;
+
 		if (GivenCode.at(i) == L'.')
 			value = 1;
 		else if (GivenCode.at(i) == L'-')
 			value = 2;
 		else // ' ' or '/'
 		{
+			FinderIterator = InToStringDictionary.find(wordValue);
+
+			if (FinderIterator == InToStringDictionary.end())
+				return L"Àß¸øµÈ ÄÚµåÀÔ´Ï´Ù";
+
 			ConvertedString += InToStringDictionary.at(wordValue);
 			
 			if (GivenCode.at(i) == L'/')

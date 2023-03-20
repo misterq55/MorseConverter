@@ -22,6 +22,7 @@ public:
 
 private:
   wstring HangulParser(wstring InString);
+  void HanguleJamoParser(int ConvertedNum, int Divider, int& OutRange, int& OutRamnant);
   wstring HangulStringfy(const wstring& InParsedHangulStr);
   wstring InnerConvertCodeToString(wstring InCode, const FromMorseDirctionary& InToStringDictionary);
   wstring InnerConvertStringToCode(wstring InString, const ToMorseDictionary& InToCodeDictionary);
@@ -33,9 +34,14 @@ private:
   KoreanCodeToLetterDictionary *MiddleVowerCodeToLetter;
   KoreanCodeToLetterDictionary *LastConsonantCodeToLetter;
 
+  KoreanCodeToLetterDictionary* JaeumOnlyCodeToLetter;
+
   KoreanLetterToCodeDictionary *FirstConsonantLetterToCode;
   KoreanLetterToCodeDictionary *MiddleVowerLetterToCode;
   KoreanLetterToCodeDictionary *LastConsonantLetterToCode;
+
+  KoreanLetterToCodeDictionary* JaeumOnlyLetterCode;
+  KoreanLetterToCodeDictionary* MoeumOnlyLetterCode;
 
   FromMorseDirctionary *FromMorseToEngStringDictionary;
   FromMorseDirctionary *FromMorseToKoreanStringDictionary;
