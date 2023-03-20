@@ -22,11 +22,11 @@ int main()
 
   getline(wcin, str);
 
-  // wstring Code = CodeInverter->ConvertStringToCode(str);
-  // wstring ConvertedString = CodeInverter->ConvertCodeToString(Code);
-  wstring ConvertedString = CodeInverter->ConvertCodeToString(str);
+  wstring Code = CodeInverter->ConvertStringToCode(str);
+  wstring ConvertedString = CodeInverter->ConvertCodeToString(Code);
+  // wstring ConvertedString = CodeInverter->ConvertCodeToString(str);
 
-  // wcout << Code << endl;
+  wcout << Code << endl;
   wcout << ConvertedString << endl;
 
   delete CodeInverter;
