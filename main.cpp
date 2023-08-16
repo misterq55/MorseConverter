@@ -4,7 +4,8 @@
 #include <iostream>
 #include <string>
 // #include "FHangulParser.h"
-#include "FMorseConverter.h"
+// #include "MorseConverter.h"
+#include "BinaryConverter.h"
 
 using namespace std;
 
@@ -14,9 +15,11 @@ int main()
   wcout.imbue(locale("korean"));
 
   // FCodeConverter *CodeInverter = new FHangulParser();
-  FCodeConverter* CodeInverter = new FMorseConverter();
+  // FCodeConverter* CodeInverter = new FMorseConverter();
   // CodeInverter->SetInputType(FCodeConverter::EInputType::IT_Engish);
-  CodeInverter->SetInputType(FCodeConverter::EInputType::IT_Korean);
+  // CodeInverter->SetInputType(FCodeConverter::EInputType::IT_Korean);
+
+  FCodeConverter* CodeInverter = new FBinaryConverter();
 
   wstring str;
 
