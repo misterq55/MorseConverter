@@ -464,6 +464,7 @@ FMorseConverter::~FMorseConverter()
 	delete LastConsonantLetterToCode;
 
 	delete JaeumOnlyLetterCode;
+	delete MoeumOnlyLetterCode;
 
 	delete FromMorseToEngStringDictionary;
 	delete FromMorseToKoreanStringDictionary;

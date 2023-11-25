@@ -24,7 +24,10 @@
     <ClCompile Include="CodeConverter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FHangulParser.cpp">
+    <ClCompile Include="HangulParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryConverter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +41,10 @@
     <ClInclude Include="CodeConverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FHangulParser.h">
+    <ClInclude Include="HangulParser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryConverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
