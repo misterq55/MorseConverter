@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 // #include "FHangulParser.h"
-// #include "MorseConverter.h"
-#include "BinaryConverter.h"
+#include "MorseConverter.h"
+// #include "BinaryConverter.h"
 
 using namespace std;
 
@@ -14,25 +14,26 @@ int main()
   wcin.imbue(locale("korean"));
   wcout.imbue(locale("korean"));
 
-  // FCodeConverter *CodeInverter = new FHangulParser();
-  // FCodeConverter* CodeInverter = new FMorseConverter();
+  // FCodeConverter *CodeConverter = new FHangulParser();
+  FCodeConverter* CodeConverter = new FMorseConverter();
+  CodeConverter->Initilize();
   // CodeInverter->SetInputType(FCodeConverter::EInputType::IT_Engish);
-  // CodeInverter->SetInputType(FCodeConverter::EInputType::IT_Korean);
+  CodeConverter->SetInputType(EInputType::IT_Korean);
 
-  FCodeConverter* CodeInverter = new FBinaryConverter();
+  // FCodeConverter* CodeConverter = new FBinaryConverter();
 
   wstring str;
 
   getline(wcin, str);
 
-  wstring Code = CodeInverter->ConvertStringToCode(str);
-  wstring ConvertedString = CodeInverter->ConvertCodeToString(Code);
-  // wstring ConvertedString = CodeInverter->ConvertCodeToString(str);
+  wstring Code = CodeConverter->Encode(str);
+  wstring ConvertedString = CodeConverter->Decode(Code);
+  // wstring ConvertedString = CodeInverter->Decode(str);
 
   wcout << Code << endl;
   wcout << ConvertedString << endl;
 
-  delete CodeInverter;
+  delete CodeConverter;
 
   /*wcout << int(L'¤¡') << endl;
   wcout << int(L'¤¾') << endl;

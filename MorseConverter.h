@@ -1,14 +1,10 @@
 #pragma once
 #include "CodeConverter.h"
-#include <map>
 
-using std::map;
-
+class FHangulParser;
 class FMorseConverter :
   public FCodeConverter
 {
-  typedef map<int, wstring> KoreanCodeToLetterDictionary;
-  typedef map<wstring, int> KoreanLetterToCodeDictionary;
   typedef map<int, wchar_t> FromMorseDirctionary;
   typedef map<wchar_t, wstring> ToMorseDictionary;
 
@@ -17,31 +13,20 @@ public:
   virtual ~FMorseConverter();
 
 public:
-  virtual wstring ConvertCodeToString(const wstring& InCode);
-  virtual wstring ConvertStringToCode(const wstring& InString);
+  virtual void Initilize();
+  virtual wstring Encode(const wstring& InString);
+  virtual wstring Decode(const wstring& InCode);
 
 private:
-  wstring HangulParser(wstring InString);
-  void HanguleJamoParser(int ConvertedNum, int Divider, int& OutRange, int& OutRamnant);
-  wstring HangulStringfy(const wstring& InParsedHangulStr);
-  wstring InnerConvertCodeToString(wstring InCode, const FromMorseDirctionary& InToStringDictionary);
-  wstring InnerConvertStringToCode(wstring InString, const ToMorseDictionary& InToCodeDictionary);
-  wstring BlankConvertCodeToString(wstring InCode, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval);
-  wstring BlankConvertStringToCode(wstring InString, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval);
+  wstring hangulParse(wstring InString);
+  wstring hangulStringfy(const wstring& InParsedHangulStr);
+  wstring decode_Inner(wstring InCode, const FromMorseDirctionary& InToStringDictionary);
+  wstring encode_Inner(wstring InString, const ToMorseDictionary& InToCodeDictionary);
+  wstring removeBlankSpaces(wstring InCode, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval);
+  wstring addBlankSpaces(wstring InString, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval);
 
 private:
-  KoreanCodeToLetterDictionary *FirstConsonantCodeToLetter;
-  KoreanCodeToLetterDictionary *MiddleVowerCodeToLetter;
-  KoreanCodeToLetterDictionary *LastConsonantCodeToLetter;
-
-  KoreanCodeToLetterDictionary* JaeumOnlyCodeToLetter;
-
-  KoreanLetterToCodeDictionary *FirstConsonantLetterToCode;
-  KoreanLetterToCodeDictionary *MiddleVowerLetterToCode;
-  KoreanLetterToCodeDictionary *LastConsonantLetterToCode;
-
-  KoreanLetterToCodeDictionary* JaeumOnlyLetterCode;
-  KoreanLetterToCodeDictionary* MoeumOnlyLetterCode;
+  FHangulParser* HangulParser;
 
   FromMorseDirctionary *FromMorseToEngStringDictionary;
   FromMorseDirctionary *FromMorseToKoreanStringDictionary;

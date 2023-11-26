@@ -3,7 +3,13 @@
 class FBinaryConverter :
     public FCodeConverter
 {
-  virtual wstring ConvertCodeToString(const wstring& InCode);
-  virtual wstring ConvertStringToCode(const wstring& InString);
+public:
+  FBinaryConverter() {}
+  virtual ~FBinaryConverter() {}
+
+public:
+  virtual void Initilize();
+  virtual wstring Encode(const wstring& InString);
+  virtual wstring Decode(const wstring& InCode);
 };
 

@@ -1,8 +1,22 @@
 #include "HangulParser.h"
 
 FHangulParser::FHangulParser()
+	: FirstConsonantCodeToLetter(nullptr)
+	, MiddleVowerCodeToLetter(nullptr)
+	, LastConsonantCodeToLetter(nullptr)
+	, JaeumOnlyCodeToLetter(nullptr)
+	, FirstConsonantLetterToCode(nullptr)
+	, MiddleVowerLetterToCode(nullptr)
+	, LastConsonantLetterToCode(nullptr)
+	, JaeumOnlyLetterCode(nullptr)
+	, MoeumOnlyLetterCode(nullptr)
 {
-	FirstConsonantCodeToLetter = {
+	
+}
+
+void FHangulParser::Initilize()
+{
+	FirstConsonantCodeToLetter = new KoreanCodeToLetterDictionary({
 		{0xAC00, L"¤¡"},
 		{0xAE4C, L"¤¡¤¡"},
 		{0xB098, L"¤¤"},
@@ -22,10 +36,10 @@ FHangulParser::FHangulParser()
 		{0xD0C0, L"¤¼"},
 		{0xD30C, L"¤½"},
 		{0xD558, L"¤¾"},
-	};
+		});
 
-	MiddleVowerCodeToLetter = {
-		{0x00, L"¤¿"},
+	MiddleVowerCodeToLetter = new KoreanCodeToLetterDictionary({
+		{0x0, L"¤¿"},
 		{0x1C, L"¤À"},
 		{0x38, L"¤Á"},
 		{0x54, L"¤Â"},
@@ -34,24 +48,25 @@ FHangulParser::FHangulParser()
 		{0xA8, L"¤Å"},
 		{0xC4, L"¤Æ"},
 		{0xE0, L"¤Ç"},
-		{0xFC, L"¤È"},
-		{0x118, L"¤É"},
-		{0x134, L"¤Ê"},
+		{0xFC, L"¤Ç¤¿"},
+		{0x118, L"¤Ç¤À"},
+		{0x134, L"¤Ç¤Ó"},
 		{0x150, L"¤Ë"},
 		{0x16C, L"¤Ì"},
-		{0x188, L"¤Í"},
-		{0x1A4, L"¤Î"},
-		{0x1C0, L"¤Ï"},
+		{0x188, L"¤Ì¤Ã"},
+		{0x1A4, L"¤Ì¤Ä"},
+		{0x1C0, L"¤Ì¤Ó"},
 		{0x1DC, L"¤Ð"},
 		{0x1F8, L"¤Ñ"},
-		{0x214, L"¤Ò"},
+		{0x214, L"¤Ñ¤Ó"},
 		{0x230, L"¤Ó"},
-	};
+		});
 
-	LastConsonantCodeToLetter = {
+	LastConsonantCodeToLetter = new KoreanCodeToLetterDictionary({
+		{0x0, L""},
 		{0x1, L"¤¡"},
 		{0x2, L"¤¡¤¡"},
-		{0x3, L"¤£"},
+		{0x3, L"¤¡¤µ"},
 		{0x4, L"¤¤"},
 		{0x5, L"¤¤¤¸"},
 		{0x6, L"¤¤¤¾"},
@@ -76,38 +91,322 @@ FHangulParser::FHangulParser()
 		{0x19, L"¤¼"},
 		{0x1A, L"¤½"},
 		{0x1B, L"¤¾"},
-	};
+		});
+
+	JaeumOnlyCodeToLetter = new KoreanCodeToLetterDictionary({
+		{L'¤¡', L"¤¡"},
+		{L'¤¢', L"¤¡¤¡"},
+		{L'¤£', L"¤¡¤µ"},
+		{L'¤¤', L"¤¤"},
+		{L'¤¥', L"¤¤¤¸"},
+		{L'¤¦', L"¤¤¤¾"},
+		{L'¤§', L"¤§"},
+		{L'¤¨', L"¤§¤§"},
+		{L'¤©', L"¤©"},
+		{L'¤ª', L"¤©¤¡"},
+		{L'¤«', L"¤©¤±"},
+		{L'¤¬', L"¤©¤²"},
+		{L'¤­', L"¤©¤µ"},
+		{L'¤®', L"¤©¤¼"},
+		{L'¤¯', L"¤©¤½"},
+		{L'¤°', L"¤©¤¾"},
+		{L'¤±', L"¤±"},
+		{L'¤²', L"¤²"},
+		{L'¤³', L"¤²¤²"},
+		{L'¤´', L"¤²¤µ"},
+		{L'¤µ', L"¤µ"},
+		{L'¤¶', L"¤µ¤µ"},
+		{L'¤·', L"¤·"},
+		{L'¤¸', L"¤¸"},
+		{L'¤¹', L"¤¸¤¸"},
+		{L'¤º', L"¤º"},
+		{L'¤»', L"¤»"},
+		{L'¤¼', L"¤¼"},
+		{L'¤½', L"¤½"},
+		{L'¤¾', L"¤¾"},
+		});
+
+	FirstConsonantLetterToCode = new KoreanLetterToCodeDictionary({
+		{L"¤¡", 0xAC00},
+		{L"¤¡¤¡", 0xAE4C},
+		{L"¤¤", 0xB098},
+		{L"¤§", 0xB2E4},
+		{L"¤§¤§", 0xB530},
+		{L"¤©", 0xB77C},
+		{L"¤±", 0xB9C8},
+		{L"¤²", 0xBC14},
+		{L"¤²¤²", 0xBE60},
+		{L"¤µ", 0xC0AC},
+		{L"¤µ¤µ", 0xC2F8},
+		{L"¤·", 0xC544},
+		{L"¤¸", 0xC790},
+		{L"¤¸¤¸", 0xC9DC},
+		{L"¤º", 0xCC28},
+		{L"¤»", 0xCE74},
+		{L"¤¼", 0xD0C0},
+		{L"¤½", 0xD30C},
+		{L"¤¾", 0xD558},
+		});
+
+	MiddleVowerLetterToCode = new KoreanLetterToCodeDictionary({
+		{L"¤¿", 0x00},
+		{L"¤À", 0x1C},
+		{L"¤Á", 0x38},
+		{L"¤Â", 0x54},
+		{L"¤Ã", 0x70},
+		{L"¤Ä", 0x8C},
+		{L"¤Å", 0xA8},
+		{L"¤Æ", 0xC4},
+		{L"¤Ç", 0xE0},
+		{L"¤Ç¤¿", 0xFC},
+		{L"¤Ç¤À", 0x118},
+		{L"¤Ç¤Ó", 0x134},
+		{L"¤Ë", 0x150},
+		{L"¤Ì", 0x16C},
+		{L"¤Ì¤Ã", 0x188},
+		{L"¤Ì¤Ä", 0x1A4},
+		{L"¤Ì¤Ó", 0x1C0},
+		{L"¤Ð", 0x1DC},
+		{L"¤Ñ", 0x1F8},
+		{L"¤Ñ¤Ó", 0x214},
+		{L"¤Ó", 0x230},
+		});
+
+	LastConsonantLetterToCode = new KoreanLetterToCodeDictionary({
+		{L"", 0x0},
+		{L"¤¡", 0x1},
+		{L"¤¡¤¡", 0x2},
+		{L"¤¡¤µ", 0x3},
+		{L"¤¤", 0x4},
+		{L"¤¤¤¸", 0x5},
+		{L"¤¤¤¾", 0x6},
+		{L"¤§", 0x7},
+		{L"¤©", 0x8},
+		{L"¤©¤¡", 0x9},
+		{L"¤©¤±", 0xA},
+		{L"¤©¤²", 0xB},
+		{L"¤©¤µ", 0xC},
+		{L"¤©¤¼", 0xD},
+		{L"¤©¤½", 0xE},
+		{L"¤©¤¾", 0xF},
+		{L"¤±", 0x10},
+		{L"¤²", 0x11},
+		{L"¤²¤µ", 0x12},
+		{L"¤µ", 0x13},
+		{L"¤µ¤µ", 0x14},
+		{L"¤·", 0x15},
+		{L"¤¸", 0x16},
+		{L"¤º", 0x17},
+		{L"¤»", 0x18},
+		{L"¤¼", 0x19},
+		{L"¤½", 0x1A},
+		{L"¤¾", 0x1B},
+		});
+
+	JaeumOnlyLetterCode = new KoreanLetterToCodeDictionary({
+		{L"¤¡", L'¤¡'},
+		{L"¤¡¤¡", L'¤¢'},
+		{L"¤¡¤µ", L'¤£'},
+		{L"¤¤", L'¤¤'},
+		{L"¤¤¤¸", L'¤¥'},
+		{L"¤¤¤¾", L'¤¦'},
+		{L"¤§", L'¤§'},
+		{L"¤§¤§", L'¤¨'},
+		{L"¤©", L'¤©'},
+		{L"¤©¤¡", L'¤ª'},
+		{L"¤©¤±", L'¤«'},
+		{L"¤©¤²", L'¤¬'},
+		{L"¤©¤µ", L'¤­'},
+		{L"¤©¤¼", L'¤®'},
+		{L"¤©¤½", L'¤¯'},
+		{L"¤©¤¾", L'¤°'},
+		{L"¤±", L'¤±'},
+		{L"¤²", L'¤²'},
+		{L"¤²¤²", L'¤³'},
+		{L"¤²¤µ", L'¤´'},
+		{L"¤µ", L'¤µ'},
+		{L"¤µ¤µ", L'¤¶'},
+		{L"¤·", L'¤·'},
+		{L"¤¸", L'¤¸'},
+		{L"¤¸¤¸", L'¤¹'},
+		{L"¤º", L'¤º'},
+		{L"¤»", L'¤»'},
+		{L"¤¼", L'¤¼'},
+		{L"¤½", L'¤½'},
+		{L"¤¾", L'¤¾'},
+		});
+
+	MoeumOnlyLetterCode = new KoreanLetterToCodeDictionary({
+		{L"¤¿", L'¤¿'},
+		{L"¤À", L'¤À'},
+		{L"¤Á", L'¤Á'},
+		{L"¤Â", L'¤Â'},
+		{L"¤Ã", L'¤Ã'},
+		{L"¤Ä", L'¤Ä'},
+		{L"¤Å", L'¤Å'},
+		{L"¤Æ", L'¤Æ'},
+		{L"¤Ç", L'¤Ç'},
+		{L"¤Ç¤¿", L'¤È'},
+		{L"¤Ç¤À", L'¤É'},
+		{L"¤Ç¤Ó", L'¤Ê'},
+		{L"¤Ë", L'¤Ë'},
+		{L"¤Ì", L'¤Ì'},
+		{L"¤Ì¤Ã", L'¤Í'},
+		{L"¤Ì¤Ä", L'¤Î'},
+		{L"¤Ì¤Ó", L'¤Ï'},
+		{L"¤Ð", L'¤Ð'},
+		{L"¤Ñ", L'¤Ñ'},
+		{L"¤Ñ¤Ó", L'¤Ò'},
+		{L"¤Ó", L'¤Ó'},
+		});
 }
 
-wstring FHangulParser::ConvertCodeToString(const wstring& InCode)
-{
-	return L"³»¿ëÀÌ ¾ø½À´Ï´Ù.";
-}
-
-wstring FHangulParser::ConvertStringToCode(const wstring& InString)
+wstring FHangulParser::Encode(const wstring& InString)
 {
 	wstring Result;
 
-	for (int i = 0; i < InString.size(); i++)
+	for (unsigned int i = 0; i < InString.size(); i++)
 	{
-		int StartNumber = 0xAC00;
-		int Divider = 0x24C;
-		int ConvertedNum = int(InString[i]);
-		int PureNum = ConvertedNum - StartNumber;
-		int Quotient = PureNum / Divider;
-		int Range = Quotient * Divider + StartNumber;
-		Result += FirstConsonantCodeToLetter[Range];
+		int Range = 0;
+		int Ramnant = 0;
 
-		StartNumber = Range;
-		Divider = 0x1C;
-		ConvertedNum = int(InString[i]);
-		PureNum = ConvertedNum - StartNumber;
-		Quotient = PureNum / Divider;
-		int Ramnant = PureNum % Divider;
-		Range = Quotient * Divider;
-		Result += MiddleVowerCodeToLetter[Range];
-		Result += LastConsonantCodeToLetter[Ramnant];
+		if (InString[i] == L' ')
+		{
+			Result += InString[i];
+
+			continue;
+		}
+
+		if (InString[i] >= L'°¡' && InString[i] <= L'ÆR')
+		{
+			hanguleJamoParse(int(InString[i]) - L'°¡', L'±î' - L'°¡', Range, Ramnant);
+
+			Range += L'°¡';
+			KoreanCodeToLetterDictionary::iterator FinderIterator = FirstConsonantCodeToLetter->find(Range);
+			if (FinderIterator != FirstConsonantCodeToLetter->end())
+				Result += FirstConsonantCodeToLetter->at(Range);
+
+			hanguleJamoParse(int(InString[i]) - Range, L'°³' - L'°¡', Range, Ramnant);
+
+			Result += MiddleVowerCodeToLetter->at(Range);
+			Result += LastConsonantCodeToLetter->at(Ramnant);
+		}
+		else if (InString[i] >= L'¤¡' && InString[i] <= L'¤¾')
+		{
+			hanguleJamoParse(int(InString[i]) - L'¤¡', L'¤¢' - L'¤¡', Range, Ramnant);
+			Range *= (L'¤¢' - L'¤¡');
+			Range += L'¤¡';
+			Result += JaeumOnlyCodeToLetter->at(Range);
+		}
+		else if (InString[i] >= L'¤¿' && InString[i] <= L'¤Ó')
+		{
+			hanguleJamoParse(int(InString[i]) - L'¤¿', L'¤À' - L'¤¿', Range, Ramnant);
+			Range *= (L'°³' - L'°¡');
+			Result += MiddleVowerCodeToLetter->at(Range);
+		}
+		else
+			Result += InString[i];
+
+		Result += L'|';
 	}
 
 	return Result;
+}
+
+wstring FHangulParser::Decode(const wstring& InParsedHangulStr)
+{
+	if (InParsedHangulStr == L"Àß¸øµÈ ÄÚµåÀÔ´Ï´Ù")
+		return InParsedHangulStr;
+
+	wstring StringfiedResult;
+
+	wstring GivenParsedString = InParsedHangulStr;
+
+	unsigned int Index = 0;
+	unsigned int SubIndex = 0;
+
+	while (Index < InParsedHangulStr.size())
+	{
+		if (InParsedHangulStr[Index] == L' ' ||
+			InParsedHangulStr[Index] == L'|' ||
+			InParsedHangulStr[Index] == L'\0')
+		{
+			wstring FirstConsonantLetter;
+			wstring MiddleVowerLetter;
+			wstring LastConsonantLetter;
+
+			int FirstConsonantValue = 0;
+			int MiddleVowerValue = 0;
+			int LastConsonantValue = 0;
+
+			while (InParsedHangulStr[SubIndex] >= L'(' && InParsedHangulStr[SubIndex] <= L'?')
+				StringfiedResult += InParsedHangulStr[SubIndex++];
+
+			while (InParsedHangulStr[SubIndex] >= L'¤¡' && InParsedHangulStr[SubIndex] <= L'¤¾')
+				FirstConsonantLetter += InParsedHangulStr[SubIndex++];
+
+			if (FirstConsonantLetterToCode->find(FirstConsonantLetter) != FirstConsonantLetterToCode->end())
+				FirstConsonantValue = FirstConsonantLetterToCode->at(FirstConsonantLetter);
+
+			while (InParsedHangulStr[SubIndex] >= L'¤¿' && InParsedHangulStr[SubIndex] <= L'¤Ó')
+				MiddleVowerLetter += InParsedHangulStr[SubIndex++];
+
+			// ÃÊ¼ºÀÌ ¾ø´Ù¸é Áß¼º¸¸ ÀÔ·Â
+			if (FirstConsonantLetter == L"")
+			{
+				if (MoeumOnlyLetterCode->find(MiddleVowerLetter) != MoeumOnlyLetterCode->end())
+					StringfiedResult += MoeumOnlyLetterCode->at(MiddleVowerLetter);
+
+				if (InParsedHangulStr[Index] == L' ')
+					StringfiedResult += L' ';
+
+				SubIndex = Index++ + 1;
+
+				continue;
+			}
+
+			if (MiddleVowerLetterToCode->find(MiddleVowerLetter) != MiddleVowerLetterToCode->end())
+				MiddleVowerValue = MiddleVowerLetterToCode->at(MiddleVowerLetter);
+
+			// Áß¼ºÀÌ ¾ø´Ù¸é ÃÊ¼º¸¸ ÀÔ·Â
+			if (MiddleVowerLetter == L"")
+			{
+				if (JaeumOnlyLetterCode->find(FirstConsonantLetter) != JaeumOnlyLetterCode->end())
+					StringfiedResult += JaeumOnlyLetterCode->at(FirstConsonantLetter);
+
+				if (InParsedHangulStr[Index] == L' ')
+					StringfiedResult += L' ';
+
+				SubIndex = Index++ + 1;
+
+				continue;
+			}
+
+			while (InParsedHangulStr[SubIndex] >= L'¤¡' && InParsedHangulStr[SubIndex] <= L'¤¾')
+				LastConsonantLetter += InParsedHangulStr[SubIndex++];
+
+			if (LastConsonantLetterToCode->find(LastConsonantLetter) != LastConsonantLetterToCode->end())
+				LastConsonantValue = LastConsonantLetterToCode->at(LastConsonantLetter);
+
+			int Result = FirstConsonantValue + MiddleVowerValue + LastConsonantValue;
+
+			StringfiedResult += Result;
+
+			if (InParsedHangulStr[Index] == L' ')
+				StringfiedResult += L' ';
+
+			SubIndex = Index + 1;
+		}
+
+		Index++;
+	}
+
+	return StringfiedResult;
+}
+
+void FHangulParser::hanguleJamoParse(int ConvertedNum, int Divider, int& OutRange, int& OutRamnant)
+{
+	int Quotient = ConvertedNum / Divider;
+	OutRange = Quotient * Divider;
+	OutRamnant = ConvertedNum % Divider;
 }

@@ -1,25 +1,37 @@
 #pragma once
 
 #include "CodeConverter.h"
-#include <map>
-
-using std::map;
 
 class FHangulParser :
     public FCodeConverter
 {
-  typedef map<int, wstring> KoreanLetterDictionary;
+  typedef map<int, wstring> KoreanCodeToLetterDictionary;
+  typedef map<wstring, int> KoreanLetterToCodeDictionary;
 
 public:
   FHangulParser();
   virtual ~FHangulParser() {}
 
 public:
-  virtual wstring ConvertCodeToString(const wstring& InCode);
-  virtual wstring ConvertStringToCode(const wstring& InString);
+  virtual void Initilize();
+  virtual wstring Encode(const wstring& InString);
+  virtual wstring Decode(const wstring& InParsedHangulStr);
 
-  KoreanLetterDictionary FirstConsonantCodeToLetter;
-  KoreanLetterDictionary MiddleVowerCodeToLetter;
-  KoreanLetterDictionary LastConsonantCodeToLetter;
+private:
+  void hanguleJamoParse(int ConvertedNum, int Divider, int& OutRange, int& OutRamnant);
+
+private:
+  KoreanCodeToLetterDictionary* FirstConsonantCodeToLetter;
+  KoreanCodeToLetterDictionary* MiddleVowerCodeToLetter;
+  KoreanCodeToLetterDictionary* LastConsonantCodeToLetter;
+
+  KoreanCodeToLetterDictionary* JaeumOnlyCodeToLetter;
+
+  KoreanLetterToCodeDictionary* FirstConsonantLetterToCode;
+  KoreanLetterToCodeDictionary* MiddleVowerLetterToCode;
+  KoreanLetterToCodeDictionary* LastConsonantLetterToCode;
+
+  KoreanLetterToCodeDictionary* JaeumOnlyLetterCode;
+  KoreanLetterToCodeDictionary* MoeumOnlyLetterCode;
 };
 
