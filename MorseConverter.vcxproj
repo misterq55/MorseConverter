@@ -139,18 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BinaryConverter.cpp" />
-    <ClCompile Include="CodeConverter.cpp" />
-    <ClCompile Include="HangulParser.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MorseConverter.cpp" />
+    <ClCompile Include="Source\BinaryConverter\BinaryConverter.cpp" />
+    <ClCompile Include="Source\CodeConverter\CodeConverter.cpp" />
+    <ClCompile Include="Source\HangulParser\HangulParser.cpp" />
+    <ClCompile Include="Source\MorseConverter\MorseConverter.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BinaryConverter.h" />
-    <ClInclude Include="CodeConverter.h" />
-    <ClInclude Include="HangulParser.h" />
     <ClInclude Include="flutter_interface.h" />
-    <ClInclude Include="MorseConverter.h" />
+    <ClInclude Include="Source\BinaryConverter\BinaryConverter.h" />
+    <ClInclude Include="Source\CodeConverter\CodeConverter.h" />
+    <ClInclude Include="Source\HangulParser\HangulParser.h" />
+    <ClInclude Include="Source\MorseConverter\MorseConverter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

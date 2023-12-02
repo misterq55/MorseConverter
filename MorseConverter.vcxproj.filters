@@ -13,39 +13,54 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{8e5e4b37-c936-4c69-b6c7-6d2493900bb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\CodeConverter">
+      <UniqueIdentifier>{e48c13f3-6dc7-4eb0-b620-915194993f0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\HangulParser">
+      <UniqueIdentifier>{266a172c-d4d7-4361-8f9c-17c7f0457353}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\MorseConverter">
+      <UniqueIdentifier>{607450c9-4432-4bea-b941-7be2373ff227}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\BinaryConverter">
+      <UniqueIdentifier>{4bda9808-07f8-4084-a3ba-859bfa7b0712}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MorseConverter.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source\CodeConverter\CodeConverter.cpp">
+      <Filter>Source\CodeConverter</Filter>
     </ClCompile>
-    <ClCompile Include="CodeConverter.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source\HangulParser\HangulParser.cpp">
+      <Filter>Source\HangulParser</Filter>
     </ClCompile>
-    <ClCompile Include="HangulParser.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source\MorseConverter\MorseConverter.cpp">
+      <Filter>Source\MorseConverter</Filter>
     </ClCompile>
-    <ClCompile Include="BinaryConverter.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Source\BinaryConverter\BinaryConverter.cpp">
+      <Filter>Source\BinaryConverter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MorseConverter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="flutter_interface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CodeConverter.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Source\CodeConverter\CodeConverter.h">
+      <Filter>Source\CodeConverter</Filter>
     </ClInclude>
-    <ClInclude Include="HangulParser.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Source\HangulParser\HangulParser.h">
+      <Filter>Source\HangulParser</Filter>
     </ClInclude>
-    <ClInclude Include="BinaryConverter.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Source\MorseConverter\MorseConverter.h">
+      <Filter>Source\MorseConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BinaryConverter\BinaryConverter.h">
+      <Filter>Source\BinaryConverter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
