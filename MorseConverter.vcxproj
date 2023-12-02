@@ -139,10 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="Source\BinaryConverter\BinaryConverter.cpp" />
     <ClCompile Include="Source\CodeConverter\CodeConverter.cpp" />
     <ClCompile Include="Source\HangulParser\HangulParser.cpp" />
+    <ClCompile Include="Source\jsoncpp\jsoncpp.cpp" />
+    <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\MorseConverter\MorseConverter.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +151,8 @@
     <ClInclude Include="Source\BinaryConverter\BinaryConverter.h" />
     <ClInclude Include="Source\CodeConverter\CodeConverter.h" />
     <ClInclude Include="Source\HangulParser\HangulParser.h" />
+    <ClInclude Include="Source\jsoncpp\json\json-forwards.h" />
+    <ClInclude Include="Source\jsoncpp\json\json.h" />
     <ClInclude Include="Source\MorseConverter\MorseConverter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

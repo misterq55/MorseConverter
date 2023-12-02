@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
@@ -28,11 +24,14 @@
     <Filter Include="Source\BinaryConverter">
       <UniqueIdentifier>{4bda9808-07f8-4084-a3ba-859bfa7b0712}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\jsoncpp">
+      <UniqueIdentifier>{546ed4a4-888f-4bca-b157-86037b623e01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\jsoncpp\json">
+      <UniqueIdentifier>{bff59220-e1eb-444a-a0b0-26c0b7238d9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\CodeConverter\CodeConverter.cpp">
       <Filter>Source\CodeConverter</Filter>
     </ClCompile>
@@ -44,6 +43,12 @@
     </ClCompile>
     <ClCompile Include="Source\BinaryConverter\BinaryConverter.cpp">
       <Filter>Source\BinaryConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\jsoncpp\jsoncpp.cpp">
+      <Filter>Source\jsoncpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +66,12 @@
     </ClInclude>
     <ClInclude Include="Source\BinaryConverter\BinaryConverter.h">
       <Filter>Source\BinaryConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\jsoncpp\json\json.h">
+      <Filter>Source\jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\jsoncpp\json\json-forwards.h">
+      <Filter>Source\jsoncpp\json</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

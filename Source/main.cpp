@@ -3,40 +3,56 @@
 
 #include <iostream>
 #include <string>
-#include "HangulParser.h"
-#include "MorseConverter.h"
-#include "BinaryConverter.h"
+// #include "FHangulParser.h"
+#include "MorseConverter/MorseConverter.h"
+// #include "BinaryConverter.h"
+#include "jsoncpp/json/json.h"
 
 using namespace std;
 
 int main()
 {
-  wcin.imbue(locale("korean"));
-  wcout.imbue(locale("korean"));
+  //wcin.imbue(locale("korean"));
+  //wcout.imbue(locale("korean"));
 
-  // FCodeConverter *CodeConverter = new FHangulParser();
-  FCodeConverter* CodeConverter = new FMorseConverter();
-  // FCodeConverter* CodeConverter = new FBinaryConverter();
+  //// FCodeConverter *CodeConverter = new FHangulParser();
+  //FCodeConverter* CodeConverter = new FMorseConverter();
+  //CodeConverter->Initilize();
+  //// CodeInverter->SetInputType(FCodeConverter::EInputType::IT_Engish);
+  //CodeConverter->SetInputType(EInputType::IT_Korean);
 
-  CodeConverter->Initilize();
-  // CodeInverter->SetInputType(FCodeConverter::EInputType::IT_Engish);
-  CodeConverter->SetInputType(EInputType::IT_Korean);
+  //// FCodeConverter* CodeConverter = new FBinaryConverter();
 
-  wstring str;
+  //wstring str;
 
-  getline(wcin, str);
+  //getline(wcin, str);
 
-  wstring Code = CodeConverter->Encode(str);
-  wstring ConvertedString = CodeConverter->Decode(Code);
-  // wstring ConvertedString = CodeInverter->Decode(str);
+  //wstring Code = CodeConverter->Encode(str);
+  //wstring ConvertedString = CodeConverter->Decode(Code);
+  //// wstring ConvertedString = CodeInverter->Decode(str);
 
-  wcout << Code << endl;
-  wcout << ConvertedString << endl;
+  //wcout << Code << endl;
+  //wcout << ConvertedString << endl;
 
-  delete CodeConverter;
+  //delete CodeConverter;
 
-  /*wcout << int(L'ぁ') << endl;
-  wcout << int(L'ぞ') << endl;
-  wcout << int(L'た') << endl;
-  wcout << int(L'び') << endl;*/
+  ///*wcout << int(L'ぁ') << endl;
+  //wcout << int(L'ぞ') << endl;
+  //wcout << int(L'た') << endl;
+  //wcout << int(L'び') << endl;*/
+
+
+  Json::Value root;
+  Json::Value data;
+  root["JsonTest"] = "name";
+  data["try"] = 1;
+  root["data"] = data;
+
+	Json::StreamWriterBuilder builder;
+	// const std::string json_file = Json::writeString(builder, root);
+	// std::cout << json_file << std::endl;
+  const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
+  writer->write(root, &std::cout);
+
+  return EXIT_SUCCESS;
 }
