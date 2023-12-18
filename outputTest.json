@@ -1,0 +1,22 @@
+{
+	"age" : 28,
+	"friends" : 
+	[
+		{
+			"age" : 30,
+			"name" : "Park"
+		},
+		{
+			"age" : 25,
+			"name" : "Kim"
+		}
+	],
+	"hasCar" : true,
+	"items" : 
+	[
+		"nootbook",
+		"iphone",
+		"apple-watch"
+	],
+	"name" : "Lee"
+}
