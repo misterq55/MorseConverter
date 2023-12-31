@@ -146,6 +146,7 @@ void makeKoreanMorseCodeBook()
   fromCode["26"] = "¤½";
   fromCode["79"] = "¤¾";
 
+
   /*fromCode["26"] = L'O';
   fromCode["52"] = L'P';
   fromCode["71"] = L'Q';
