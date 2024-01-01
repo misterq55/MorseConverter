@@ -1,4 +1,5 @@
 ﻿#include "MorseConverter.h"
+#include <cmath>
 #include "../HangulParser/HangulParser.h"
 
 FMorseConverter::FMorseConverter()

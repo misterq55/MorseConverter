@@ -280,37 +280,37 @@ void read_json()
 
 int main()
 {
-  //wcin.imbue(locale("korean"));
-  //wcout.imbue(locale("korean"));
+  // wcin.imbue(locale("korean"));
+  // wcout.imbue(locale("korean"));
 
-  //// FCodeConverter *CodeConverter = new FHangulParser();
-  //FCodeConverter* CodeConverter = new FMorseConverter();
-  //CodeConverter->Initilize();
-  //// CodeInverter->SetInputType(FCodeConverter::EInputType::IT_Engish);
-  //CodeConverter->SetInputType(EInputType::IT_Korean);
+  // FCodeConverter *CodeConverter = new FHangulParser();
+  FCodeConverter* CodeConverter = new FMorseConverter();
+  CodeConverter->Initilize();
+  CodeConverter->SetInputType(EInputType::IT_Engish);
+  // CodeConverter->SetInputType(EInputType::IT_Korean);
 
-  //// FCodeConverter* CodeConverter = new FBinaryConverter();
+  // FCodeConverter* CodeConverter = new FBinaryConverter();
 
-  //wstring str;
+  wstring str;
 
-  //getline(wcin, str);
+  getline(wcin, str);
 
-  //wstring Code = CodeConverter->Encode(str);
-  //wstring ConvertedString = CodeConverter->Decode(Code);
-  //// wstring ConvertedString = CodeInverter->Decode(str);
+  wstring Code = CodeConverter->Encode(str);
+  wstring ConvertedString = CodeConverter->Decode(Code);
+  // wstring ConvertedString = CodeInverter->Decode(str);
 
-  //wcout << Code << endl;
-  //wcout << ConvertedString << endl;
+  wcout << Code << endl;
+  wcout << ConvertedString << endl;
 
-  //delete CodeConverter;
+  delete CodeConverter;
 
   ///*wcout << int(L'ㄱ') << endl;
   //wcout << int(L'ㅎ') << endl;
   //wcout << int(L'ㅏ') << endl;
   //wcout << int(L'ㅣ') << endl;*/
 
-  makeEnglishMorseCodeBook();
-  makeKoreanMorseCodeBook();
+  // makeEnglishMorseCodeBook();
+  // makeKoreanMorseCodeBook();
 
   // read_json();
 
