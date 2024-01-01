@@ -131,20 +131,20 @@ void makeKoreanMorseCodeBook()
   keyValueType["keyVariableType"] = "Int";
   keyValueType["valueVariableType"] = "WChar";
   fromCode["variableType"] = keyValueType;
-  fromCode["43"] = "§°";
-  fromCode["49"] = "§§";
-  fromCode["41"] = "§ß";
-  fromCode["67"] = "§©";
-  fromCode["8"] = "§±";
-  fromCode["25"] = "§≤";
-  fromCode["17"] = "§µ";
-  fromCode["23"] = "§∑";
-  fromCode["52"] = "§∏";
-  fromCode["50"] = "§∫";
-  fromCode["68"] = "§ª";
-  fromCode["44"] = "§º";
-  fromCode["26"] = "§Ω";
-  fromCode["79"] = "§æ";
+  fromCode["43"] = "„Ñ±";
+  fromCode["49"] = "„Ñ¥";
+  fromCode["41"] = "„Ñ∑";
+  fromCode["67"] = "„Ñπ";
+  fromCode["8"] = "„ÖÅ";
+  fromCode["25"] = "„ÖÇ";
+  fromCode["17"] = "„ÖÖ";
+  fromCode["23"] = "„Öá";
+  fromCode["52"] = "„Öà";
+  fromCode["50"] = "„Öä";
+  fromCode["68"] = "„Öã";
+  fromCode["44"] = "„Öå";
+  fromCode["26"] = "„Öç";
+  fromCode["79"] = "„Öé";
 
   /*fromCode["26"] = L'O';
   fromCode["52"] = L'P';
@@ -304,10 +304,10 @@ int main()
 
   //delete CodeConverter;
 
-  ///*wcout << int(L'§°') << endl;
-  //wcout << int(L'§æ') << endl;
-  //wcout << int(L'§ø') << endl;
-  //wcout << int(L'§”') << endl;*/
+  ///*wcout << int(L'„Ñ±') << endl;
+  //wcout << int(L'„Öé') << endl;
+  //wcout << int(L'„Öè') << endl;
+  //wcout << int(L'„Ö£') << endl;*/
 
   makeEnglishMorseCodeBook();
   makeKoreanMorseCodeBook();
