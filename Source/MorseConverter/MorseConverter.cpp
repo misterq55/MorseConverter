@@ -1,4 +1,4 @@
-#include "MorseConverter.h"
+ï»¿#include "MorseConverter.h"
 #include "../HangulParser/HangulParser.h"
 
 FMorseConverter::FMorseConverter()
@@ -127,33 +127,33 @@ void FMorseConverter::Initilize()
 		});
 
 	FromMorseToKoreanStringDictionary = new FromMorseDirctionary({
-		{43, L'¤¡'}, // ¤¡ 1 2 1 1
-		{49, L'¤¤'}, // ¤¤ 1 1 2 1
-		{41, L'¤§'}, // ¤§ 2 1 1 1
-		{67, L'¤©'}, // ¤© 1 1 1 2
-		{8, L'¤±'}, // ¤± 2 2
-		{25, L'¤²'}, // ¤² 1 2 2
-		{17, L'¤µ'}, // ¤µ 2 2 1
-		{23, L'¤·'}, // ¤· 2 1 2
-		{52, L'¤¸'}, // ¤¸ 1 2 2 1
-		{50, L'¤º'}, // ¤º 2 1 2 1
-		{68, L'¤»'}, // ¤» 2 1 1 2
-		{44, L'¤¼'}, // ¤¼ 2 2 1 1
-		{26, L'¤½'}, // ¤½ 2 2 2
-		{79, L'¤¾'}, // ¤¾ 1 2 2 2
+		{43, L'ã„±'}, // ã„± 1 2 1 1
+		{49, L'ã„´'}, // ã„´ 1 1 2 1
+		{41, L'ã„·'}, // ã„· 2 1 1 1
+		{67, L'ã„¹'}, // ã„¹ 1 1 1 2
+		{8, L'ã…'}, // ã… 2 2
+		{25, L'ã…‚'}, // ã…‚ 1 2 2
+		{17, L'ã……'}, // ã…… 2 2 1
+		{23, L'ã…‡'}, // ã…‡ 2 1 2
+		{52, L'ã…ˆ'}, // ã…ˆ 1 2 2 1
+		{50, L'ã…Š'}, // ã…Š 2 1 2 1
+		{68, L'ã…‹'}, // ã…‹ 2 1 1 2
+		{44, L'ã…Œ'}, // ã…Œ 2 2 1 1
+		{26, L'ã…'}, // ã… 2 2 2
+		{79, L'ã…'}, // ã… 1 2 2 2
 
-		{1, L'¤¿'}, // ¤¿ 1
-		{4, L'¤Á'}, // ¤Á 1 1
-		{2, L'¤Ã'}, // ¤Ã 2
-		{13, L'¤Å'}, // ¤Å 1 1 1
-		{7, L'¤Ç'}, // ¤Ç 1 2
-		{5, L'¤Ë'}, // ¤Ë 2 1
-		{40, L'¤Ì'}, // ¤Ì 1 1 1 1
-		{16, L'¤Ğ'}, // ¤Ğ 1 2 1
-		{14, L'¤Ñ'}, // ¤Ñ 2 1 1
-		{22, L'¤Ó'}, // ¤Ó 1 1 2
-		{71, L'¤À'}, // ¤À 2 2 1 2
-		{77, L'¤Ä'}, // ¤Ä 2 1 2 2
+		{1, L'ã…'}, // ã… 1
+		{4, L'ã…‘'}, // ã…‘ 1 1
+		{2, L'ã…“'}, // ã…“ 2
+		{13, L'ã…•'}, // ã…• 1 1 1
+		{7, L'ã…—'}, // ã…— 1 2
+		{5, L'ã…›'}, // ã…› 2 1
+		{40, L'ã…œ'}, // ã…œ 1 1 1 1
+		{16, L'ã… '}, // ã…  1 2 1
+		{14, L'ã…¡'}, // ã…¡ 2 1 1
+		{22, L'ã…£'}, // ã…£ 1 1 2
+		{71, L'ã…'}, // ã… 2 2 1 2
+		{77, L'ã…”'}, // ã…” 2 1 2 2
 
 		{241, L'1'}, // 1 2 2 2 2
 		{238, L'2'}, // 1 1 2 2 2
@@ -176,33 +176,33 @@ void FMorseConverter::Initilize()
 		});
 
 	KoreanStringToMorseDictionary = new ToMorseDictionary({
-		{L'¤¡', L".-.."},
-		{L'¤¤', L"..-."},
-		{L'¤§', L"-..."},
-		{L'¤©', L"...-"},
-		{L'¤±', L"--"},
-		{L'¤²', L".--"},
-		{L'¤µ', L"--."},
-		{L'¤·', L"-.-"},
-		{L'¤¸', L".--."},
-		{L'¤º', L"-.-."},
-		{L'¤»', L"-..-"},
-		{L'¤¼', L"--.."},
-		{L'¤½', L"---"},
-		{L'¤¾', L".---"},
+		{L'ã„±', L".-.."},
+		{L'ã„´', L"..-."},
+		{L'ã„·', L"-..."},
+		{L'ã„¹', L"...-"},
+		{L'ã…', L"--"},
+		{L'ã…‚', L".--"},
+		{L'ã……', L"--."},
+		{L'ã…‡', L"-.-"},
+		{L'ã…ˆ', L".--."},
+		{L'ã…Š', L"-.-."},
+		{L'ã…‹', L"-..-"},
+		{L'ã…Œ', L"--.."},
+		{L'ã…', L"---"},
+		{L'ã…', L".---"},
 
-		{L'¤¿', L"."},
-		{L'¤Á', L".."},
-		{L'¤Ã', L"-"},
-		{L'¤Å', L"..."},
-		{L'¤Ç', L".-"},
-		{L'¤Ë', L"-."},
-		{L'¤Ì', L"...."},
-		{L'¤Ğ', L".-."},
-		{L'¤Ñ', L"-.."},
-		{L'¤Ó', L"..-"},
-		{L'¤À', L"--.-"},
-		{L'¤Ä', L"-.--"},
+		{L'ã…', L"."},
+		{L'ã…‘', L".."},
+		{L'ã…“', L"-"},
+		{L'ã…•', L"..."},
+		{L'ã…—', L".-"},
+		{L'ã…›', L"-."},
+		{L'ã…œ', L"...."},
+		{L'ã… ', L".-."},
+		{L'ã…¡', L"-.."},
+		{L'ã…£', L"..-"},
+		{L'ã…', L"--.-"},
+		{L'ã…”', L"-.--"},
 
 		{L'1', L".----"},
 		{L'2', L"..---"},
@@ -253,19 +253,19 @@ wstring FMorseConverter::Encode(const wstring& InString)
 			EngCount++;
 		}
 
-		if ((L'°¡' <= GivenString[i] && L'ÆR' >= GivenString[i]) ||
-			(L'¤¡' <= GivenString[i] && L'¤¾' >= GivenString[i]) ||
-			(L'¤¿' <= GivenString[i] && L'¤Ó' >= GivenString[i]))
+		if ((L'ê°€' <= GivenString[i] && L'í£' >= GivenString[i]) ||
+			(L'ã„±' <= GivenString[i] && L'ã…' >= GivenString[i]) ||
+			(L'ã…' <= GivenString[i] && L'ã…£' >= GivenString[i]))
 			KoreanCount++;
 
 		if (EngCount && KoreanCount)
-			return L"µÎ°¡Áö ÀÌ»óÀÇ ¾ğ¾î°¡ °¨ÁöµÇ¾ú½À´Ï´Ù.";
+			return L"ë‘ê°€ì§€ ì´ìƒì˜ ì–¸ì–´ê°€ ê°ì§€ë˜ì—ˆìŠµë‹ˆë‹¤.";
 	}
 
 	if (EngCount && !KoreanCount)
 	{
 		if (InputType != IT_Engish)
-			return L"ÇöÀç ¸ğµå¿Í ÀÔ·ÂµÈ ¾ğ¾î°¡ ´Ù¸¨´Ï´Ù.";
+			return L"í˜„ì¬ ëª¨ë“œì™€ ì…ë ¥ëœ ì–¸ì–´ê°€ ë‹¤ë¦…ë‹ˆë‹¤.";
 
 		ResultCode = encode_Inner(GivenString, *EngStringToMorseDictionary);
 		ResultCode = addBlankSpaces(ResultCode, L"   ", L"", L"       ");
@@ -274,7 +274,7 @@ wstring FMorseConverter::Encode(const wstring& InString)
 	if (!EngCount && KoreanCount && InputType == IT_Korean)
 	{
 		if (InputType != IT_Korean)
-			return L"ÇöÀç ¸ğµå¿Í ÀÔ·ÂµÈ ¾ğ¾î°¡ ´Ù¸¨´Ï´Ù.";
+			return L"í˜„ì¬ ëª¨ë“œì™€ ì…ë ¥ëœ ì–¸ì–´ê°€ ë‹¤ë¦…ë‹ˆë‹¤.";
 
 		ResultCode = encode_Inner(hangulParse(GivenString), *KoreanStringToMorseDictionary);
 		ResultCode = addBlankSpaces(ResultCode, L"   ", L"     ", L"       ");
@@ -288,7 +288,7 @@ wstring FMorseConverter::Encode(const wstring& InString)
 wstring FMorseConverter::Decode(const wstring& InCode)
 {
 	if (InputType == IT_None)
-		return L"ÀÔ·Â ¾ğ¾î°¡ ¼³Á¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.";
+		return L"ì…ë ¥ ì–¸ì–´ê°€ ì„¤ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.";
 
 	wstring ResultString;
 	wstring GivenCode = InCode;
@@ -355,7 +355,7 @@ wstring FMorseConverter::decode_Inner(wstring InCode, const FromMorseDirctionary
 			FinderIterator = InToStringDictionary.find(wordValue);
 
 			if (FinderIterator == InToStringDictionary.end())
-				return L"Àß¸øµÈ ÄÚµåÀÔ´Ï´Ù";
+				return L"ì˜ëª»ëœ ì½”ë“œì…ë‹ˆë‹¤";
 
 			ConvertedString += InToStringDictionary.at(wordValue);
 			
