@@ -17,247 +17,247 @@ FHangulParser::FHangulParser()
 void FHangulParser::Initilize()
 {
 	FirstConsonantCodeToLetter = new KoreanCodeToLetterDictionary({
-		{0xAC00, L"§°"},
-		{0xAE4C, L"§°§°"},
-		{0xB098, L"§§"},
-		{0xB2E4, L"§ß"},
-		{0xB530, L"§ß§ß"},
-		{0xB77C, L"§©"},
-		{0xB9C8, L"§±"},
-		{0xBC14, L"§≤"},
-		{0xBE60, L"§≤§≤"},
-		{0xC0AC, L"§µ"},
-		{0xC2F8, L"§µ§µ"},
-		{0xC544, L"§∑"},
-		{0xC790, L"§∏"},
-		{0xC9DC, L"§∏§∏"},
-		{0xCC28, L"§∫"},
-		{0xCE74, L"§ª"},
-		{0xD0C0, L"§º"},
-		{0xD30C, L"§Ω"},
-		{0xD558, L"§æ"},
+		{0xAC00, L"„Ñ±"},
+		{0xAE4C, L"„Ñ±„Ñ±"},
+		{0xB098, L"„Ñ¥"},
+		{0xB2E4, L"„Ñ∑"},
+		{0xB530, L"„Ñ∑„Ñ∑"},
+		{0xB77C, L"„Ñπ"},
+		{0xB9C8, L"„ÖÅ"},
+		{0xBC14, L"„ÖÇ"},
+		{0xBE60, L"„ÖÇ„ÖÇ"},
+		{0xC0AC, L"„ÖÖ"},
+		{0xC2F8, L"„ÖÖ„ÖÖ"},
+		{0xC544, L"„Öá"},
+		{0xC790, L"„Öà"},
+		{0xC9DC, L"„Öà„Öà"},
+		{0xCC28, L"„Öä"},
+		{0xCE74, L"„Öã"},
+		{0xD0C0, L"„Öå"},
+		{0xD30C, L"„Öç"},
+		{0xD558, L"„Öé"},
 		});
 
 	MiddleVowerCodeToLetter = new KoreanCodeToLetterDictionary({
-		{0x0, L"§ø"},
-		{0x1C, L"§¿"},
-		{0x38, L"§¡"},
-		{0x54, L"§¬"},
-		{0x70, L"§√"},
-		{0x8C, L"§ƒ"},
-		{0xA8, L"§≈"},
-		{0xC4, L"§∆"},
-		{0xE0, L"§«"},
-		{0xFC, L"§«§ø"},
-		{0x118, L"§«§¿"},
-		{0x134, L"§«§”"},
-		{0x150, L"§À"},
-		{0x16C, L"§Ã"},
-		{0x188, L"§Ã§√"},
-		{0x1A4, L"§Ã§ƒ"},
-		{0x1C0, L"§Ã§”"},
-		{0x1DC, L"§–"},
-		{0x1F8, L"§—"},
-		{0x214, L"§—§”"},
-		{0x230, L"§”"},
+		{0x0, L"„Öè"},
+		{0x1C, L"„Öê"},
+		{0x38, L"„Öë"},
+		{0x54, L"„Öí"},
+		{0x70, L"„Öì"},
+		{0x8C, L"„Öî"},
+		{0xA8, L"„Öï"},
+		{0xC4, L"„Öñ"},
+		{0xE0, L"„Öó"},
+		{0xFC, L"„Öó„Öè"},
+		{0x118, L"„Öó„Öê"},
+		{0x134, L"„Öó„Ö£"},
+		{0x150, L"„Öõ"},
+		{0x16C, L"„Öú"},
+		{0x188, L"„Öú„Öì"},
+		{0x1A4, L"„Öú„Öî"},
+		{0x1C0, L"„Öú„Ö£"},
+		{0x1DC, L"„Ö†"},
+		{0x1F8, L"„Ö°"},
+		{0x214, L"„Ö°„Ö£"},
+		{0x230, L"„Ö£"},
 		});
 
 	LastConsonantCodeToLetter = new KoreanCodeToLetterDictionary({
 		{0x0, L""},
-		{0x1, L"§°"},
-		{0x2, L"§°§°"},
-		{0x3, L"§°§µ"},
-		{0x4, L"§§"},
-		{0x5, L"§§§∏"},
-		{0x6, L"§§§æ"},
-		{0x7, L"§ß"},
-		{0x8, L"§©"},
-		{0x9, L"§©§°"},
-		{0xA, L"§©§±"},
-		{0xB, L"§©§≤"},
-		{0xC, L"§©§µ"},
-		{0xD, L"§©§º"},
-		{0xE, L"§©§Ω"},
-		{0xF, L"§©§æ"},
-		{0x10, L"§±"},
-		{0x11, L"§≤"},
-		{0x12, L"§≤§µ"},
-		{0x13, L"§µ"},
-		{0x14, L"§µ§µ"},
-		{0x15, L"§∑"},
-		{0x16, L"§∏"},
-		{0x17, L"§∫"},
-		{0x18, L"§ª"},
-		{0x19, L"§º"},
-		{0x1A, L"§Ω"},
-		{0x1B, L"§æ"},
+		{0x1, L"„Ñ±"},
+		{0x2, L"„Ñ±„Ñ±"},
+		{0x3, L"„Ñ±„ÖÖ"},
+		{0x4, L"„Ñ¥"},
+		{0x5, L"„Ñ¥„Öà"},
+		{0x6, L"„Ñ¥„Öé"},
+		{0x7, L"„Ñ∑"},
+		{0x8, L"„Ñπ"},
+		{0x9, L"„Ñπ„Ñ±"},
+		{0xA, L"„Ñπ„ÖÅ"},
+		{0xB, L"„Ñπ„ÖÇ"},
+		{0xC, L"„Ñπ„ÖÖ"},
+		{0xD, L"„Ñπ„Öå"},
+		{0xE, L"„Ñπ„Öç"},
+		{0xF, L"„Ñπ„Öé"},
+		{0x10, L"„ÖÅ"},
+		{0x11, L"„ÖÇ"},
+		{0x12, L"„ÖÇ„ÖÖ"},
+		{0x13, L"„ÖÖ"},
+		{0x14, L"„ÖÖ„ÖÖ"},
+		{0x15, L"„Öá"},
+		{0x16, L"„Öà"},
+		{0x17, L"„Öä"},
+		{0x18, L"„Öã"},
+		{0x19, L"„Öå"},
+		{0x1A, L"„Öç"},
+		{0x1B, L"„Öé"},
 		});
 
 	JaeumOnlyCodeToLetter = new KoreanCodeToLetterDictionary({
-		{L'§°', L"§°"},
-		{L'§¢', L"§°§°"},
-		{L'§£', L"§°§µ"},
-		{L'§§', L"§§"},
-		{L'§•', L"§§§∏"},
-		{L'§¶', L"§§§æ"},
-		{L'§ß', L"§ß"},
-		{L'§®', L"§ß§ß"},
-		{L'§©', L"§©"},
-		{L'§™', L"§©§°"},
-		{L'§´', L"§©§±"},
-		{L'§¨', L"§©§≤"},
-		{L'§≠', L"§©§µ"},
-		{L'§Æ', L"§©§º"},
-		{L'§Ø', L"§©§Ω"},
-		{L'§∞', L"§©§æ"},
-		{L'§±', L"§±"},
-		{L'§≤', L"§≤"},
-		{L'§≥', L"§≤§≤"},
-		{L'§¥', L"§≤§µ"},
-		{L'§µ', L"§µ"},
-		{L'§∂', L"§µ§µ"},
-		{L'§∑', L"§∑"},
-		{L'§∏', L"§∏"},
-		{L'§π', L"§∏§∏"},
-		{L'§∫', L"§∫"},
-		{L'§ª', L"§ª"},
-		{L'§º', L"§º"},
-		{L'§Ω', L"§Ω"},
-		{L'§æ', L"§æ"},
+		{L'„Ñ±', L"„Ñ±"},
+		{L'„Ñ≤', L"„Ñ±„Ñ±"},
+		{L'„Ñ≥', L"„Ñ±„ÖÖ"},
+		{L'„Ñ¥', L"„Ñ¥"},
+		{L'„Ñµ', L"„Ñ¥„Öà"},
+		{L'„Ñ∂', L"„Ñ¥„Öé"},
+		{L'„Ñ∑', L"„Ñ∑"},
+		{L'„Ñ∏', L"„Ñ∑„Ñ∑"},
+		{L'„Ñπ', L"„Ñπ"},
+		{L'„Ñ∫', L"„Ñπ„Ñ±"},
+		{L'„Ñª', L"„Ñπ„ÖÅ"},
+		{L'„Ñº', L"„Ñπ„ÖÇ"},
+		{L'„ÑΩ', L"„Ñπ„ÖÖ"},
+		{L'„Ñæ', L"„Ñπ„Öå"},
+		{L'„Ñø', L"„Ñπ„Öç"},
+		{L'„ÖÄ', L"„Ñπ„Öé"},
+		{L'„ÖÅ', L"„ÖÅ"},
+		{L'„ÖÇ', L"„ÖÇ"},
+		{L'„ÖÉ', L"„ÖÇ„ÖÇ"},
+		{L'„ÖÑ', L"„ÖÇ„ÖÖ"},
+		{L'„ÖÖ', L"„ÖÖ"},
+		{L'„ÖÜ', L"„ÖÖ„ÖÖ"},
+		{L'„Öá', L"„Öá"},
+		{L'„Öà', L"„Öà"},
+		{L'„Öâ', L"„Öà„Öà"},
+		{L'„Öä', L"„Öä"},
+		{L'„Öã', L"„Öã"},
+		{L'„Öå', L"„Öå"},
+		{L'„Öç', L"„Öç"},
+		{L'„Öé', L"„Öé"},
 		});
 
 	FirstConsonantLetterToCode = new KoreanLetterToCodeDictionary({
-		{L"§°", 0xAC00},
-		{L"§°§°", 0xAE4C},
-		{L"§§", 0xB098},
-		{L"§ß", 0xB2E4},
-		{L"§ß§ß", 0xB530},
-		{L"§©", 0xB77C},
-		{L"§±", 0xB9C8},
-		{L"§≤", 0xBC14},
-		{L"§≤§≤", 0xBE60},
-		{L"§µ", 0xC0AC},
-		{L"§µ§µ", 0xC2F8},
-		{L"§∑", 0xC544},
-		{L"§∏", 0xC790},
-		{L"§∏§∏", 0xC9DC},
-		{L"§∫", 0xCC28},
-		{L"§ª", 0xCE74},
-		{L"§º", 0xD0C0},
-		{L"§Ω", 0xD30C},
-		{L"§æ", 0xD558},
+		{L"„Ñ±", 0xAC00},
+		{L"„Ñ±„Ñ±", 0xAE4C},
+		{L"„Ñ¥", 0xB098},
+		{L"„Ñ∑", 0xB2E4},
+		{L"„Ñ∑„Ñ∑", 0xB530},
+		{L"„Ñπ", 0xB77C},
+		{L"„ÖÅ", 0xB9C8},
+		{L"„ÖÇ", 0xBC14},
+		{L"„ÖÇ„ÖÇ", 0xBE60},
+		{L"„ÖÖ", 0xC0AC},
+		{L"„ÖÖ„ÖÖ", 0xC2F8},
+		{L"„Öá", 0xC544},
+		{L"„Öà", 0xC790},
+		{L"„Öà„Öà", 0xC9DC},
+		{L"„Öä", 0xCC28},
+		{L"„Öã", 0xCE74},
+		{L"„Öå", 0xD0C0},
+		{L"„Öç", 0xD30C},
+		{L"„Öé", 0xD558},
 		});
 
 	MiddleVowerLetterToCode = new KoreanLetterToCodeDictionary({
-		{L"§ø", 0x00},
-		{L"§¿", 0x1C},
-		{L"§¡", 0x38},
-		{L"§¬", 0x54},
-		{L"§√", 0x70},
-		{L"§ƒ", 0x8C},
-		{L"§≈", 0xA8},
-		{L"§∆", 0xC4},
-		{L"§«", 0xE0},
-		{L"§«§ø", 0xFC},
-		{L"§«§¿", 0x118},
-		{L"§«§”", 0x134},
-		{L"§À", 0x150},
-		{L"§Ã", 0x16C},
-		{L"§Ã§√", 0x188},
-		{L"§Ã§ƒ", 0x1A4},
-		{L"§Ã§”", 0x1C0},
-		{L"§–", 0x1DC},
-		{L"§—", 0x1F8},
-		{L"§—§”", 0x214},
-		{L"§”", 0x230},
+		{L"„Öè", 0x00},
+		{L"„Öê", 0x1C},
+		{L"„Öë", 0x38},
+		{L"„Öí", 0x54},
+		{L"„Öì", 0x70},
+		{L"„Öî", 0x8C},
+		{L"„Öï", 0xA8},
+		{L"„Öñ", 0xC4},
+		{L"„Öó", 0xE0},
+		{L"„Öó„Öè", 0xFC},
+		{L"„Öó„Öê", 0x118},
+		{L"„Öó„Ö£", 0x134},
+		{L"„Öõ", 0x150},
+		{L"„Öú", 0x16C},
+		{L"„Öú„Öì", 0x188},
+		{L"„Öú„Öî", 0x1A4},
+		{L"„Öú„Ö£", 0x1C0},
+		{L"„Ö†", 0x1DC},
+		{L"„Ö°", 0x1F8},
+		{L"„Ö°„Ö£", 0x214},
+		{L"„Ö£", 0x230},
 		});
 
 	LastConsonantLetterToCode = new KoreanLetterToCodeDictionary({
 		{L"", 0x0},
-		{L"§°", 0x1},
-		{L"§°§°", 0x2},
-		{L"§°§µ", 0x3},
-		{L"§§", 0x4},
-		{L"§§§∏", 0x5},
-		{L"§§§æ", 0x6},
-		{L"§ß", 0x7},
-		{L"§©", 0x8},
-		{L"§©§°", 0x9},
-		{L"§©§±", 0xA},
-		{L"§©§≤", 0xB},
-		{L"§©§µ", 0xC},
-		{L"§©§º", 0xD},
-		{L"§©§Ω", 0xE},
-		{L"§©§æ", 0xF},
-		{L"§±", 0x10},
-		{L"§≤", 0x11},
-		{L"§≤§µ", 0x12},
-		{L"§µ", 0x13},
-		{L"§µ§µ", 0x14},
-		{L"§∑", 0x15},
-		{L"§∏", 0x16},
-		{L"§∫", 0x17},
-		{L"§ª", 0x18},
-		{L"§º", 0x19},
-		{L"§Ω", 0x1A},
-		{L"§æ", 0x1B},
+		{L"„Ñ±", 0x1},
+		{L"„Ñ±„Ñ±", 0x2},
+		{L"„Ñ±„ÖÖ", 0x3},
+		{L"„Ñ¥", 0x4},
+		{L"„Ñ¥„Öà", 0x5},
+		{L"„Ñ¥„Öé", 0x6},
+		{L"„Ñ∑", 0x7},
+		{L"„Ñπ", 0x8},
+		{L"„Ñπ„Ñ±", 0x9},
+		{L"„Ñπ„ÖÅ", 0xA},
+		{L"„Ñπ„ÖÇ", 0xB},
+		{L"„Ñπ„ÖÖ", 0xC},
+		{L"„Ñπ„Öå", 0xD},
+		{L"„Ñπ„Öç", 0xE},
+		{L"„Ñπ„Öé", 0xF},
+		{L"„ÖÅ", 0x10},
+		{L"„ÖÇ", 0x11},
+		{L"„ÖÇ„ÖÖ", 0x12},
+		{L"„ÖÖ", 0x13},
+		{L"„ÖÖ„ÖÖ", 0x14},
+		{L"„Öá", 0x15},
+		{L"„Öà", 0x16},
+		{L"„Öä", 0x17},
+		{L"„Öã", 0x18},
+		{L"„Öå", 0x19},
+		{L"„Öç", 0x1A},
+		{L"„Öé", 0x1B},
 		});
 
 	JaeumOnlyLetterCode = new KoreanLetterToCodeDictionary({
-		{L"§°", L'§°'},
-		{L"§°§°", L'§¢'},
-		{L"§°§µ", L'§£'},
-		{L"§§", L'§§'},
-		{L"§§§∏", L'§•'},
-		{L"§§§æ", L'§¶'},
-		{L"§ß", L'§ß'},
-		{L"§ß§ß", L'§®'},
-		{L"§©", L'§©'},
-		{L"§©§°", L'§™'},
-		{L"§©§±", L'§´'},
-		{L"§©§≤", L'§¨'},
-		{L"§©§µ", L'§≠'},
-		{L"§©§º", L'§Æ'},
-		{L"§©§Ω", L'§Ø'},
-		{L"§©§æ", L'§∞'},
-		{L"§±", L'§±'},
-		{L"§≤", L'§≤'},
-		{L"§≤§≤", L'§≥'},
-		{L"§≤§µ", L'§¥'},
-		{L"§µ", L'§µ'},
-		{L"§µ§µ", L'§∂'},
-		{L"§∑", L'§∑'},
-		{L"§∏", L'§∏'},
-		{L"§∏§∏", L'§π'},
-		{L"§∫", L'§∫'},
-		{L"§ª", L'§ª'},
-		{L"§º", L'§º'},
-		{L"§Ω", L'§Ω'},
-		{L"§æ", L'§æ'},
+		{L"„Ñ±", L'„Ñ±'},
+		{L"„Ñ±„Ñ±", L'„Ñ≤'},
+		{L"„Ñ±„ÖÖ", L'„Ñ≥'},
+		{L"„Ñ¥", L'„Ñ¥'},
+		{L"„Ñ¥„Öà", L'„Ñµ'},
+		{L"„Ñ¥„Öé", L'„Ñ∂'},
+		{L"„Ñ∑", L'„Ñ∑'},
+		{L"„Ñ∑„Ñ∑", L'„Ñ∏'},
+		{L"„Ñπ", L'„Ñπ'},
+		{L"„Ñπ„Ñ±", L'„Ñ∫'},
+		{L"„Ñπ„ÖÅ", L'„Ñª'},
+		{L"„Ñπ„ÖÇ", L'„Ñº'},
+		{L"„Ñπ„ÖÖ", L'„ÑΩ'},
+		{L"„Ñπ„Öå", L'„Ñæ'},
+		{L"„Ñπ„Öç", L'„Ñø'},
+		{L"„Ñπ„Öé", L'„ÖÄ'},
+		{L"„ÖÅ", L'„ÖÅ'},
+		{L"„ÖÇ", L'„ÖÇ'},
+		{L"„ÖÇ„ÖÇ", L'„ÖÉ'},
+		{L"„ÖÇ„ÖÖ", L'„ÖÑ'},
+		{L"„ÖÖ", L'„ÖÖ'},
+		{L"„ÖÖ„ÖÖ", L'„ÖÜ'},
+		{L"„Öá", L'„Öá'},
+		{L"„Öà", L'„Öà'},
+		{L"„Öà„Öà", L'„Öâ'},
+		{L"„Öä", L'„Öä'},
+		{L"„Öã", L'„Öã'},
+		{L"„Öå", L'„Öå'},
+		{L"„Öç", L'„Öç'},
+		{L"„Öé", L'„Öé'},
 		});
 
 	MoeumOnlyLetterCode = new KoreanLetterToCodeDictionary({
-		{L"§ø", L'§ø'},
-		{L"§¿", L'§¿'},
-		{L"§¡", L'§¡'},
-		{L"§¬", L'§¬'},
-		{L"§√", L'§√'},
-		{L"§ƒ", L'§ƒ'},
-		{L"§≈", L'§≈'},
-		{L"§∆", L'§∆'},
-		{L"§«", L'§«'},
-		{L"§«§ø", L'§»'},
-		{L"§«§¿", L'§…'},
-		{L"§«§”", L'§ '},
-		{L"§À", L'§À'},
-		{L"§Ã", L'§Ã'},
-		{L"§Ã§√", L'§Õ'},
-		{L"§Ã§ƒ", L'§Œ'},
-		{L"§Ã§”", L'§œ'},
-		{L"§–", L'§–'},
-		{L"§—", L'§—'},
-		{L"§—§”", L'§“'},
-		{L"§”", L'§”'},
+		{L"„Öè", L'„Öè'},
+		{L"„Öê", L'„Öê'},
+		{L"„Öë", L'„Öë'},
+		{L"„Öí", L'„Öí'},
+		{L"„Öì", L'„Öì'},
+		{L"„Öî", L'„Öî'},
+		{L"„Öï", L'„Öï'},
+		{L"„Öñ", L'„Öñ'},
+		{L"„Öó", L'„Öó'},
+		{L"„Öó„Öè", L'„Öò'},
+		{L"„Öó„Öê", L'„Öô'},
+		{L"„Öó„Ö£", L'„Öö'},
+		{L"„Öõ", L'„Öõ'},
+		{L"„Öú", L'„Öú'},
+		{L"„Öú„Öì", L'„Öù'},
+		{L"„Öú„Öî", L'„Öû'},
+		{L"„Öú„Ö£", L'„Öü'},
+		{L"„Ö†", L'„Ö†'},
+		{L"„Ö°", L'„Ö°'},
+		{L"„Ö°„Ö£", L'„Ö¢'},
+		{L"„Ö£", L'„Ö£'},
 		});
 }
 
@@ -277,31 +277,31 @@ wstring FHangulParser::Encode(const wstring& InString)
 			continue;
 		}
 
-		if (InString[i] >= L'∞°' && InString[i] <= L'∆R')
+		if (InString[i] >= L'Í∞Ä' && InString[i] <= L'Ìû£')
 		{
-			hanguleJamoParse(int(InString[i]) - L'∞°', L'±Ó' - L'∞°', Range, Ramnant);
+			hanguleJamoParse(int(InString[i]) - L'Í∞Ä', L'Íπå' - L'Í∞Ä', Range, Ramnant);
 
-			Range += L'∞°';
+			Range += L'Í∞Ä';
 			KoreanCodeToLetterDictionary::iterator FinderIterator = FirstConsonantCodeToLetter->find(Range);
 			if (FinderIterator != FirstConsonantCodeToLetter->end())
 				Result += FirstConsonantCodeToLetter->at(Range);
 
-			hanguleJamoParse(int(InString[i]) - Range, L'∞≥' - L'∞°', Range, Ramnant);
+			hanguleJamoParse(int(InString[i]) - Range, L'Í∞ú' - L'Í∞Ä', Range, Ramnant);
 
 			Result += MiddleVowerCodeToLetter->at(Range);
 			Result += LastConsonantCodeToLetter->at(Ramnant);
 		}
-		else if (InString[i] >= L'§°' && InString[i] <= L'§æ')
+		else if (InString[i] >= L'„Ñ±' && InString[i] <= L'„Öé')
 		{
-			hanguleJamoParse(int(InString[i]) - L'§°', L'§¢' - L'§°', Range, Ramnant);
-			Range *= (L'§¢' - L'§°');
-			Range += L'§°';
+			hanguleJamoParse(int(InString[i]) - L'„Ñ±', L'„Ñ≤' - L'„Ñ±', Range, Ramnant);
+			Range *= (L'„Ñ≤' - L'„Ñ±');
+			Range += L'„Ñ±';
 			Result += JaeumOnlyCodeToLetter->at(Range);
 		}
-		else if (InString[i] >= L'§ø' && InString[i] <= L'§”')
+		else if (InString[i] >= L'„Öè' && InString[i] <= L'„Ö£')
 		{
-			hanguleJamoParse(int(InString[i]) - L'§ø', L'§¿' - L'§ø', Range, Ramnant);
-			Range *= (L'∞≥' - L'∞°');
+			hanguleJamoParse(int(InString[i]) - L'„Öè', L'„Öê' - L'„Öè', Range, Ramnant);
+			Range *= (L'Í∞ú' - L'Í∞Ä');
 			Result += MiddleVowerCodeToLetter->at(Range);
 		}
 		else
@@ -315,7 +315,7 @@ wstring FHangulParser::Encode(const wstring& InString)
 
 wstring FHangulParser::Decode(const wstring& InParsedHangulStr)
 {
-	if (InParsedHangulStr == L"¿ﬂ∏¯µ» ƒ⁄µÂ¿‘¥œ¥Ÿ")
+	if (InParsedHangulStr == L"ÏûòÎ™ªÎêú ÏΩîÎìúÏûÖÎãàÎã§")
 		return InParsedHangulStr;
 
 	wstring StringfiedResult;
@@ -342,16 +342,16 @@ wstring FHangulParser::Decode(const wstring& InParsedHangulStr)
 			while (InParsedHangulStr[SubIndex] >= L'(' && InParsedHangulStr[SubIndex] <= L'?')
 				StringfiedResult += InParsedHangulStr[SubIndex++];
 
-			while (InParsedHangulStr[SubIndex] >= L'§°' && InParsedHangulStr[SubIndex] <= L'§æ')
+			while (InParsedHangulStr[SubIndex] >= L'„Ñ±' && InParsedHangulStr[SubIndex] <= L'„Öé')
 				FirstConsonantLetter += InParsedHangulStr[SubIndex++];
 
 			if (FirstConsonantLetterToCode->find(FirstConsonantLetter) != FirstConsonantLetterToCode->end())
 				FirstConsonantValue = FirstConsonantLetterToCode->at(FirstConsonantLetter);
 
-			while (InParsedHangulStr[SubIndex] >= L'§ø' && InParsedHangulStr[SubIndex] <= L'§”')
+			while (InParsedHangulStr[SubIndex] >= L'„Öè' && InParsedHangulStr[SubIndex] <= L'„Ö£')
 				MiddleVowerLetter += InParsedHangulStr[SubIndex++];
 
-			// √ º∫¿Ã æ¯¥Ÿ∏È ¡ﬂº∫∏∏ ¿‘∑¬
+			// Ï¥àÏÑ±Ïù¥ ÏóÜÎã§Î©¥ Ï§ëÏÑ±Îßå ÏûÖÎ†•
 			if (FirstConsonantLetter == L"")
 			{
 				if (MoeumOnlyLetterCode->find(MiddleVowerLetter) != MoeumOnlyLetterCode->end())
@@ -368,7 +368,7 @@ wstring FHangulParser::Decode(const wstring& InParsedHangulStr)
 			if (MiddleVowerLetterToCode->find(MiddleVowerLetter) != MiddleVowerLetterToCode->end())
 				MiddleVowerValue = MiddleVowerLetterToCode->at(MiddleVowerLetter);
 
-			// ¡ﬂº∫¿Ã æ¯¥Ÿ∏È √ º∫∏∏ ¿‘∑¬
+			// Ï§ëÏÑ±Ïù¥ ÏóÜÎã§Î©¥ Ï¥àÏÑ±Îßå ÏûÖÎ†•
 			if (MiddleVowerLetter == L"")
 			{
 				if (JaeumOnlyLetterCode->find(FirstConsonantLetter) != JaeumOnlyLetterCode->end())
@@ -382,7 +382,7 @@ wstring FHangulParser::Decode(const wstring& InParsedHangulStr)
 				continue;
 			}
 
-			while (InParsedHangulStr[SubIndex] >= L'§°' && InParsedHangulStr[SubIndex] <= L'§æ')
+			while (InParsedHangulStr[SubIndex] >= L'„Ñ±' && InParsedHangulStr[SubIndex] <= L'„Öé')
 				LastConsonantLetter += InParsedHangulStr[SubIndex++];
 
 			if (LastConsonantLetterToCode->find(LastConsonantLetter) != LastConsonantLetterToCode->end())
