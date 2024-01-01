@@ -1,4 +1,4 @@
-#include "HangulParser.h"
+﻿#include "HangulParser.h"
 
 FHangulParser::FHangulParser()
 	: FirstConsonantCodeToLetter(nullptr)
