@@ -82,7 +82,7 @@ void FMorseConverter::Initilize()
 		{L'F', L"..-."},
 		{L'G', L"--."},
 		{L'H', L"...."},
-		{L'I', L".---"},
+		{L'I', L".."},
 		{L'J', L".---"},
 
 		{L'K', L"-.-"},
