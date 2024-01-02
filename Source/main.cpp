@@ -16,52 +16,182 @@ void makeEnglishMorseCodeBook() {
   Json::Value root;
   Json::Value fromCode;
   Json::Value keyValueType;
-  keyValueType["keyVariableType"] = "Int";
-  keyValueType["valueVariableType"] = "WChar";
-  fromCode["variableType"] = keyValueType;
-  fromCode["7"] = L'A';
-  fromCode["41"] = L'B';
-  fromCode["50"] = L'C';
-  fromCode["14"] = L'D';
-  fromCode["1"] = L'E';
-  fromCode["49"] = L'F';
-  fromCode["17"] = L'G';
-  fromCode["40"] = L'H';
-  fromCode["4"] = L'I';
-  fromCode["79"] = L'J';
-  fromCode["23"] = L'K';
-  fromCode["43"] = L'L';
-  fromCode["8"] = L'M';
-  fromCode["5"] = L'N';
-  fromCode["26"] = L'O';
-  fromCode["52"] = L'P';
-  fromCode["71"] = L'Q';
-  fromCode["16"] = L'R';
-  fromCode["13"] = L'S';
-  fromCode["2"] = L'T';
-  fromCode["22"] = L'U';
-  fromCode["67"] = L'V';
-  fromCode["25"] = L'W';
-  fromCode["68"] = L'X';
-  fromCode["77"] = L'Y';
-  fromCode["44"] = L'Z';
-  fromCode["241"] = L'1';
-  fromCode["238"] = L'2';
-  fromCode["229"] = L'3';
-  fromCode["202"] = L'4';
-  fromCode["121"] = L'5';
-  fromCode["122"] = L'6';
-  fromCode["125"] = L'7';
-  fromCode["134"] = L'8';
-  fromCode["161"] = L'9';
-  fromCode["242"] = L'0';
-  fromCode["355"] = L'-'; 
-  fromCode["637"] = L'.';
-  fromCode["692"] = L',';
-  fromCode["158"] = L'(';
-  fromCode["644"] = L')';
-  fromCode["400"] = L'?';
-  fromCode["149"] = L'/';
+  Json::Value codeValue;
+  // keyValueType["keyVariableType"] = "Int";
+  // keyValueType["valueVariableType"] = "WChar";
+  // fromCode["variableType"] = keyValueType;
+
+  codeValue["from"] = 7;
+  codeValue["to"] = L'A';
+  fromCode["0"] = codeValue;
+
+  codeValue["from"] = 41;
+  codeValue["to"] = L'B';
+  fromCode["1"] = codeValue;
+
+  codeValue["from"] = 50;
+  codeValue["to"] = L'C';
+  fromCode["2"] = codeValue;
+
+  codeValue["from"] = 14;
+  codeValue["to"] = L'D';
+  fromCode["3"] = codeValue;
+
+  codeValue["from"] = 1;
+  codeValue["to"] = L'E';
+  fromCode["4"] = codeValue;
+
+  codeValue["from"] = 49;
+  codeValue["to"] = L'F';
+  fromCode["5"] = codeValue;
+
+  codeValue["from"] = 17;
+  codeValue["to"] = L'G';
+  fromCode["6"] = codeValue;
+
+  codeValue["from"] = 40;
+  codeValue["to"] = L'H';
+  fromCode["7"] = codeValue;
+  
+  codeValue["from"] = 4;
+  codeValue["to"] = L'I';
+  fromCode["8"] = codeValue;
+
+  codeValue["from"] = 79;
+  codeValue["to"] = L'J';
+  fromCode["9"] = codeValue;
+
+  codeValue["from"] = 23;
+  codeValue["to"] = L'K';
+  fromCode["10"] = codeValue;
+
+  codeValue["from"] = 43;
+  codeValue["to"] = L'L';
+  fromCode["11"] = codeValue;
+
+  codeValue["from"] = 8;
+  codeValue["to"] = L'M';
+  fromCode["12"] = codeValue;
+
+  codeValue["from"] = 5;
+  codeValue["to"] = L'N';
+  fromCode["13"] = codeValue;
+
+  codeValue["from"] = 26;
+  codeValue["to"] = L'O';
+  fromCode["14"] = codeValue;
+
+  codeValue["from"] = 52;
+  codeValue["to"] = L'P';
+  fromCode["15"] = codeValue;
+
+  codeValue["from"] = 71;
+  codeValue["to"] = L'Q';
+  fromCode["16"] = codeValue;
+
+  codeValue["from"] = 16;
+  codeValue["to"] = L'R';
+  fromCode["17"] = codeValue;
+
+  codeValue["from"] = 13;
+  codeValue["to"] = L'S';
+  fromCode["18"] = codeValue;
+
+  codeValue["from"] = 2;
+  codeValue["to"] = L'T';
+  fromCode["19"] = codeValue;
+
+  codeValue["from"] = 22;
+  codeValue["to"] = L'U';
+  fromCode["20"] = codeValue;
+
+  codeValue["from"] = 67;
+  codeValue["to"] = L'V';
+  fromCode["21"] = codeValue;
+
+  codeValue["from"] = 25;
+  codeValue["to"] = L'W';
+  fromCode["22"] = codeValue;
+
+  codeValue["from"] = 68;
+  codeValue["to"] = L'X';
+  fromCode["23"] = codeValue;
+
+  codeValue["from"] = 77;
+  codeValue["to"] = L'Y';
+  fromCode["24"] = codeValue;
+
+  codeValue["from"] = 44;
+  codeValue["to"] = L'Z';
+  fromCode["25"] = codeValue;
+
+  codeValue["from"] = 241;
+  codeValue["to"] = L'1';
+  fromCode["26"] = codeValue;
+
+  codeValue["from"] = 228;
+  codeValue["to"] = L'2';
+  fromCode["27"] = codeValue;
+
+  codeValue["from"] = 229;
+  codeValue["to"] = L'3';
+  fromCode["28"] = codeValue;
+
+  codeValue["from"] = 202;
+  codeValue["to"] = L'4';
+  fromCode["29"] = codeValue;
+
+  codeValue["from"] = 121;
+  codeValue["to"] = L'5';
+  fromCode["30"] = codeValue;
+
+  codeValue["from"] = 122;
+  codeValue["to"] = L'6';
+  fromCode["31"] = codeValue;
+  
+  codeValue["from"] = 125;
+  codeValue["to"] = L'7';
+  fromCode["32"] = codeValue;
+
+  codeValue["from"] = 134;
+  codeValue["to"] = L'8';
+  fromCode["33"] = codeValue;
+
+  codeValue["from"] = 161;
+  codeValue["to"] = L'9';
+  fromCode["34"] = codeValue;
+
+  codeValue["from"] = 242;
+  codeValue["to"] = L'0';
+  fromCode["35"] = codeValue;
+
+  codeValue["from"] = 355;
+  codeValue["to"] = L'-';
+  fromCode["36"] = codeValue;
+
+  codeValue["from"] = 637;
+  codeValue["to"] = L'.';
+  fromCode["37"] = codeValue;
+
+  codeValue["from"] = 692;
+  codeValue["to"] = L',';
+  fromCode["38"] = codeValue;
+  
+  codeValue["from"] = 158;
+  codeValue["to"] = L'(';
+  fromCode["39"] = codeValue;
+
+  codeValue["from"] = 644;
+  codeValue["to"] = L')';
+  fromCode["40"] = codeValue;
+
+  codeValue["from"] = 400;
+  codeValue["to"] = L'?';
+  fromCode["41"] = codeValue;
+
+  codeValue["from"] = 149;
+  codeValue["to"] = L'/';
+  fromCode["42"] = codeValue;
 
   Json::Value toCode;
 
@@ -284,32 +414,32 @@ int main()
   // wcout.imbue(locale("korean"));
 
   // FCodeConverter *CodeConverter = new FHangulParser();
-  FCodeConverter* CodeConverter = new FMorseConverter();
-  CodeConverter->Initilize();
-  CodeConverter->SetInputType(EInputType::IT_Engish);
+  // FCodeConverter* CodeConverter = new FMorseConverter();
+  // CodeConverter->Initilize();
+  // CodeConverter->SetInputType(EInputType::IT_Engish);
   // CodeConverter->SetInputType(EInputType::IT_Korean);
 
   // FCodeConverter* CodeConverter = new FBinaryConverter();
 
-  wstring str;
+  // wstring str;
 
-  getline(wcin, str);
+  // getline(wcin, str);
 
-  wstring Code = CodeConverter->Encode(str);
-  wstring ConvertedString = CodeConverter->Decode(Code);
-  // wstring ConvertedString = CodeInverter->Decode(str);
+  // wstring Code = CodeConverter->Encode(str);
+  // wstring ConvertedString = CodeConverter->Decode(Code);
+  // // wstring ConvertedString = CodeInverter->Decode(str);
 
-  wcout << Code << endl;
-  wcout << ConvertedString << endl;
+  // wcout << Code << endl;
+  // wcout << ConvertedString << endl;
 
-  delete CodeConverter;
+  // delete CodeConverter;
 
   ///*wcout << int(L'ㄱ') << endl;
   //wcout << int(L'ㅎ') << endl;
   //wcout << int(L'ㅏ') << endl;
   //wcout << int(L'ㅣ') << endl;*/
 
-  // makeEnglishMorseCodeBook();
+  makeEnglishMorseCodeBook();
   // makeKoreanMorseCodeBook();
 
   // read_json();
