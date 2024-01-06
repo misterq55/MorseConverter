@@ -4,205 +4,195 @@
 		"0" : 
 		{
 			"key" : 44032,
-			"value" : "\u3131"
+			"value" : "丑"
 		},
 		"1" : 
 		{
 			"key" : 44620,
-			"value" : "\u3131\u3131"
+			"value" : "丑丑"
 		},
 		"10" : 
 		{
 			"key" : 49912,
-			"value" : "\u3145\u3145"
+			"value" : "今今"
 		},
 		"11" : 
 		{
 			"key" : 50500,
-			"value" : "\u3147"
+			"value" : "仄"
 		},
 		"12" : 
 		{
 			"key" : 51088,
-			"value" : "\u3148"
+			"value" : "元"
 		},
 		"13" : 
 		{
 			"key" : 51676,
-			"value" : "\u3148\u3148"
+			"value" : "元元"
 		},
 		"14" : 
 		{
 			"key" : 52264,
-			"value" : "\u314a"
+			"value" : "內"
 		},
 		"15" : 
 		{
 			"key" : 52852,
-			"value" : "\u314b"
+			"value" : "六"
 		},
 		"16" : 
 		{
 			"key" : 53440,
-			"value" : "\u314c"
+			"value" : "兮"
 		},
 		"17" : 
 		{
 			"key" : 54028,
-			"value" : "\u314d"
+			"value" : "公"
 		},
 		"18" : 
 		{
 			"key" : 54616,
-			"value" : "\u314e"
+			"value" : "冗"
 		},
 		"2" : 
 		{
 			"key" : 45208,
-			"value" : "\u3134"
+			"value" : "中"
 		},
 		"3" : 
 		{
 			"key" : 45796,
-			"value" : "\u3137"
+			"value" : "之"
 		},
 		"4" : 
 		{
 			"key" : 46384,
-			"value" : "\u3137\u3137"
+			"value" : "之之"
 		},
 		"5" : 
 		{
 			"key" : 46972,
-			"value" : "\u3139"
+			"value" : "予"
 		},
 		"6" : 
 		{
 			"key" : 47560,
-			"value" : "\u3141"
+			"value" : "仃"
 		},
 		"7" : 
 		{
 			"key" : 48148,
-			"value" : "\u3142"
+			"value" : "仆"
 		},
 		"8" : 
 		{
 			"key" : 48736,
-			"value" : "\u3142\u3142"
+			"value" : "仆仆"
 		},
 		"9" : 
 		{
 			"key" : 49324,
-			"value" : "\u3145"
-		},
-		"variableType" : 
-		{
-			"keyVariableType" : "Int",
-			"valueVariableType" : "String"
+			"value" : "今"
 		}
 	},
 	"toCode" : 
 	{
 		"0" : 
 		{
-			"key" : "\u3131",
+			"key" : "丑",
 			"value" : 44032
 		},
 		"1" : 
 		{
-			"key" : "\u3131\u3131",
+			"key" : "丑丑",
 			"value" : 44620
 		},
 		"10" : 
 		{
-			"key" : "\u3145\u3145",
+			"key" : "今今",
 			"value" : 49912
 		},
 		"11" : 
 		{
-			"key" : "\u3147",
+			"key" : "仄",
 			"value" : 50500
 		},
 		"12" : 
 		{
-			"key" : "\u3148",
+			"key" : "元",
 			"value" : 51088
 		},
 		"13" : 
 		{
-			"key" : "\u3148\u3148",
+			"key" : "元元",
 			"value" : 51676
 		},
 		"14" : 
 		{
-			"key" : "\u314a",
+			"key" : "內",
 			"value" : 52264
 		},
 		"15" : 
 		{
-			"key" : "\u314b",
+			"key" : "六",
 			"value" : 52852
 		},
 		"16" : 
 		{
-			"key" : "\u314c",
+			"key" : "兮",
 			"value" : 53440
 		},
 		"17" : 
 		{
-			"key" : "\u314d",
+			"key" : "公",
 			"value" : 54028
 		},
 		"18" : 
 		{
-			"key" : "\u314e",
+			"key" : "冗",
 			"value" : 54616
 		},
 		"2" : 
 		{
-			"key" : "\u3134",
+			"key" : "中",
 			"value" : 44620
 		},
 		"3" : 
 		{
-			"key" : "\u3137",
+			"key" : "之",
 			"value" : 45796
 		},
 		"4" : 
 		{
-			"key" : "\u3137\u3137",
+			"key" : "之之",
 			"value" : 46384
 		},
 		"5" : 
 		{
-			"key" : "\u3139",
+			"key" : "予",
 			"value" : 46972
 		},
 		"6" : 
 		{
-			"key" : "\u3141",
+			"key" : "仃",
 			"value" : 47560
 		},
 		"7" : 
 		{
-			"key" : "\u3142",
+			"key" : "仆",
 			"value" : 48148
 		},
 		"8" : 
 		{
-			"key" : "\u3142\u3142",
+			"key" : "仆仆",
 			"value" : 48736
 		},
 		"9" : 
 		{
-			"key" : "\u3145",
+			"key" : "今",
 			"value" : 49324
-		},
-		"variableType" : 
-		{
-			"keyVariableType" : "WChar",
-			"valueVariableType" : "Int"
 		}
 	}
 }

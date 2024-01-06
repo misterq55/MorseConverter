@@ -39,6 +39,9 @@
     <Filter Include="Source\CodeBook\MorseCodeBook">
       <UniqueIdentifier>{4b7a36c9-c06f-4766-b6dd-5851f7f54d5d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\CodeBook\HangulParserCodeBook">
+      <UniqueIdentifier>{0e50e2c0-3795-41ea-946c-0eab414d14a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CodeConverter\CodeConverter.cpp">
@@ -67,6 +70,9 @@
     </ClCompile>
     <ClCompile Include="Source\CodeBook\MorseCodeBook\MorseCodeBook.cpp">
       <Filter>Source\CodeBook\MorseCodeBook</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CodeBook\HangulParserCodeBook\HangulParserCodeBook.cpp">
+      <Filter>Source\CodeBook\HangulParserCodeBook</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +105,9 @@
     </ClInclude>
     <ClInclude Include="Source\CodeBook\MorseCodeBook\MorseCodeBook.h">
       <Filter>Source\CodeBook\MorseCodeBook</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CodeBook\HangulParserCodeBook\HangulParserCodeBook.h">
+      <Filter>Source\CodeBook\HangulParserCodeBook</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

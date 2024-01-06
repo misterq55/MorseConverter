@@ -215,11 +215,6 @@
 		{
 			"key" : 79,
 			"value" : "J"
-		},
-		"variableType" : 
-		{
-			"keyVariableType" : "Int",
-			"valueVariableType" : "WChar"
 		}
 	},
 	"toCode" : 
@@ -438,11 +433,6 @@
 		{
 			"key" : "J",
 			"value" : ".---"
-		},
-		"variableType" : 
-		{
-			"keyVariableType" : "WChar",
-			"valueVariableType" : "String"
 		}
 	}
 }

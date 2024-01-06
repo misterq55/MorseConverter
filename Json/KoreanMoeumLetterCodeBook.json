@@ -1,105 +1,100 @@
 {
-	"fromCode" : 
+	"toCode" : 
 	{
 		"0" : 
 		{
-			"key" : "\u314f",
-			"value" : "\u314f"
+			"key" : "た",
+			"value" : 42175
 		},
 		"1" : 
 		{
-			"key" : "\u3150",
-			"value" : "\u3150"
+			"key" : "だ",
+			"value" : 42176
 		},
 		"10" : 
 		{
-			"key" : "\u3157\u3150",
-			"value" : "\u3159"
+			"key" : "でだ",
+			"value" : 42185
 		},
 		"11" : 
 		{
-			"key" : "\u3157\u3163",
-			"value" : "\u315a"
+			"key" : "でび",
+			"value" : 42186
 		},
 		"12" : 
 		{
-			"key" : "\u315b",
-			"value" : "\u315b"
+			"key" : "に",
+			"value" : 42187
 		},
 		"13" : 
 		{
-			"key" : "\u315c\u3153",
-			"value" : "\u315d"
+			"key" : "ぬっ",
+			"value" : 42189
 		},
 		"14" : 
 		{
-			"key" : "\u315c\u3154",
-			"value" : "\u315e"
+			"key" : "ぬつ",
+			"value" : 42190
 		},
 		"15" : 
 		{
-			"key" : "\u315c\u3163",
-			"value" : "\u315f"
+			"key" : "ぬび",
+			"value" : 42191
 		},
 		"16" : 
 		{
-			"key" : "\u3160",
-			"value" : "\u3160"
+			"key" : "ば",
+			"value" : 42192
 		},
 		"17" : 
 		{
-			"key" : "\u3161",
-			"value" : "\u3161"
+			"key" : "ぱ",
+			"value" : 42193
 		},
 		"18" : 
 		{
-			"key" : "\u3163",
-			"value" : "\u3163"
+			"key" : "び",
+			"value" : 42195
 		},
 		"2" : 
 		{
-			"key" : "\u3151",
-			"value" : "\u3151"
+			"key" : "ち",
+			"value" : 42177
 		},
 		"3" : 
 		{
-			"key" : "\u3152",
-			"value" : "\u3152"
+			"key" : "ぢ",
+			"value" : 42178
 		},
 		"4" : 
 		{
-			"key" : "\u3153",
-			"value" : "\u3153"
+			"key" : "っ",
+			"value" : 42179
 		},
 		"5" : 
 		{
-			"key" : "\u3154",
-			"value" : "\u3154"
+			"key" : "つ",
+			"value" : 42180
 		},
 		"6" : 
 		{
-			"key" : "\u3155",
-			"value" : "\u3155"
+			"key" : "づ",
+			"value" : 42181
 		},
 		"7" : 
 		{
-			"key" : "\u3156",
-			"value" : "\u3156"
+			"key" : "て",
+			"value" : 42182
 		},
 		"8" : 
 		{
-			"key" : "\u3157",
-			"value" : "\u3157"
+			"key" : "で",
+			"value" : 42183
 		},
 		"9" : 
 		{
-			"key" : "\u3157\u314f",
-			"value" : "\u3158"
-		},
-		"variableType" : 
-		{
-			"keyVariableType" : "String",
-			"valueVariableType" : "String"
+			"key" : "でた",
+			"value" : 42184
 		}
 	}
 }

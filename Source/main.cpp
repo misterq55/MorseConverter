@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-// #include "FHangulParser.h"
+#include "HangulParser/HangulParser.h"
 #include "MorseConverter/MorseConverter.h"
 #include "LatinAlphabetMorseConverter/LatinAlphabetMorseConverter.h"
 // #include "BinaryConverter.h"
@@ -16,12 +16,8 @@ void makeEnglishMorseCodeBook() {
 
   Json::Value root;
   Json::Value fromCode;
-  Json::Value keyValueType;
   Json::Value codeValue;
-  keyValueType["keyVariableType"] = "Int";
-  keyValueType["valueVariableType"] = "WChar";
-  fromCode["variableType"] = keyValueType;
-
+  
   codeValue["key"] = 7;
   codeValue["value"] = "A";
   fromCode["0"] = codeValue;
@@ -195,10 +191,6 @@ void makeEnglishMorseCodeBook() {
   fromCode["42"] = codeValue;
 
   Json::Value toCode;
-
-  keyValueType["keyVariableType"] = "WChar";
-  keyValueType["valueVariableType"] = "String";
-  toCode["variableType"] = keyValueType;
 
   codeValue["key"] = "A";
   codeValue["value"] = ".-";
@@ -379,8 +371,8 @@ void makeEnglishMorseCodeBook() {
   root["fromCode"] = fromCode;
   root["toCode"] = toCode;
 
-  // cout << root << endl;
   Json::StreamWriterBuilder builder;
+  builder.settings_["emitUTF8"] = true;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
   std::ofstream output_file("Json/MorseEnglishCodeBook.json");
   writer->write(root, &output_file);
@@ -390,12 +382,8 @@ void makeKoreanMorseCodeBook()
 {
   Json::Value root;
   Json::Value fromCode;
-  Json::Value keyValueType;
   Json::Value codeValue;
-  keyValueType["keyVariableType"] = "Int";
-  keyValueType["valueVariableType"] = "WChar";
-  fromCode["variableType"] = keyValueType;
-
+  
   codeValue["key"] = 43;
   codeValue["value"] = "ㄱ";
   fromCode["0"] = codeValue;
@@ -569,10 +557,6 @@ void makeKoreanMorseCodeBook()
   fromCode["42"] = codeValue;
 
   Json::Value toCode;
-
-  keyValueType["keyVariableType"] = "WChar";
-  keyValueType["valueVariableType"] = "String";
-  toCode["variableType"] = keyValueType;
 
   codeValue["key"] = "ㄱ";
   codeValue["value"] = ".-..";
@@ -753,8 +737,8 @@ void makeKoreanMorseCodeBook()
   root["fromCode"] = fromCode;
   root["toCode"] = toCode;
 
-  // cout << root << endl;
   Json::StreamWriterBuilder builder;
+  builder.settings_["emitUTF8"] = true;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
   std::ofstream output_file("Json/MorseKoreanCodeBook.json");
   writer->write(root, &output_file);
@@ -764,11 +748,7 @@ void makeKoreanConsonantLetterCodeBook()
 {
   Json::Value root;
   Json::Value fromCode;
-  Json::Value keyValueType;
   Json::Value codeValue;
-  keyValueType["keyVariableType"] = "Int";
-  keyValueType["valueVariableType"] = "String";
-  fromCode["variableType"] = keyValueType;
 
   codeValue["key"] = 0xAC00;
   codeValue["value"] = "ㄱ";
@@ -847,10 +827,6 @@ void makeKoreanConsonantLetterCodeBook()
   fromCode["18"] = codeValue;
 
   Json::Value toCode;
-
-  keyValueType["keyVariableType"] = "WChar";
-  keyValueType["valueVariableType"] = "Int";
-  toCode["variableType"] = keyValueType;
 
   codeValue["key"] = "ㄱ";
   codeValue["value"] = 0xAC00;
@@ -931,8 +907,8 @@ void makeKoreanConsonantLetterCodeBook()
   root["fromCode"] = fromCode;
   root["toCode"] = toCode;
 
-  // cout << root << endl;
   Json::StreamWriterBuilder builder;
+  builder.settings_["emitUTF8"] = true;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
   std::ofstream output_file("Json/KoreanConsonantLetterCodeBook.json");
   writer->write(root, &output_file);
@@ -942,12 +918,8 @@ void makeKoreanMiddleVowerLetterCodeBook()
 {
   Json::Value root;
   Json::Value fromCode;
-  Json::Value keyValueType;
   Json::Value codeValue;
-  keyValueType["keyVariableType"] = "Int";
-  keyValueType["valueVariableType"] = "String";
-  fromCode["variableType"] = keyValueType;
-
+  
   codeValue["key"] = 0x00;
   codeValue["value"] = "ㅏ";
   fromCode["1"] = codeValue;
@@ -1033,10 +1005,6 @@ void makeKoreanMiddleVowerLetterCodeBook()
   fromCode["19"] = codeValue;
 
   Json::Value toCode;
-
-  keyValueType["keyVariableType"] = "String";
-  keyValueType["valueVariableType"] = "Int";
-  toCode["variableType"] = keyValueType;
 
   codeValue["key"] = "ㅏ";
   codeValue["value"] = 0x00;
@@ -1125,8 +1093,8 @@ void makeKoreanMiddleVowerLetterCodeBook()
   root["fromCode"] = fromCode;
   root["toCode"] = toCode;
 
-  // cout << root << endl;
   Json::StreamWriterBuilder builder;
+  builder.settings_["emitUTF8"] = true;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
   std::ofstream output_file("Json/KoreanMiddleVowerLetterCodeBook.json");
   writer->write(root, &output_file);
@@ -1136,12 +1104,8 @@ void makeKoreanLastConsonantLetterCodeBook()
 {
   Json::Value root;
   Json::Value fromCode;
-  Json::Value keyValueType;
   Json::Value codeValue;
-  keyValueType["keyVariableType"] = "Int";
-  keyValueType["valueVariableType"] = "String";
-  fromCode["variableType"] = keyValueType;
-
+  
   codeValue["key"] = 0x0;
   codeValue["value"] = " ";
   fromCode["0"] = codeValue;
@@ -1255,10 +1219,6 @@ void makeKoreanLastConsonantLetterCodeBook()
   fromCode["27"] = codeValue;
 
   Json::Value toCode;
-
-  keyValueType["keyVariableType"] = "WChar";
-  keyValueType["valueVariableType"] = "Int";
-  toCode["variableType"] = keyValueType;
 
   codeValue["key"] = " ";
   codeValue["value"] = 0x0;
@@ -1375,8 +1335,8 @@ void makeKoreanLastConsonantLetterCodeBook()
   root["fromCode"] = fromCode;
   root["toCode"] = toCode;
 
-  // cout << root << endl;
   Json::StreamWriterBuilder builder;
+  builder.settings_["emitUTF8"] = true;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
   std::ofstream output_file("Json/KoreanLastConsonantLetterCodeBook.json");
   writer->write(root, &output_file);
@@ -1386,264 +1346,255 @@ void makeKoreanJaeumLetterCodeBook()
 {
   Json::Value root;
   Json::Value fromCode;
-  Json::Value keyValueType;
   Json::Value codeValue;
-  keyValueType["keyVariableType"] = "String";
-  keyValueType["valueVariableType"] = "String";
-  fromCode["variableType"] = keyValueType;
 
-  codeValue["key"] = "ㄱ";
+  codeValue["key"] = 'ㄱ';
   codeValue["value"] = "ㄱ";
   fromCode["0"] = codeValue;
 
-  codeValue["key"] = "ㄲ";
+  codeValue["key"] = 'ㄲ';
   codeValue["value"] = "ㄱㄱ";
   fromCode["1"] = codeValue;
 
-  codeValue["key"] = "ㄳ";
+  codeValue["key"] = 'ㄳ';
   codeValue["value"] = "ㄱㅅ";
   fromCode["2"] = codeValue;
 
-  codeValue["key"] = "ㄴ";
+  codeValue["key"] = 'ㄴ';
   codeValue["value"] = "ㄴ";
   fromCode["3"] = codeValue;
 
-  codeValue["key"] = "ㄵ";
+  codeValue["key"] = 'ㄵ';
   codeValue["value"] = "ㄴㅈ";
   fromCode["4"] = codeValue;
 
-  codeValue["key"] = "ㄶ";
+  codeValue["key"] = 'ㄶ';
   codeValue["value"] = "ㄴㅎ";
   fromCode["5"] = codeValue;
 
-  codeValue["key"] = "ㄷ";
+  codeValue["key"] = 'ㄷ';
   codeValue["value"] = "ㄷ";
   fromCode["6"] = codeValue;
 
-  codeValue["key"] = "ㄸ";
+  codeValue["key"] = 'ㄸ';
   codeValue["value"] = "ㄷㄷ";
   fromCode["7"] = codeValue;
 
-  codeValue["key"] = "ㄹ";
+  codeValue["key"] = 'ㄹ';
   codeValue["value"] = "ㄹ";
   fromCode["8"] = codeValue;
   
-	codeValue["key"] = "ㄺ";
+	codeValue["key"] = 'ㄺ';
   codeValue["value"] = "ㄹㄱ";
   fromCode["9"] = codeValue;
 
-  codeValue["key"] = "ㄻ";
+  codeValue["key"] = 'ㄻ';
   codeValue["value"] = "ㄹㅁ";
   fromCode["10"] = codeValue;
 
-  codeValue["key"] = "ㄼ";
+  codeValue["key"] = 'ㄼ';
   codeValue["value"] = "ㄹㅂ";
   fromCode["11"] = codeValue;
 
-  codeValue["key"] = "ㄽ";
+  codeValue["key"] = 'ㄽ';
   codeValue["value"] = "ㄹㅅ";
   fromCode["12"] = codeValue;
 
-  codeValue["key"] = "ㄾ";
+  codeValue["key"] = 'ㄾ';
   codeValue["value"] = "ㄹㅌ";
   fromCode["13"] = codeValue;
 
-  codeValue["key"] = "ㄿ";
+  codeValue["key"] = 'ㄿ';
   codeValue["value"] = "ㄹㅍ";
   fromCode["14"] = codeValue;
 
-  codeValue["key"] = "ㅀ";
+  codeValue["key"] = 'ㅀ';
   codeValue["value"] = "ㄹㅎ";
   fromCode["15"] = codeValue;
 
-  codeValue["key"] = "ㅁ";
+  codeValue["key"] = 'ㅁ';
   codeValue["value"] = "ㅁ";
   fromCode["16"] = codeValue;
 
-  codeValue["key"] = "ㅂ";
+  codeValue["key"] = 'ㅂ';
   codeValue["value"] = "ㅂ";
   fromCode["17"] = codeValue;
 
-  codeValue["key"] = "ㅃ";
+  codeValue["key"] = 'ㅃ';
   codeValue["value"] = "ㅂㅂ";
   fromCode["18"] = codeValue;
 
-  codeValue["key"] = "ㅄ";
+  codeValue["key"] = 'ㅄ';
   codeValue["value"] = "ㅂㅅ";
   fromCode["19"] = codeValue;
 
-  codeValue["key"] = "ㅅ";
+  codeValue["key"] = 'ㅅ';
   codeValue["value"] = "ㅅ";
   fromCode["20"] = codeValue;
 		
-  codeValue["key"] = "ㅆ";
+  codeValue["key"] = 'ㅆ';
   codeValue["value"] = "ㅅㅅ";
   fromCode["21"] = codeValue;
 
-  codeValue["key"] = "ㅇ";
+  codeValue["key"] = 'ㅇ';
   codeValue["value"] = "ㅇ";
   fromCode["22"] = codeValue;
 
-  codeValue["key"] = "ㅈ";
+  codeValue["key"] = 'ㅈ';
   codeValue["value"] = "ㅈ";
   fromCode["23"] = codeValue;
 
-  codeValue["key"] = "ㅉ";
+  codeValue["key"] = 'ㅉ';
   codeValue["value"] = "ㅈㅈ";
   fromCode["24"] = codeValue;
 
-  codeValue["key"] = "ㅊ";
+  codeValue["key"] = 'ㅊ';
   codeValue["value"] = "ㅊ";
   fromCode["25"] = codeValue;
 
-  codeValue["key"] = "ㅋ";
+  codeValue["key"] = 'ㅋ';
   codeValue["value"] = "ㅋ";
   fromCode["26"] = codeValue;
 
-  codeValue["key"] = "ㅌ";
+  codeValue["key"] = 'ㅌ';
   codeValue["value"] = "ㅌ";
   fromCode["27"] = codeValue;
 
-  codeValue["key"] = "ㅍ";
+  codeValue["key"] = 'ㅍ';
   codeValue["value"] = "ㅍ";
   fromCode["28"] = codeValue;
 
-  codeValue["key"] = "ㅎ";
+  codeValue["key"] = 'ㅎ';
   codeValue["value"] = "ㅎ";
   fromCode["29"] = codeValue;
-  
 
   Json::Value toCode;
 
-  keyValueType["keyVariableType"] = "String";
-  keyValueType["valueVariableType"] = "String";
-  toCode["variableType"] = keyValueType;
-
   codeValue["key"] = "ㄱ";
-  codeValue["value"] = "ㄱ";
+  codeValue["value"] = 'ㄱ';
   toCode["0"] = codeValue;
 
   codeValue["key"] = "ㄱㄱ";
-  codeValue["value"] = "ㄲ";
+  codeValue["value"] = 'ㄲ';
   toCode["1"] = codeValue;
 
   codeValue["key"] = "ㄱㅅ";
-  codeValue["value"] = "ㄳ";
+  codeValue["value"] = 'ㄳ';
   toCode["2"] = codeValue;
 
   codeValue["key"] = "ㄴ";
-  codeValue["value"] = "ㄴ";
+  codeValue["value"] = 'ㄴ';
   toCode["3"] = codeValue;
 
   codeValue["key"] = "ㄴㅈ";
-  codeValue["value"] = "ㄵ";
+  codeValue["value"] = 'ㄵ';
   toCode["4"] = codeValue;
 
   codeValue["key"] = "ㄴㅎ";
-  codeValue["value"] = "ㄶ";
+  codeValue["value"] = 'ㄶ';
   toCode["5"] = codeValue;
 
   codeValue["key"] = "ㄷ";
-  codeValue["value"] = "ㄷ";
+  codeValue["value"] = 'ㄷ';
   toCode["6"] = codeValue;
 
   codeValue["key"] = "ㄷㄷ";
-  codeValue["value"] = "ㄸ";
+  codeValue["value"] = 'ㄸ';
   toCode["7"] = codeValue;
 
   codeValue["key"] = "ㄹ";
-  codeValue["value"] = "ㄹ";
+  codeValue["value"] = 'ㄹ';
   toCode["8"] = codeValue;
   
 	codeValue["key"] = "ㄹㄱ";
-  codeValue["value"] = "ㄺ";
+  codeValue["value"] = 'ㄺ';
   toCode["9"] = codeValue;
 
   codeValue["key"] = "ㄹㅁ";
-  codeValue["value"] = "ㄻ";
+  codeValue["value"] = 'ㄻ';
   toCode["10"] = codeValue;
 
   codeValue["key"] = "ㄹㅂ";
-  codeValue["value"] = "ㄼ";
+  codeValue["value"] = 'ㄼ';
   toCode["11"] = codeValue;
 
   codeValue["key"] = "ㄹㅅ";
-  codeValue["value"] = "ㄽ";
+  codeValue["value"] = 'ㄽ';
   toCode["12"] = codeValue;
 
   codeValue["key"] = "ㄹㅌ";
-  codeValue["value"] = "ㄾ";
+  codeValue["value"] = 'ㄾ';
   toCode["13"] = codeValue;
 
   codeValue["key"] = "ㄹㅍ";
-  codeValue["value"] = "ㄿ";
+  codeValue["value"] = 'ㄿ';
   toCode["14"] = codeValue;
 
   codeValue["key"] = "ㄹㅎ";
-  codeValue["value"] = "ㅀ";
+  codeValue["value"] = 'ㅀ';
   toCode["15"] = codeValue;
 
   codeValue["key"] = "ㅁ";
-  codeValue["value"] = "ㅁ";
+  codeValue["value"] = 'ㅁ';
   toCode["16"] = codeValue;
 
   codeValue["key"] = "ㅂ";
-  codeValue["value"] = "ㅂ";
+  codeValue["value"] = 'ㅂ';
   toCode["17"] = codeValue;
 
   codeValue["key"] = "ㅂㅂ";
-  codeValue["value"] = "ㅃ";
+  codeValue["value"] = 'ㅃ';
   toCode["18"] = codeValue;
 
   codeValue["key"] = "ㅂㅅ";
-  codeValue["value"] = "ㅄ";
+  codeValue["value"] = 'ㅄ';
   toCode["19"] = codeValue;
 
   codeValue["key"] = "ㅅ";
-  codeValue["value"] = "ㅅ";
+  codeValue["value"] = 'ㅅ';
   toCode["20"] = codeValue;
 		
   codeValue["key"] = "ㅅㅅ";
-  codeValue["value"] = "ㅆ";
+  codeValue["value"] = 'ㅆ';
   toCode["21"] = codeValue;
 
   codeValue["key"] = "ㅇ";
-  codeValue["value"] = "ㅇ";
+  codeValue["value"] = 'ㅇ';
   toCode["22"] = codeValue;
 
   codeValue["key"] = "ㅈ";
-  codeValue["value"] = "ㅈ";
+  codeValue["value"] = 'ㅈ';
   toCode["23"] = codeValue;
 
   codeValue["key"] = "ㅈㅈ";
-  codeValue["value"] = "ㅉ";
+  codeValue["value"] = 'ㅉ';
   toCode["24"] = codeValue;
 
   codeValue["key"] = "ㅊ";
-  codeValue["value"] = "ㅊ";
+  codeValue["value"] = 'ㅊ';
   toCode["25"] = codeValue;
 
   codeValue["key"] = "ㅋ";
-  codeValue["value"] = "ㅋ";
+  codeValue["value"] = 'ㅋ';
   toCode["26"] = codeValue;
 
   codeValue["key"] = "ㅌ";
-  codeValue["value"] = "ㅌ";
+  codeValue["value"] = 'ㅌ';
   toCode["27"] = codeValue;
 
   codeValue["key"] = "ㅍ";
-  codeValue["value"] = "ㅍ";
+  codeValue["value"] = 'ㅍ';
   toCode["28"] = codeValue;
 
   codeValue["key"] = "ㅎ";
-  codeValue["value"] = "ㅎ";
+  codeValue["value"] = 'ㅎ';
   toCode["29"] = codeValue;
 
   root["fromCode"] = fromCode;
   root["toCode"] = toCode;
 
-  // cout << root << endl;
   Json::StreamWriterBuilder builder;
+  builder.settings_["emitUTF8"] = true;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
   std::ofstream output_file("Json/KoreanLastJaeumLetterCodeBook.json");
   writer->write(root, &output_file);
@@ -1652,112 +1603,98 @@ void makeKoreanJaeumLetterCodeBook()
 void makeKoreanMoeumLetterCodeBook()
 {
   Json::Value root;
-  Json::Value fromCode;
+  Json::Value toCode;
   Json::Value keyValueType;
   Json::Value codeValue;
-  keyValueType["keyVariableType"] = "String";
-  keyValueType["valueVariableType"] = "String";
-  fromCode["variableType"] = keyValueType;
 
   codeValue["key"] = "ㅏ";
-  codeValue["value"] = "ㅏ";
-  fromCode["0"] = codeValue;
+  codeValue["value"] = 'ㅏ';
+  toCode["0"] = codeValue;
 
   codeValue["key"] = "ㅐ";
-  codeValue["value"] = "ㅐ";
-  fromCode["1"] = codeValue;
+  codeValue["value"] = 'ㅐ';
+  toCode["1"] = codeValue;
 
   codeValue["key"] = "ㅑ";
-  codeValue["value"] = "ㅑ";
-  fromCode["2"] = codeValue;
+  codeValue["value"] = 'ㅑ';
+  toCode["2"] = codeValue;
 
   codeValue["key"] = "ㅒ";
-  codeValue["value"] = "ㅒ";
-  fromCode["3"] = codeValue;
+  codeValue["value"] = 'ㅒ';
+  toCode["3"] = codeValue;
 
   codeValue["key"] = "ㅓ";
-  codeValue["value"] = "ㅓ";
-  fromCode["4"] = codeValue;
+  codeValue["value"] = 'ㅓ';
+  toCode["4"] = codeValue;
 
   codeValue["key"] = "ㅔ";
-  codeValue["value"] = "ㅔ";
-  fromCode["5"] = codeValue;
+  codeValue["value"] = 'ㅔ';
+  toCode["5"] = codeValue;
 
   codeValue["key"] = "ㅕ";
-  codeValue["value"] = "ㅕ";
-  fromCode["6"] = codeValue;
+  codeValue["value"] = 'ㅕ';
+  toCode["6"] = codeValue;
 
   codeValue["key"] = "ㅖ";
-  codeValue["value"] = "ㅖ";
-  fromCode["7"] = codeValue;
+  codeValue["value"] = 'ㅖ';
+  toCode["7"] = codeValue;
 
   codeValue["key"] = "ㅗ";
-  codeValue["value"] = "ㅗ";
-  fromCode["8"] = codeValue;
+  codeValue["value"] = 'ㅗ';
+  toCode["8"] = codeValue;
   
   codeValue["key"] = "ㅗㅏ";
-  codeValue["value"] = "ㅘ";
-  fromCode["9"] = codeValue;
+  codeValue["value"] = 'ㅘ';
+  toCode["9"] = codeValue;
 
   codeValue["key"] = "ㅗㅐ";
-  codeValue["value"] = "ㅙ";
-  fromCode["10"] = codeValue;
+  codeValue["value"] = 'ㅙ';
+  toCode["10"] = codeValue;
 
 	codeValue["key"] = "ㅗㅣ";
-  codeValue["value"] = "ㅚ";
-  fromCode["11"] = codeValue;
+  codeValue["value"] = 'ㅚ';
+  toCode["11"] = codeValue;
 
   codeValue["key"] = "ㅛ";
-  codeValue["value"] = "ㅛ";
-  fromCode["12"] = codeValue;
+  codeValue["value"] = 'ㅛ';
+  toCode["12"] = codeValue;
 	
   codeValue["key"] = "ㅜ";
-  codeValue["value"] = "ㅜ";
-  fromCode["13"] = codeValue;
+  codeValue["value"] = 'ㅜ';
+  toCode["13"] = codeValue;
 
   codeValue["key"] = "ㅜㅓ";
-  codeValue["value"] = "ㅝ";
-  fromCode["13"] = codeValue;
+  codeValue["value"] = 'ㅝ';
+  toCode["13"] = codeValue;
 
   codeValue["key"] = "ㅜㅔ";
-  codeValue["value"] = "ㅞ";
-  fromCode["14"] = codeValue;
+  codeValue["value"] = 'ㅞ';
+  toCode["14"] = codeValue;
 
   codeValue["key"] = "ㅜㅣ";
-  codeValue["value"] = "ㅟ";
-  fromCode["15"] = codeValue;
+  codeValue["value"] = 'ㅟ';
+  toCode["15"] = codeValue;
 
   codeValue["key"] = "ㅠ";
-  codeValue["value"] = "ㅠ";
-  fromCode["16"] = codeValue;
+  codeValue["value"] = 'ㅠ';
+  toCode["16"] = codeValue;
 
 	codeValue["key"] = "ㅡ";
-  codeValue["value"] = "ㅡ";
-  fromCode["17"] = codeValue;
+  codeValue["value"] = 'ㅡ';
+  toCode["17"] = codeValue;
 
 	codeValue["key"] = "ㅡㅣ";
-  codeValue["value"] = "ㅢ";
-  fromCode["18"] = codeValue;
+  codeValue["value"] = 'ㅢ';
+  toCode["18"] = codeValue;
 
   codeValue["key"] = "ㅣ";
-  codeValue["value"] = "ㅣ";
-  fromCode["18"] = codeValue;
+  codeValue["value"] = 'ㅣ';
+  toCode["18"] = codeValue;
 
-  // Json::Value toCode;
+  root["toCode"] = toCode;
 
-  // keyValueType["keyVariableType"] = "String";
-  // keyValueType["valueVariableType"] = "String";
-  // toCode["variableType"] = keyValueType;
-
-  // codeValue["key"] = "ㄱ";
-  // codeValue["value"] = "ㄱ";
-  // toCode["0"] = codeValue;
-
-  root["fromCode"] = fromCode;
-  // root["toCode"] = toCode;
-
-  // cout << root << endl;
   Json::StreamWriterBuilder builder;
+  builder.settings_["emitUTF8"] = true;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
   std::ofstream output_file("Json/KoreanMoeumLetterCodeBook.json");
   writer->write(root, &output_file);
@@ -1771,10 +1708,9 @@ void read_json(const string& jsonPath)
   if (input_file.is_open())
   {
     input_file.seekg(0, std::ios::end);
-    int size = input_file.tellg();
-    rawJson.resize(size);
+    rawJson.resize(input_file.tellg());
     input_file.seekg(0, std::ios::beg);
-    input_file.read(&rawJson[0], size);
+    input_file.read(&rawJson[0], input_file.tellg());
   }
   
   const auto rawJsonLength = static_cast<int>(rawJson.length());
@@ -1854,12 +1790,13 @@ int main()
   //wcout << int(L'ㅏ') << endl;
   //wcout << int(L'ㅣ') << endl;*/
 
-  // makeEnglishMorseCodeBook();
-  // makeKoreanMorseCodeBook();
-  // makeKoreanConsonantLetterCodeBook();
-  // makeKoreanMiddleVowerLetterCodeBook();
-  // makeKoreanJaeumLetterCodeBook();
-  // makeKoreanMoeumLetterCodeBook();
+	// makeEnglishMorseCodeBook();
+	/*makeKoreanMorseCodeBook();
+	makeKoreanConsonantLetterCodeBook();
+	makeKoreanMiddleVowerLetterCodeBook();
+	makeKoreanLastConsonantLetterCodeBook();
+	makeKoreanJaeumLetterCodeBook();
+	makeKoreanMoeumLetterCodeBook();*/
 
   // read_json("Json/MorseEnglishCodeBook.json");
 

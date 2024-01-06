@@ -2,6 +2,7 @@
 
 #include "../CodeConverter/CodeConverter.h"
 
+class FHangulParserCodeBook;
 class FHangulParser :
     public FCodeConverter
 {
@@ -10,7 +11,7 @@ class FHangulParser :
 
 public:
   FHangulParser();
-  virtual ~FHangulParser() {}
+  virtual ~FHangulParser();
 
 public:
   virtual void Initilize();
@@ -33,5 +34,11 @@ private:
 
   KoreanLetterToCodeDictionary* JaeumOnlyLetterCode;
   KoreanLetterToCodeDictionary* MoeumOnlyLetterCode;
+
+  FHangulParserCodeBook* FirstConsonantCodeBook;
+  FHangulParserCodeBook* MiddleVowerCodeBook;
+  FHangulParserCodeBook* LastConsonantCodeBook;
+  FHangulParserCodeBook* JaeumOnlyCodeBook;
+  FHangulParserCodeBook* MoeumOnlyCodeBook;
 };
 

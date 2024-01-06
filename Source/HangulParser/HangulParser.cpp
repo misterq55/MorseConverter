@@ -1,4 +1,5 @@
 ﻿#include "HangulParser.h"
+#include "../CodeBook/HangulParserCodeBook/HangulParserCodeBook.h"
 
 FHangulParser::FHangulParser()
 	: FirstConsonantCodeToLetter(nullptr)
@@ -14,8 +15,23 @@ FHangulParser::FHangulParser()
 	
 }
 
+FHangulParser::~FHangulParser()
+{
+	delete FirstConsonantCodeBook;
+	delete MiddleVowerCodeBook;
+	delete LastConsonantCodeBook;
+	delete JaeumOnlyCodeBook;
+	delete MoeumOnlyCodeBook;
+}
+
 void FHangulParser::Initilize()
 {
+	FirstConsonantCodeBook = new FHangulParserCodeBook("Json/KoreanConsonantLetterCodeBook.json");
+	MiddleVowerCodeBook = new FHangulParserCodeBook("Json/KoreanMiddleVowerLetterCodeBook.json");
+	LastConsonantCodeBook = new FHangulParserCodeBook("Json/KoreanLastConsonantLetterCodeBook.json");
+	JaeumOnlyCodeBook = new FHangulParserCodeBook("Json/KoreanLastJaeumLetterCodeBook.json");
+	MoeumOnlyCodeBook = new FHangulParserCodeBook("Json/KoreanMoeumLetterCodeBook.json");
+	
 	FirstConsonantCodeToLetter = new KoreanCodeToLetterDictionary({
 		{0xAC00, L"ㄱ"},
 		{0xAE4C, L"ㄱㄱ"},

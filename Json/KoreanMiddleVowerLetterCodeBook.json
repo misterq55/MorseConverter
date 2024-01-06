@@ -4,205 +4,195 @@
 		"1" : 
 		{
 			"key" : 0,
-			"value" : "\u314f"
+			"value" : "た"
 		},
 		"10" : 
 		{
 			"key" : 308,
-			"value" : "\u3157\u3163"
+			"value" : "でび"
 		},
 		"11" : 
 		{
 			"key" : 336,
-			"value" : "\u315b"
+			"value" : "に"
 		},
 		"12" : 
 		{
 			"key" : 364,
-			"value" : "\u315c"
+			"value" : "ぬ"
 		},
 		"13" : 
 		{
 			"key" : 392,
-			"value" : "\u315c\u3153"
+			"value" : "ぬっ"
 		},
 		"14" : 
 		{
 			"key" : 420,
-			"value" : "\u315c\u3154"
+			"value" : "ぬつ"
 		},
 		"15" : 
 		{
 			"key" : 448,
-			"value" : "\u315c\u3163"
+			"value" : "ぬび"
 		},
 		"16" : 
 		{
 			"key" : 476,
-			"value" : "\u3160"
+			"value" : "ば"
 		},
 		"17" : 
 		{
 			"key" : 504,
-			"value" : "\u3161"
+			"value" : "ぱ"
 		},
 		"18" : 
 		{
 			"key" : 532,
-			"value" : "\u3161\u3163"
+			"value" : "ぱび"
 		},
 		"19" : 
 		{
 			"key" : 560,
-			"value" : "\u3163"
+			"value" : "び"
 		},
 		"2" : 
 		{
 			"key" : 28,
-			"value" : "\u3150"
+			"value" : "だ"
 		},
 		"3" : 
 		{
 			"key" : 84,
-			"value" : "\u3152"
+			"value" : "ぢ"
 		},
 		"4" : 
 		{
 			"key" : 112,
-			"value" : "\u3153"
+			"value" : "っ"
 		},
 		"5" : 
 		{
 			"key" : 140,
-			"value" : "\u3154"
+			"value" : "つ"
 		},
 		"6" : 
 		{
 			"key" : 168,
-			"value" : "\u3155"
+			"value" : "づ"
 		},
 		"7" : 
 		{
 			"key" : 196,
-			"value" : "\u3156"
+			"value" : "て"
 		},
 		"8" : 
 		{
 			"key" : 252,
-			"value" : "\u3157\u314f"
+			"value" : "でた"
 		},
 		"9" : 
 		{
 			"key" : 280,
-			"value" : "\u3157\u3150"
-		},
-		"variableType" : 
-		{
-			"keyVariableType" : "Int",
-			"valueVariableType" : "String"
+			"value" : "でだ"
 		}
 	},
 	"toCode" : 
 	{
 		"1" : 
 		{
-			"key" : "\u314f",
+			"key" : "た",
 			"value" : 0
 		},
 		"10" : 
 		{
-			"key" : "\u3157\u3163",
+			"key" : "でび",
 			"value" : 308
 		},
 		"11" : 
 		{
-			"key" : "\u315b",
+			"key" : "に",
 			"value" : 336
 		},
 		"12" : 
 		{
-			"key" : "\u315c",
+			"key" : "ぬ",
 			"value" : 364
 		},
 		"13" : 
 		{
-			"key" : "\u315c\u3153",
+			"key" : "ぬっ",
 			"value" : 392
 		},
 		"14" : 
 		{
-			"key" : "\u315c\u3154",
+			"key" : "ぬつ",
 			"value" : 420
 		},
 		"15" : 
 		{
-			"key" : "\u315c\u3163",
+			"key" : "ぬび",
 			"value" : 448
 		},
 		"16" : 
 		{
-			"key" : "\u3160",
+			"key" : "ば",
 			"value" : 476
 		},
 		"17" : 
 		{
-			"key" : "\u3161",
+			"key" : "ぱ",
 			"value" : 504
 		},
 		"18" : 
 		{
-			"key" : "\u3161\u3163",
+			"key" : "ぱび",
 			"value" : 532
 		},
 		"19" : 
 		{
-			"key" : "\u3163",
+			"key" : "び",
 			"value" : 560
 		},
 		"2" : 
 		{
-			"key" : "\u3150",
+			"key" : "だ",
 			"value" : 28
 		},
 		"3" : 
 		{
-			"key" : "\u3152",
+			"key" : "ぢ",
 			"value" : 84
 		},
 		"4" : 
 		{
-			"key" : "\u3153",
+			"key" : "っ",
 			"value" : 112
 		},
 		"5" : 
 		{
-			"key" : "\u3154",
+			"key" : "つ",
 			"value" : 140
 		},
 		"6" : 
 		{
-			"key" : "\u3155",
+			"key" : "づ",
 			"value" : 168
 		},
 		"7" : 
 		{
-			"key" : "\u3156",
+			"key" : "て",
 			"value" : 196
 		},
 		"8" : 
 		{
-			"key" : "\u3157\u314f",
+			"key" : "でた",
 			"value" : 252
 		},
 		"9" : 
 		{
-			"key" : "\u3157\u3150",
+			"key" : "でだ",
 			"value" : 280
-		},
-		"variableType" : 
-		{
-			"keyVariableType" : "String",
-			"valueVariableType" : "Int"
 		}
 	}
 }
