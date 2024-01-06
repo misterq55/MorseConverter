@@ -1,7 +1,6 @@
 #pragma once
 #include "../CodeConverter/CodeConverter.h"
 
-class FHangulParser;
 class FLatinAlphabetMorseConverter :
   public FCodeConverter
 {
