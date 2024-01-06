@@ -1,1 +1,1 @@
-g++ ./Source/main.cpp ./Source/BinaryConverter/BinaryConverter.cpp ./Source/CodeConverter/CodeConverter.cpp ./Source/HangulParser/HangulParser.cpp ./Source/MorseConverter/MorseConverter.cpp ./Source/jsoncpp/jsoncpp.cpp
+g++ ./Source/main.cpp ./Source/BinaryConverter/BinaryConverter.cpp ./Source/CodeConverter/CodeConverter.cpp ./Source/HangulParser/HangulParser.cpp ./Source/MorseConverter/MorseConverter.cpp ./Source/LatinAlphabetMorseConverter/LatinAlphabetMorseConverter.cpp ./Source/jsoncpp/jsoncpp.cpp

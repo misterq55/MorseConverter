@@ -6,6 +6,7 @@
 #include <string>
 // #include "FHangulParser.h"
 #include "MorseConverter/MorseConverter.h"
+#include "LatinAlphabetMorseConverter/LatinAlphabetMorseConverter.h"
 // #include "BinaryConverter.h"
 #include "jsoncpp/json/json.h"
 
@@ -1648,6 +1649,120 @@ void makeKoreanJaeumLetterCodeBook()
   writer->write(root, &output_file);
 }
 
+void makeKoreanMoeumLetterCodeBook()
+{
+  Json::Value root;
+  Json::Value fromCode;
+  Json::Value keyValueType;
+  Json::Value codeValue;
+  keyValueType["keyVariableType"] = "String";
+  keyValueType["valueVariableType"] = "String";
+  fromCode["variableType"] = keyValueType;
+
+  codeValue["key"] = "ㅏ";
+  codeValue["value"] = "ㅏ";
+  fromCode["0"] = codeValue;
+
+  codeValue["key"] = "ㅐ";
+  codeValue["value"] = "ㅐ";
+  fromCode["1"] = codeValue;
+
+  codeValue["key"] = "ㅑ";
+  codeValue["value"] = "ㅑ";
+  fromCode["2"] = codeValue;
+
+  codeValue["key"] = "ㅒ";
+  codeValue["value"] = "ㅒ";
+  fromCode["3"] = codeValue;
+
+  codeValue["key"] = "ㅓ";
+  codeValue["value"] = "ㅓ";
+  fromCode["4"] = codeValue;
+
+  codeValue["key"] = "ㅔ";
+  codeValue["value"] = "ㅔ";
+  fromCode["5"] = codeValue;
+
+  codeValue["key"] = "ㅕ";
+  codeValue["value"] = "ㅕ";
+  fromCode["6"] = codeValue;
+
+  codeValue["key"] = "ㅖ";
+  codeValue["value"] = "ㅖ";
+  fromCode["7"] = codeValue;
+
+  codeValue["key"] = "ㅗ";
+  codeValue["value"] = "ㅗ";
+  fromCode["8"] = codeValue;
+  
+  codeValue["key"] = "ㅗㅏ";
+  codeValue["value"] = "ㅘ";
+  fromCode["9"] = codeValue;
+
+  codeValue["key"] = "ㅗㅐ";
+  codeValue["value"] = "ㅙ";
+  fromCode["10"] = codeValue;
+
+	codeValue["key"] = "ㅗㅣ";
+  codeValue["value"] = "ㅚ";
+  fromCode["11"] = codeValue;
+
+  codeValue["key"] = "ㅛ";
+  codeValue["value"] = "ㅛ";
+  fromCode["12"] = codeValue;
+	
+  codeValue["key"] = "ㅜ";
+  codeValue["value"] = "ㅜ";
+  fromCode["13"] = codeValue;
+
+  codeValue["key"] = "ㅜㅓ";
+  codeValue["value"] = "ㅝ";
+  fromCode["13"] = codeValue;
+
+  codeValue["key"] = "ㅜㅔ";
+  codeValue["value"] = "ㅞ";
+  fromCode["14"] = codeValue;
+
+  codeValue["key"] = "ㅜㅣ";
+  codeValue["value"] = "ㅟ";
+  fromCode["15"] = codeValue;
+
+  codeValue["key"] = "ㅠ";
+  codeValue["value"] = "ㅠ";
+  fromCode["16"] = codeValue;
+
+	codeValue["key"] = "ㅡ";
+  codeValue["value"] = "ㅡ";
+  fromCode["17"] = codeValue;
+
+	codeValue["key"] = "ㅡㅣ";
+  codeValue["value"] = "ㅢ";
+  fromCode["18"] = codeValue;
+
+  codeValue["key"] = "ㅣ";
+  codeValue["value"] = "ㅣ";
+  fromCode["18"] = codeValue;
+
+  // Json::Value toCode;
+
+  // keyValueType["keyVariableType"] = "String";
+  // keyValueType["valueVariableType"] = "String";
+  // toCode["variableType"] = keyValueType;
+
+  // codeValue["key"] = "ㄱ";
+  // codeValue["value"] = "ㄱ";
+  // toCode["0"] = codeValue;
+
+  root["fromCode"] = fromCode;
+  // root["toCode"] = toCode;
+
+  // cout << root << endl;
+  Json::StreamWriterBuilder builder;
+  const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
+  std::ofstream output_file("KoreanMoeumLetterCodeBook.json");
+  writer->write(root, &output_file);
+}
+
 void read_json()
 {
   std::ifstream input_file("D:/Project/MorseConverter/test.json");
@@ -1697,35 +1812,37 @@ int main()
 
   // FCodeConverter *CodeConverter = new FHangulParser();
   // FCodeConverter* CodeConverter = new FMorseConverter();
-  // CodeConverter->Initilize();
-  // CodeConverter->SetInputType(EInputType::IT_Engish);
+  FCodeConverter* CodeConverter = new FLatinAlphabetMorseConverter();
+  CodeConverter->Initilize();
+  CodeConverter->SetInputType(EInputType::IT_Engish);
   // CodeConverter->SetInputType(EInputType::IT_Korean);
 
   // FCodeConverter* CodeConverter = new FBinaryConverter();
 
-  // wstring str;
+  wstring str;
 
-  // getline(wcin, str);
+  getline(wcin, str);
 
-  // wstring Code = CodeConverter->Encode(str);
-  // wstring ConvertedString = CodeConverter->Decode(Code);
-  // // wstring ConvertedString = CodeInverter->Decode(str);
+  wstring Code = CodeConverter->Encode(str);
+  wstring ConvertedString = CodeConverter->Decode(Code);
+  // wstring ConvertedString = CodeInverter->Decode(str);
 
-  // wcout << Code << endl;
-  // wcout << ConvertedString << endl;
+  wcout << Code << endl;
+  wcout << ConvertedString << endl;
 
-  // delete CodeConverter;
+  delete CodeConverter;
 
   ///*wcout << int(L'ㄱ') << endl;
   //wcout << int(L'ㅎ') << endl;
   //wcout << int(L'ㅏ') << endl;
   //wcout << int(L'ㅣ') << endl;*/
 
-  makeEnglishMorseCodeBook();
-  makeKoreanMorseCodeBook();
-  makeKoreanConsonantLetterCodeBook();
-  makeKoreanMiddleVowerLetterCodeBook();
-  makeKoreanJaeumLetterCodeBook();
+  // makeEnglishMorseCodeBook();
+  // makeKoreanMorseCodeBook();
+  // makeKoreanConsonantLetterCodeBook();
+  // makeKoreanMiddleVowerLetterCodeBook();
+  // makeKoreanJaeumLetterCodeBook();
+  // makeKoreanMoeumLetterCodeBook();
 
   // read_json();
 
