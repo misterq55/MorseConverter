@@ -5,6 +5,7 @@
 
 using std::map;
 using std::wstring;
+using std::string;
 
 enum EInputType
 {

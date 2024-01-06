@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\BinaryConverter\BinaryConverter.cpp" />
+    <ClCompile Include="Source\CodeBook\CodeBook.cpp" />
+    <ClCompile Include="Source\CodeBook\MorseCodeBook\MorseCodeBook.cpp" />
     <ClCompile Include="Source\CodeConverter\CodeConverter.cpp" />
     <ClCompile Include="Source\HangulParser\HangulParser.cpp" />
     <ClCompile Include="Source\jsoncpp\jsoncpp.cpp" />
@@ -150,6 +152,8 @@
   <ItemGroup>
     <ClInclude Include="flutter_interface.h" />
     <ClInclude Include="Source\BinaryConverter\BinaryConverter.h" />
+    <ClInclude Include="Source\CodeBook\CodeBook.h" />
+    <ClInclude Include="Source\CodeBook\MorseCodeBook\MorseCodeBook.h" />
     <ClInclude Include="Source\CodeConverter\CodeConverter.h" />
     <ClInclude Include="Source\HangulParser\HangulParser.h" />
     <ClInclude Include="Source\jsoncpp\json\json-forwards.h" />

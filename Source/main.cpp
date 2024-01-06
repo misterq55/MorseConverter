@@ -67,7 +67,7 @@ void makeEnglishMorseCodeBook() {
   fromCode["10"] = codeValue;
 
   codeValue["key"] = 43;
-  codeValue["value"] = "";
+  codeValue["value"] = "L";
   fromCode["11"] = codeValue;
 
   codeValue["key"] = 8;
@@ -233,7 +233,7 @@ void makeEnglishMorseCodeBook() {
   toCode["7"] = codeValue;
   
   codeValue["key"] = "I";
-  codeValue["value"] = ".---";
+  codeValue["value"] = "..";
   toCode["8"] = codeValue;
 
   codeValue["key"] = "J";
@@ -382,7 +382,7 @@ void makeEnglishMorseCodeBook() {
   // cout << root << endl;
   Json::StreamWriterBuilder builder;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
-  std::ofstream output_file("MorseEnglishCodeBook.json");
+  std::ofstream output_file("Json/MorseEnglishCodeBook.json");
   writer->write(root, &output_file);
 }
 
@@ -756,7 +756,7 @@ void makeKoreanMorseCodeBook()
   // cout << root << endl;
   Json::StreamWriterBuilder builder;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
-  std::ofstream output_file("MorseKoreanCodeBook.json");
+  std::ofstream output_file("Json/MorseKoreanCodeBook.json");
   writer->write(root, &output_file);
 }
 
@@ -934,7 +934,7 @@ void makeKoreanConsonantLetterCodeBook()
   // cout << root << endl;
   Json::StreamWriterBuilder builder;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
-  std::ofstream output_file("KoreanConsonantLetterCodeBook.json");
+  std::ofstream output_file("Json/KoreanConsonantLetterCodeBook.json");
   writer->write(root, &output_file);
 }
 
@@ -1128,7 +1128,7 @@ void makeKoreanMiddleVowerLetterCodeBook()
   // cout << root << endl;
   Json::StreamWriterBuilder builder;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
-  std::ofstream output_file("KoreanMiddleVowerLetterCodeBook.json");
+  std::ofstream output_file("Json/KoreanMiddleVowerLetterCodeBook.json");
   writer->write(root, &output_file);
 }
 
@@ -1378,7 +1378,7 @@ void makeKoreanLastConsonantLetterCodeBook()
   // cout << root << endl;
   Json::StreamWriterBuilder builder;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
-  std::ofstream output_file("KoreanLastConsonantLetterCodeBook.json");
+  std::ofstream output_file("Json/KoreanLastConsonantLetterCodeBook.json");
   writer->write(root, &output_file);
 }
 
@@ -1645,7 +1645,7 @@ void makeKoreanJaeumLetterCodeBook()
   // cout << root << endl;
   Json::StreamWriterBuilder builder;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
-  std::ofstream output_file("KoreanLastJaeumLetterCodeBook.json");
+  std::ofstream output_file("Json/KoreanLastJaeumLetterCodeBook.json");
   writer->write(root, &output_file);
 }
 
@@ -1759,13 +1759,13 @@ void makeKoreanMoeumLetterCodeBook()
   // cout << root << endl;
   Json::StreamWriterBuilder builder;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
-  std::ofstream output_file("KoreanMoeumLetterCodeBook.json");
+  std::ofstream output_file("Json/KoreanMoeumLetterCodeBook.json");
   writer->write(root, &output_file);
 }
 
-void read_json()
+void read_json(const string& jsonPath)
 {
-  std::ifstream input_file("D:/Project/MorseConverter/test.json");
+  std::ifstream input_file(jsonPath);
   std::string rawJson;
 
   if (input_file.is_open())
@@ -1795,8 +1795,25 @@ void read_json()
       return;
     }
   }
-  const int size = root["friends"].size();
-  cout << root["friends"][0]["name"] << endl;
+
+  Json::Value fromCode = root["fromCode"];
+  const int fromCodeSize = fromCode.size();
+
+  for (int i = 0; i < fromCodeSize; i++)
+  {
+    cout << fromCode[std::to_string(i)] << endl;
+  }
+
+  Json::Value toCode = root["toCode"];
+  const int toCodeSize = toCode.size();
+
+  for (int i = 0; i < toCodeSize; i++)
+  {
+    cout << toCode[std::to_string(i)] << endl;
+  }
+  
+  /*const int size = root["friends"].size();
+  cout << root["friends"][0]["name"] << endl;*/
   // cout << root["friends"]["age"] << endl;
   //const std::string name = root["name"].asString();
   //const int age = root["age"].asInt();
@@ -1844,7 +1861,7 @@ int main()
   // makeKoreanJaeumLetterCodeBook();
   // makeKoreanMoeumLetterCodeBook();
 
-  // read_json();
+  // read_json("Json/MorseEnglishCodeBook.json");
 
   /*Json::Value root;
   std::ifstream ifs;

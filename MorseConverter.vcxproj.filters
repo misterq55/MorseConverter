@@ -33,6 +33,12 @@
     <Filter Include="Source\LatinAlphabetMorseConverter">
       <UniqueIdentifier>{5fb1b1f8-473d-480f-92f1-f857130e11e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\CodeBook">
+      <UniqueIdentifier>{d99f26d4-e8e6-44aa-81ae-ca9f3cbe64e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\CodeBook\MorseCodeBook">
+      <UniqueIdentifier>{4b7a36c9-c06f-4766-b6dd-5851f7f54d5d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CodeConverter\CodeConverter.cpp">
@@ -55,6 +61,12 @@
     </ClCompile>
     <ClCompile Include="Source\LatinAlphabetMorseConverter\LatinAlphabetMorseConverter.cpp">
       <Filter>Source\LatinAlphabetMorseConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CodeBook\CodeBook.cpp">
+      <Filter>Source\CodeBook</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CodeBook\MorseCodeBook\MorseCodeBook.cpp">
+      <Filter>Source\CodeBook\MorseCodeBook</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +93,12 @@
     </ClInclude>
     <ClInclude Include="Source\LatinAlphabetMorseConverter\LatinAlphabetMorseConverter.h">
       <Filter>Source\LatinAlphabetMorseConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CodeBook\CodeBook.h">
+      <Filter>Source\CodeBook</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CodeBook\MorseCodeBook\MorseCodeBook.h">
+      <Filter>Source\CodeBook\MorseCodeBook</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

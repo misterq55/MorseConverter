@@ -1,123 +1,21 @@
 ﻿#include "LatinAlphabetMorseConverter.h"
+#include "../CodeBook/MorseCodeBook/MorseCodeBook.h"
 #include <cmath>
 
 FLatinAlphabetMorseConverter::FLatinAlphabetMorseConverter()
-	: FromMorseToEngStringDictionary(nullptr)
-	, EngStringToMorseDictionary(nullptr)
+	: LatinAlphbetMorseCodeBook(nullptr)
 {
 	
 }
 
 FLatinAlphabetMorseConverter::~FLatinAlphabetMorseConverter()
 {
-	delete FromMorseToEngStringDictionary;
-	delete EngStringToMorseDictionary;
+	delete LatinAlphbetMorseCodeBook;
 }
 
 void FLatinAlphabetMorseConverter::Initilize()
 {
-	FromMorseToEngStringDictionary = new FromMorseDirctionary({
-		{7, L'A'}, // 1 2
-		{41, L'B'}, // 2 1 1 1
-		{50, L'C'}, // 2 1 2 1
-		{14, L'D'}, // 2 1 1
-		{1, L'E'}, // 1
-		{49, L'F'}, // 1 1 2 1
-		{17, L'G'}, // 2 2 1
-		{40, L'H'}, // 1 1 1 1
-		{4, L'I'}, // 1 1
-		{79, L'J'}, // 1 2 2 2
-		{23, L'K'}, // 2 1 2
-		{43, L'L'}, // 1 2 1 1
-		{8, L'M'}, // 2 2
-		{5, L'N'}, // 2 1
-		{26, L'O'}, // 2 2 2
-		{52, L'P'}, // 1 2 2 1
-		{71, L'Q'}, // 2 2 1 2
-		{16, L'R'}, // 1 2 1
-		{13, L'S'}, // 1 1 1
-		{2, L'T'}, // 2
-		{22, L'U'}, // 1 1 2
-		{67, L'V'}, // 1 1 1 2
-		{25, L'W'}, // 1 2 2
-		{68, L'X'}, // 2 1 1 2
-		{77, L'Y'}, // 2 1 2 2
-		{44, L'Z'}, // 2 2 1 1
-
-		{241, L'1'}, // 1 2 2 2 2
-		{238, L'2'}, // 1 1 2 2 2
-		{229, L'3'}, // 1 1 1 2 2
-		{202, L'4'}, // 1 1 1 1 2
-		{121, L'5'}, // 1 1 1 1 1
-		{122, L'6'}, // 2 1 1 1 1
-		{125, L'7'}, // 2 2 1 1 1
-		{134, L'8'}, // 2 2 2 1 1
-		{161, L'9'}, // 2 2 2 2 1
-		{242, L'0'}, // 2 2 2 2 2
-
-		{355, L'-'}, // 2 1 1 1 1 2
-		{637, L'.'}, // 1 2 1 2 1 2
-		{692, L','}, // 2 2 1 1 2 2
-		{158, L'('}, // 2 1 2 2 1
-		{644, L')'}, // 2 1 2 2 1 2
-		{400, L'?'}, // 1 1 2 2 1 1
-		{149, L'/'}, // 2 1 1 2 1
-		});
-
-	EngStringToMorseDictionary = new ToMorseDictionary({
-		{L'A', L".-"},
-		{L'B', L"-..."},
-		{L'C', L"-.-."},
-		{L'D', L"-.."},
-		{L'E', L"."},
-
-		{L'F', L"..-."},
-		{L'G', L"--."},
-		{L'H', L"...."},
-		{L'I', L".."},
-		{L'J', L".---"},
-
-		{L'K', L"-.-"},
-		{L'L', L".-.."},
-		{L'M', L"--"},
-		{L'N', L"-."},
-		{L'O', L"---"},
-
-		{L'P', L".--."},
-		{L'Q', L"--.-"},
-		{L'R', L".-."},
-		{L'S', L"..."},
-		{L'T', L"-"},
-
-		{L'U', L"..-"},
-		{L'V', L"...-"},
-		{L'W', L".--"},
-		{L'X', L"-..-"},
-		{L'Y', L"-.--"},
-		{L'Z', L"--.."},
-
-		{L'1', L".----"},
-		{L'2', L"..---"},
-		{L'3', L"...--"},
-		{L'4', L"....-"},
-		{L'5', L"....."},
-
-		{L'6', L"-...."},
-		{L'7', L"--..."},
-		{L'8', L"---.."},
-		{L'9', L"----."},
-		{L'0', L"-----"},
-
-		{L'-', L"-....-"},
-		{L'.', L".-.-.-"},
-		{L',', L"--..--"},
-		{L'(', L"-.--."},
-		{L')', L"-.--.-"},
-		{L'?', L"..--.."},
-		{L'/', L"-..-."},
-
-		{L' ', L"/"},
-		});
+	LatinAlphbetMorseCodeBook = new FMorseCodeBook("Json/MorseEnglishCodeBook.json");
 }
 
 wstring FLatinAlphabetMorseConverter::Encode(const wstring& InString)
@@ -152,7 +50,7 @@ wstring FLatinAlphabetMorseConverter::Encode(const wstring& InString)
 		if (InputType != IT_Engish)
 			return L"현재 모드와 입력된 언어가 다릅니다.";
 
-		ResultCode = encode_Inner(GivenString, *EngStringToMorseDictionary);
+		ResultCode = encode_Inner(GivenString);
 		ResultCode = addBlankSpaces(ResultCode, L"   ", L"", L"       ");
 	}
 
@@ -175,13 +73,13 @@ wstring FLatinAlphabetMorseConverter::Decode(const wstring& InCode)
 	if (InputType == IT_Engish)
 	{
 		ResultString = removeBlankSpaces(GivenCode, L"   ", L"", L"       ");
-		ResultString = decode_Inner(ResultString, *FromMorseToEngStringDictionary);
+		ResultString = decode_Inner(ResultString);
 	}
 
 	return ResultString;
 }
 
-wstring FLatinAlphabetMorseConverter::decode_Inner(wstring InCode, const FromMorseDirctionary& InToStringDictionary)
+wstring FLatinAlphabetMorseConverter::decode_Inner(wstring InCode)
 {
 	wstring GivenCode = InCode;
 	wstring ConvertedString;
@@ -193,21 +91,14 @@ wstring FLatinAlphabetMorseConverter::decode_Inner(wstring InCode, const FromMor
 	{
 		int value = -1;
 
-		FromMorseDirctionary::const_iterator FinderIterator;
-
 		if (GivenCode.at(i) == L'.')
 			value = 1;
 		else if (GivenCode.at(i) == L'-')
 			value = 2;
 		else // ' ' or '/'
 		{
-			FinderIterator = InToStringDictionary.find(wordValue);
+			ConvertedString += LatinAlphbetMorseCodeBook->Decode(wordValue);
 
-			if (FinderIterator == InToStringDictionary.end())
-				return L"잘못된 코드입니다";
-
-			ConvertedString += InToStringDictionary.at(wordValue);
-			
 			if (GivenCode.at(i) == L'/')
 				ConvertedString += L' ';
 
@@ -228,11 +119,11 @@ wstring FLatinAlphabetMorseConverter::decode_Inner(wstring InCode, const FromMor
 	return ConvertedString;
 }
 
-wstring FLatinAlphabetMorseConverter::encode_Inner(wstring InString, const ToMorseDictionary& InToCodeDictionary)
+wstring FLatinAlphabetMorseConverter::encode_Inner(wstring InString)
 {
 	wstring ConvertedResult;
 
-	ConvertedResult += InToCodeDictionary.at(InString[0]);
+	ConvertedResult += LatinAlphbetMorseCodeBook->Encode(InString[0]);
 
 	for (unsigned int i = 1; i < InString.size(); i++)
 	{
@@ -242,13 +133,8 @@ wstring FLatinAlphabetMorseConverter::encode_Inner(wstring InString, const ToMor
 			continue;
 		}
 
-		if (InToCodeDictionary.find(InString[i]) == InToCodeDictionary.end())
-		{
-			continue;
-		}
-		
-		wstring ContertedCode = InToCodeDictionary.at(InString[i]);
-		
+		wstring ContertedCode = LatinAlphbetMorseCodeBook->Encode(InString[i]);
+
 		if ((ContertedCode != L"/" && ConvertedResult.back() != L'/') && ConvertedResult.back() != L'|')
 			ConvertedResult += L' ';
 
