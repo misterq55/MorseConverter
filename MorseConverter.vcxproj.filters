@@ -30,6 +30,9 @@
     <Filter Include="Source\jsoncpp\json">
       <UniqueIdentifier>{bff59220-e1eb-444a-a0b0-26c0b7238d9c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\LatinAlphabetMorseConverter">
+      <UniqueIdentifier>{5fb1b1f8-473d-480f-92f1-f857130e11e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CodeConverter\CodeConverter.cpp">
@@ -49,6 +52,9 @@
     </ClCompile>
     <ClCompile Include="Source\jsoncpp\jsoncpp.cpp">
       <Filter>Source\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LatinAlphabetMorseConverter\LatinAlphabetMorseConverter.cpp">
+      <Filter>Source\LatinAlphabetMorseConverter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +78,9 @@
     </ClInclude>
     <ClInclude Include="Source\jsoncpp\json\json-forwards.h">
       <Filter>Source\jsoncpp\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LatinAlphabetMorseConverter\LatinAlphabetMorseConverter.h">
+      <Filter>Source\LatinAlphabetMorseConverter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
