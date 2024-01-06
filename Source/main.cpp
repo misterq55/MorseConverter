@@ -21,176 +21,176 @@ void makeEnglishMorseCodeBook() {
   keyValueType["valueVariableType"] = "WChar";
   fromCode["variableType"] = keyValueType;
 
-  codeValue["from"] = 7;
-  codeValue["to"] = "A";
+  codeValue["key"] = 7;
+  codeValue["value"] = "A";
   fromCode["0"] = codeValue;
 
-  codeValue["from"] = 41;
-  codeValue["to"] = "B";
+  codeValue["key"] = 41;
+  codeValue["value"] = "B";
   fromCode["1"] = codeValue;
 
-  codeValue["from"] = 50;
-  codeValue["to"] = "C";
+  codeValue["key"] = 50;
+  codeValue["value"] = "C";
   fromCode["2"] = codeValue;
 
-  codeValue["from"] = 14;
-  codeValue["to"] = "D";
+  codeValue["key"] = 14;
+  codeValue["value"] = "D";
   fromCode["3"] = codeValue;
 
-  codeValue["from"] = 1;
-  codeValue["to"] = "E";
+  codeValue["key"] = 1;
+  codeValue["value"] = "E";
   fromCode["4"] = codeValue;
 
-  codeValue["from"] = 49;
-  codeValue["to"] = "F";
+  codeValue["key"] = 49;
+  codeValue["value"] = "F";
   fromCode["5"] = codeValue;
 
-  codeValue["from"] = 17;
-  codeValue["to"] = "G";
+  codeValue["key"] = 17;
+  codeValue["value"] = "G";
   fromCode["6"] = codeValue;
 
-  codeValue["from"] = 40;
-  codeValue["to"] = "H";
+  codeValue["key"] = 40;
+  codeValue["value"] = "H";
   fromCode["7"] = codeValue;
   
-  codeValue["from"] = 4;
-  codeValue["to"] = "I";
+  codeValue["key"] = 4;
+  codeValue["value"] = "I";
   fromCode["8"] = codeValue;
 
-  codeValue["from"] = 79;
-  codeValue["to"] = "J";
+  codeValue["key"] = 79;
+  codeValue["value"] = "J";
   fromCode["9"] = codeValue;
 
-  codeValue["from"] = 23;
-  codeValue["to"] = "K";
+  codeValue["key"] = 23;
+  codeValue["value"] = "K";
   fromCode["10"] = codeValue;
 
-  codeValue["from"] = 43;
-  codeValue["to"] = "";
+  codeValue["key"] = 43;
+  codeValue["value"] = "";
   fromCode["11"] = codeValue;
 
-  codeValue["from"] = 8;
-  codeValue["to"] = "M";
+  codeValue["key"] = 8;
+  codeValue["value"] = "M";
   fromCode["12"] = codeValue;
 
-  codeValue["from"] = 5;
-  codeValue["to"] = "N";
+  codeValue["key"] = 5;
+  codeValue["value"] = "N";
   fromCode["13"] = codeValue;
 
-  codeValue["from"] = 26;
-  codeValue["to"] = "O";
+  codeValue["key"] = 26;
+  codeValue["value"] = "O";
   fromCode["14"] = codeValue;
 
-  codeValue["from"] = 52;
-  codeValue["to"] = "P";
+  codeValue["key"] = 52;
+  codeValue["value"] = "P";
   fromCode["15"] = codeValue;
 
-  codeValue["from"] = 71;
-  codeValue["to"] = "Q";
+  codeValue["key"] = 71;
+  codeValue["value"] = "Q";
   fromCode["16"] = codeValue;
 
-  codeValue["from"] = 16;
-  codeValue["to"] = "R";
+  codeValue["key"] = 16;
+  codeValue["value"] = "R";
   fromCode["17"] = codeValue;
 
-  codeValue["from"] = 13;
-  codeValue["to"] = "S";
+  codeValue["key"] = 13;
+  codeValue["value"] = "S";
   fromCode["18"] = codeValue;
 
-  codeValue["from"] = 2;
-  codeValue["to"] = "T";
+  codeValue["key"] = 2;
+  codeValue["value"] = "T";
   fromCode["19"] = codeValue;
 
-  codeValue["from"] = 22;
-  codeValue["to"] = "U";
+  codeValue["key"] = 22;
+  codeValue["value"] = "U";
   fromCode["20"] = codeValue;
 
-  codeValue["from"] = 67;
-  codeValue["to"] = "V";
+  codeValue["key"] = 67;
+  codeValue["value"] = "V";
   fromCode["21"] = codeValue;
 
-  codeValue["from"] = 25;
-  codeValue["to"] = "W";
+  codeValue["key"] = 25;
+  codeValue["value"] = "W";
   fromCode["22"] = codeValue;
 
-  codeValue["from"] = 68;
-  codeValue["to"] = "X";
+  codeValue["key"] = 68;
+  codeValue["value"] = "X";
   fromCode["23"] = codeValue;
 
-  codeValue["from"] = 77;
-  codeValue["to"] = "Y";
+  codeValue["key"] = 77;
+  codeValue["value"] = "Y";
   fromCode["24"] = codeValue;
 
-  codeValue["from"] = 44;
-  codeValue["to"] = "Z";
+  codeValue["key"] = 44;
+  codeValue["value"] = "Z";
   fromCode["25"] = codeValue;
 
-  codeValue["from"] = 241;
-  codeValue["to"] = "1";
+  codeValue["key"] = 241;
+  codeValue["value"] = "1";
   fromCode["26"] = codeValue;
 
-  codeValue["from"] = 228;
-  codeValue["to"] = "2";
+  codeValue["key"] = 228;
+  codeValue["value"] = "2";
   fromCode["27"] = codeValue;
 
-  codeValue["from"] = 229;
-  codeValue["to"] = "3";
+  codeValue["key"] = 229;
+  codeValue["value"] = "3";
   fromCode["28"] = codeValue;
 
-  codeValue["from"] = 202;
-  codeValue["to"] = "4";
+  codeValue["key"] = 202;
+  codeValue["value"] = "4";
   fromCode["29"] = codeValue;
 
-  codeValue["from"] = 121;
-  codeValue["to"] = "5";
+  codeValue["key"] = 121;
+  codeValue["value"] = "5";
   fromCode["30"] = codeValue;
 
-  codeValue["from"] = 122;
-  codeValue["to"] = "6";
+  codeValue["key"] = 122;
+  codeValue["value"] = "6";
   fromCode["31"] = codeValue;
   
-  codeValue["from"] = 125;
-  codeValue["to"] = "7";
+  codeValue["key"] = 125;
+  codeValue["value"] = "7";
   fromCode["32"] = codeValue;
 
-  codeValue["from"] = 134;
-  codeValue["to"] = "8";
+  codeValue["key"] = 134;
+  codeValue["value"] = "8";
   fromCode["33"] = codeValue;
 
-  codeValue["from"] = 161;
-  codeValue["to"] = "9";
+  codeValue["key"] = 161;
+  codeValue["value"] = "9";
   fromCode["34"] = codeValue;
 
-  codeValue["from"] = 242;
-  codeValue["to"] = "0";
+  codeValue["key"] = 242;
+  codeValue["value"] = "0";
   fromCode["35"] = codeValue;
 
-  codeValue["from"] = 355;
-  codeValue["to"] = "-";
+  codeValue["key"] = 355;
+  codeValue["value"] = "-";
   fromCode["36"] = codeValue;
 
-  codeValue["from"] = 637;
-  codeValue["to"] = ".";
+  codeValue["key"] = 637;
+  codeValue["value"] = ".";
   fromCode["37"] = codeValue;
 
-  codeValue["from"] = 692;
-  codeValue["to"] = ",";
+  codeValue["key"] = 692;
+  codeValue["value"] = ",";
   fromCode["38"] = codeValue;
   
-  codeValue["from"] = 158;
-  codeValue["to"] = "(";
+  codeValue["key"] = 158;
+  codeValue["value"] = "(";
   fromCode["39"] = codeValue;
 
-  codeValue["from"] = 644;
-  codeValue["to"] = ")";
+  codeValue["key"] = 644;
+  codeValue["value"] = ")";
   fromCode["40"] = codeValue;
 
-  codeValue["from"] = 400;
-  codeValue["to"] = "?";
+  codeValue["key"] = 400;
+  codeValue["value"] = "?";
   fromCode["41"] = codeValue;
 
-  codeValue["from"] = 149;
-  codeValue["to"] = "/";
+  codeValue["key"] = 149;
+  codeValue["value"] = "/";
   fromCode["42"] = codeValue;
 
   Json::Value toCode;
@@ -199,180 +199,180 @@ void makeEnglishMorseCodeBook() {
   keyValueType["valueVariableType"] = "String";
   toCode["variableType"] = keyValueType;
 
-  codeValue["from"] = "A";
-  codeValue["to"] = ".-";
+  codeValue["key"] = "A";
+  codeValue["value"] = ".-";
   toCode["0"] = codeValue;
 
-  codeValue["from"] = "B";
-  codeValue["to"] = "-...";
+  codeValue["key"] = "B";
+  codeValue["value"] = "-...";
   toCode["1"] = codeValue;
 
-  codeValue["from"] = "C";
-  codeValue["to"] = "-.-.";
+  codeValue["key"] = "C";
+  codeValue["value"] = "-.-.";
   toCode["2"] = codeValue;
 
-  codeValue["from"] = "D";
-  codeValue["to"] = "-..";
+  codeValue["key"] = "D";
+  codeValue["value"] = "-..";
   toCode["3"] = codeValue;
 
-  codeValue["from"] = "E";
-  codeValue["to"] = ".";
+  codeValue["key"] = "E";
+  codeValue["value"] = ".";
   toCode["4"] = codeValue;
 
-  codeValue["from"] = "F";
-  codeValue["to"] = "..-.";
+  codeValue["key"] = "F";
+  codeValue["value"] = "..-.";
   toCode["5"] = codeValue;
 
-  codeValue["from"] = "G";
-  codeValue["to"] = "--.";
+  codeValue["key"] = "G";
+  codeValue["value"] = "--.";
   toCode["6"] = codeValue;
 
-  codeValue["from"] = "H";
-  codeValue["to"] = "....";
+  codeValue["key"] = "H";
+  codeValue["value"] = "....";
   toCode["7"] = codeValue;
   
-  codeValue["from"] = "I";
-  codeValue["to"] = ".---";
+  codeValue["key"] = "I";
+  codeValue["value"] = ".---";
   toCode["8"] = codeValue;
 
-  codeValue["from"] = "J";
-  codeValue["to"] = ".---";
+  codeValue["key"] = "J";
+  codeValue["value"] = ".---";
   toCode["9"] = codeValue;
 
-  codeValue["from"] = "K";
-  codeValue["to"] = "-.-";
+  codeValue["key"] = "K";
+  codeValue["value"] = "-.-";
   toCode["10"] = codeValue;
 
-  codeValue["from"] = "L";
-  codeValue["to"] = ".-..";
+  codeValue["key"] = "L";
+  codeValue["value"] = ".-..";
   toCode["11"] = codeValue;
 
-  codeValue["from"] = "M";
-  codeValue["to"] = "--";
+  codeValue["key"] = "M";
+  codeValue["value"] = "--";
   toCode["12"] = codeValue;
 
-  codeValue["from"] = "N";
-  codeValue["to"] = "-.";
+  codeValue["key"] = "N";
+  codeValue["value"] = "-.";
   toCode["13"] = codeValue;
 
-  codeValue["from"] = "O";
-  codeValue["to"] = "---";
+  codeValue["key"] = "O";
+  codeValue["value"] = "---";
   toCode["14"] = codeValue;
 
-  codeValue["from"] = "P";
-  codeValue["to"] = ".--.";
+  codeValue["key"] = "P";
+  codeValue["value"] = ".--.";
   toCode["15"] = codeValue;
 
-  codeValue["from"] = "Q";
-  codeValue["to"] = "--.-";
+  codeValue["key"] = "Q";
+  codeValue["value"] = "--.-";
   toCode["16"] = codeValue;
 
-  codeValue["from"] = "R";
-  codeValue["to"] = ".-.";
+  codeValue["key"] = "R";
+  codeValue["value"] = ".-.";
   toCode["17"] = codeValue;
 
-  codeValue["from"] = "S";
-  codeValue["to"] = "...";
+  codeValue["key"] = "S";
+  codeValue["value"] = "...";
   toCode["18"] = codeValue;
 
-  codeValue["from"] = "T";
-  codeValue["to"] = "-";
+  codeValue["key"] = "T";
+  codeValue["value"] = "-";
   toCode["19"] = codeValue;
 
-  codeValue["from"] = "U";
-  codeValue["to"] = "..-";
+  codeValue["key"] = "U";
+  codeValue["value"] = "..-";
   toCode["20"] = codeValue;
 
-  codeValue["from"] = "V";
-  codeValue["to"] = "...-";
+  codeValue["key"] = "V";
+  codeValue["value"] = "...-";
   toCode["21"] = codeValue;
 
-  codeValue["from"] = "W";
-  codeValue["to"] = ".--";
+  codeValue["key"] = "W";
+  codeValue["value"] = ".--";
   toCode["22"] = codeValue;
 
-  codeValue["from"] = "X";
-  codeValue["to"] = "-..-";
+  codeValue["key"] = "X";
+  codeValue["value"] = "-..-";
   toCode["23"] = codeValue;
 
-  codeValue["from"] = "Y";
-  codeValue["to"] = "-.--";
+  codeValue["key"] = "Y";
+  codeValue["value"] = "-.--";
   toCode["24"] = codeValue;
 
-  codeValue["from"] = "Z";
-  codeValue["to"] = "--..";
+  codeValue["key"] = "Z";
+  codeValue["value"] = "--..";
   toCode["25"] = codeValue;
 
-  codeValue["from"] = "1";
-  codeValue["to"] = ".----";
+  codeValue["key"] = "1";
+  codeValue["value"] = ".----";
   toCode["26"] = codeValue;
 
-  codeValue["from"] = "2";
-  codeValue["to"] = "..---";
+  codeValue["key"] = "2";
+  codeValue["value"] = "..---";
   toCode["27"] = codeValue;
 
-  codeValue["from"] = "3";
-  codeValue["to"] = "...--";
+  codeValue["key"] = "3";
+  codeValue["value"] = "...--";
   toCode["28"] = codeValue;
 
-  codeValue["from"] = "4";
-  codeValue["to"] = "....-";
+  codeValue["key"] = "4";
+  codeValue["value"] = "....-";
   toCode["29"] = codeValue;
 
-  codeValue["from"] = "5";
-  codeValue["to"] = ".....";
+  codeValue["key"] = "5";
+  codeValue["value"] = ".....";
   toCode["30"] = codeValue;
 
-  codeValue["from"] = "6";
-  codeValue["to"] = "-....";
+  codeValue["key"] = "6";
+  codeValue["value"] = "-....";
   toCode["31"] = codeValue;
 
-  codeValue["from"] = "7";
-  codeValue["to"] = "--...";
+  codeValue["key"] = "7";
+  codeValue["value"] = "--...";
   toCode["32"] = codeValue;
 
-  codeValue["from"] = "8";
-  codeValue["to"] = "---..";
+  codeValue["key"] = "8";
+  codeValue["value"] = "---..";
   toCode["33"] = codeValue;
 
-  codeValue["from"] = "9";
-  codeValue["to"] = "----.";
+  codeValue["key"] = "9";
+  codeValue["value"] = "----.";
   toCode["34"] = codeValue;
 
-  codeValue["from"] = "0";
-  codeValue["to"] = "-----";
+  codeValue["key"] = "0";
+  codeValue["value"] = "-----";
   toCode["35"] = codeValue;
 
-  codeValue["from"] = "-";
-  codeValue["to"] = "-....-";
+  codeValue["key"] = "-";
+  codeValue["value"] = "-....-";
   toCode["36"] = codeValue;
 
-  codeValue["from"] = ".";
-  codeValue["to"] = ".-.-.-";
+  codeValue["key"] = ".";
+  codeValue["value"] = ".-.-.-";
   toCode["37"] = codeValue;
 
-  codeValue["from"] = ",";
-  codeValue["to"] = "--..--";
+  codeValue["key"] = ",";
+  codeValue["value"] = "--..--";
   toCode["38"] = codeValue;
 
-  codeValue["from"] = "(";
-  codeValue["to"] = "-.--.";
+  codeValue["key"] = "(";
+  codeValue["value"] = "-.--.";
   toCode["39"] = codeValue;
 
-  codeValue["from"] = ")";
-  codeValue["to"] = "-.--.-";
+  codeValue["key"] = ")";
+  codeValue["value"] = "-.--.-";
   toCode["40"] = codeValue;
 
-  codeValue["from"] = "?";
-  codeValue["to"] = "..--..";
+  codeValue["key"] = "?";
+  codeValue["value"] = "..--..";
   toCode["41"] = codeValue;
 
-  codeValue["from"] = "/";
-  codeValue["to"] = "-..-.";
+  codeValue["key"] = "/";
+  codeValue["value"] = "-..-.";
   toCode["42"] = codeValue;
 
-  codeValue["from"] = " ";
-  codeValue["to"] = "/";
+  codeValue["key"] = " ";
+  codeValue["value"] = "/";
   toCode["42"] = codeValue;
 
   root["fromCode"] = fromCode;
@@ -395,176 +395,176 @@ void makeKoreanMorseCodeBook()
   keyValueType["valueVariableType"] = "WChar";
   fromCode["variableType"] = keyValueType;
 
-  codeValue["from"] = 43;
-  codeValue["to"] = "ㄱ";
+  codeValue["key"] = 43;
+  codeValue["value"] = "ㄱ";
   fromCode["0"] = codeValue;
 
-  codeValue["from"] = 49;
-  codeValue["to"] = "ㄴ";
+  codeValue["key"] = 49;
+  codeValue["value"] = "ㄴ";
   fromCode["1"] = codeValue;
 
-  codeValue["from"] = 41;
-  codeValue["to"] = "ㄷ";
+  codeValue["key"] = 41;
+  codeValue["value"] = "ㄷ";
   fromCode["2"] = codeValue;
 
-  codeValue["from"] = 67;
-  codeValue["to"] = "ㄹ";
+  codeValue["key"] = 67;
+  codeValue["value"] = "ㄹ";
   fromCode["3"] = codeValue;
 
-  codeValue["from"] = 8;
-  codeValue["to"] = "ㅁ";
+  codeValue["key"] = 8;
+  codeValue["value"] = "ㅁ";
   fromCode["4"] = codeValue;
 
-  codeValue["from"] = 25;
-  codeValue["to"] = "ㅂ";
+  codeValue["key"] = 25;
+  codeValue["value"] = "ㅂ";
   fromCode["5"] = codeValue;
 
-  codeValue["from"] = 17;
-  codeValue["to"] = "ㅅ";
+  codeValue["key"] = 17;
+  codeValue["value"] = "ㅅ";
   fromCode["6"] = codeValue;
 
-  codeValue["from"] = 23;
-  codeValue["to"] = "ㅇ";
+  codeValue["key"] = 23;
+  codeValue["value"] = "ㅇ";
   fromCode["7"] = codeValue;
 
-  codeValue["from"] = 52;
-  codeValue["to"] = "ㅈ";
+  codeValue["key"] = 52;
+  codeValue["value"] = "ㅈ";
   fromCode["8"] = codeValue;
 
-  codeValue["from"] = 50;
-  codeValue["to"] = "ㅊ";
+  codeValue["key"] = 50;
+  codeValue["value"] = "ㅊ";
   fromCode["9"] = codeValue;
 
-  codeValue["from"] = 68;
-  codeValue["to"] = "ㅋ";
+  codeValue["key"] = 68;
+  codeValue["value"] = "ㅋ";
   fromCode["10"] = codeValue;
 
-  codeValue["from"] = 44;
-  codeValue["to"] = "ㅌ";
+  codeValue["key"] = 44;
+  codeValue["value"] = "ㅌ";
   fromCode["11"] = codeValue;
 
-  codeValue["from"] = 26;
-  codeValue["to"] = "ㅍ";
+  codeValue["key"] = 26;
+  codeValue["value"] = "ㅍ";
   fromCode["12"] = codeValue;
 
-  codeValue["from"] = 79;
-  codeValue["to"] = "ㅎ";
+  codeValue["key"] = 79;
+  codeValue["value"] = "ㅎ";
   fromCode["13"] = codeValue;
 
-  codeValue["from"] = 1;
-  codeValue["to"] = "ㅏ";
+  codeValue["key"] = 1;
+  codeValue["value"] = "ㅏ";
   fromCode["14"] = codeValue;
 
-  codeValue["from"] = 4;
-  codeValue["to"] = "ㅑ";
+  codeValue["key"] = 4;
+  codeValue["value"] = "ㅑ";
   fromCode["15"] = codeValue;
 
-  codeValue["from"] = 2;
-  codeValue["to"] = "ㅓ";
+  codeValue["key"] = 2;
+  codeValue["value"] = "ㅓ";
   fromCode["16"] = codeValue;
 
-  codeValue["from"] = 13;
-  codeValue["to"] = "ㅕ";
+  codeValue["key"] = 13;
+  codeValue["value"] = "ㅕ";
   fromCode["17"] = codeValue;
 
-  codeValue["from"] = 7;
-  codeValue["to"] = "ㅗ";
+  codeValue["key"] = 7;
+  codeValue["value"] = "ㅗ";
   fromCode["18"] = codeValue;
 
-  codeValue["from"] = 5;
-  codeValue["to"] = "ㅛ";
+  codeValue["key"] = 5;
+  codeValue["value"] = "ㅛ";
   fromCode["19"] = codeValue;
 
-  codeValue["from"] = 40;
-  codeValue["to"] = "ㅜ";
+  codeValue["key"] = 40;
+  codeValue["value"] = "ㅜ";
   fromCode["20"] = codeValue;
 
-  codeValue["from"] = 16;
-  codeValue["to"] = "ㅠ";
+  codeValue["key"] = 16;
+  codeValue["value"] = "ㅠ";
   fromCode["21"] = codeValue;
 
-  codeValue["from"] = 14;
-  codeValue["to"] = "ㅡ";
+  codeValue["key"] = 14;
+  codeValue["value"] = "ㅡ";
   fromCode["22"] = codeValue;
 
-  codeValue["from"] = 22;
-  codeValue["to"] = "ㅣ";
+  codeValue["key"] = 22;
+  codeValue["value"] = "ㅣ";
   fromCode["23"] = codeValue;
 
-  codeValue["from"] = 71;
-  codeValue["to"] = "ㅐ";
+  codeValue["key"] = 71;
+  codeValue["value"] = "ㅐ";
   fromCode["24"] = codeValue;
 
-  codeValue["from"] = 77;
-  codeValue["to"] = "ㅔ";
+  codeValue["key"] = 77;
+  codeValue["value"] = "ㅔ";
   fromCode["25"] = codeValue;
 
-  codeValue["from"] = 241;
-  codeValue["to"] = "1";
+  codeValue["key"] = 241;
+  codeValue["value"] = "1";
   fromCode["26"] = codeValue;
 
-  codeValue["from"] = 228;
-  codeValue["to"] = "2";
+  codeValue["key"] = 228;
+  codeValue["value"] = "2";
   fromCode["27"] = codeValue;
 
-  codeValue["from"] = 229;
-  codeValue["to"] = "3";
+  codeValue["key"] = 229;
+  codeValue["value"] = "3";
   fromCode["28"] = codeValue;
 
-  codeValue["from"] = 202;
-  codeValue["to"] = "4";
+  codeValue["key"] = 202;
+  codeValue["value"] = "4";
   fromCode["29"] = codeValue;
 
-  codeValue["from"] = 121;
-  codeValue["to"] = "5";
+  codeValue["key"] = 121;
+  codeValue["value"] = "5";
   fromCode["30"] = codeValue;
 
-  codeValue["from"] = 122;
-  codeValue["to"] = "6";
+  codeValue["key"] = 122;
+  codeValue["value"] = "6";
   fromCode["31"] = codeValue;
 
-  codeValue["from"] = 125;
-  codeValue["to"] = "7";
+  codeValue["key"] = 125;
+  codeValue["value"] = "7";
   fromCode["32"] = codeValue;
 
-  codeValue["from"] = 134;
-  codeValue["to"] = "8";
+  codeValue["key"] = 134;
+  codeValue["value"] = "8";
   fromCode["33"] = codeValue;
 
-  codeValue["from"] = 161;
-  codeValue["to"] = "9";
+  codeValue["key"] = 161;
+  codeValue["value"] = "9";
   fromCode["34"] = codeValue;
 
-  codeValue["from"] = 242;
-  codeValue["to"] = "0";
+  codeValue["key"] = 242;
+  codeValue["value"] = "0";
   fromCode["35"] = codeValue;
 
-  codeValue["from"] = 355;
-  codeValue["to"] = "-";
+  codeValue["key"] = 355;
+  codeValue["value"] = "-";
   fromCode["36"] = codeValue;
 
-  codeValue["from"] = 637;
-  codeValue["to"] = ".";
+  codeValue["key"] = 637;
+  codeValue["value"] = ".";
   fromCode["37"] = codeValue;
 
-  codeValue["from"] = 692;
-  codeValue["to"] = ",";
+  codeValue["key"] = 692;
+  codeValue["value"] = ",";
   fromCode["38"] = codeValue;
 
-  codeValue["from"] = 158;
-  codeValue["to"] = "(";
+  codeValue["key"] = 158;
+  codeValue["value"] = "(";
   fromCode["39"] = codeValue;
 
-  codeValue["from"] = 644;
-  codeValue["to"] = ")";
+  codeValue["key"] = 644;
+  codeValue["value"] = ")";
   fromCode["40"] = codeValue;
 
-  codeValue["from"] = 400;
-  codeValue["to"] = "?";
+  codeValue["key"] = 400;
+  codeValue["value"] = "?";
   fromCode["41"] = codeValue;
 
-  codeValue["from"] = 149;
-  codeValue["to"] = "/";
+  codeValue["key"] = 149;
+  codeValue["value"] = "/";
   fromCode["42"] = codeValue;
 
   Json::Value toCode;
@@ -573,180 +573,180 @@ void makeKoreanMorseCodeBook()
   keyValueType["valueVariableType"] = "String";
   toCode["variableType"] = keyValueType;
 
-  codeValue["from"] = "ㄱ";
-  codeValue["to"] = ".-..";
+  codeValue["key"] = "ㄱ";
+  codeValue["value"] = ".-..";
   toCode["0"] = codeValue;
 
-  codeValue["from"] = "ㄴ";
-  codeValue["to"] = "..-.";
+  codeValue["key"] = "ㄴ";
+  codeValue["value"] = "..-.";
   toCode["1"] = codeValue;
 
-  codeValue["from"] = "ㄷ";
-  codeValue["to"] = "-...";
+  codeValue["key"] = "ㄷ";
+  codeValue["value"] = "-...";
   toCode["2"] = codeValue;
 
-  codeValue["from"] = "ㄹ";
-  codeValue["to"] = "...-";
+  codeValue["key"] = "ㄹ";
+  codeValue["value"] = "...-";
   toCode["3"] = codeValue;
 
-  codeValue["from"] = "ㅁ";
-  codeValue["to"] = "--";
+  codeValue["key"] = "ㅁ";
+  codeValue["value"] = "--";
   toCode["4"] = codeValue;
 
-  codeValue["from"] = "ㅂ";
-  codeValue["to"] = ".--";
+  codeValue["key"] = "ㅂ";
+  codeValue["value"] = ".--";
   toCode["5"] = codeValue;
 
-  codeValue["from"] = "ㅅ";
-  codeValue["to"] = "--.";
+  codeValue["key"] = "ㅅ";
+  codeValue["value"] = "--.";
   toCode["6"] = codeValue;
 
-  codeValue["from"] = "ㅇ";
-  codeValue["to"] = "-.-";
+  codeValue["key"] = "ㅇ";
+  codeValue["value"] = "-.-";
   toCode["7"] = codeValue;
 
-  codeValue["from"] = "ㅈ";
-  codeValue["to"] = ".--.";
+  codeValue["key"] = "ㅈ";
+  codeValue["value"] = ".--.";
   toCode["8"] = codeValue;
 
-  codeValue["from"] = "ㅊ";
-  codeValue["to"] = "-.-.";
+  codeValue["key"] = "ㅊ";
+  codeValue["value"] = "-.-.";
   toCode["9"] = codeValue;
 
-  codeValue["from"] = "ㅋ";
-  codeValue["to"] = "-..-";
+  codeValue["key"] = "ㅋ";
+  codeValue["value"] = "-..-";
   toCode["10"] = codeValue;
 
-  codeValue["from"] = "ㅌ";
-  codeValue["to"] = "--..";
+  codeValue["key"] = "ㅌ";
+  codeValue["value"] = "--..";
   toCode["11"] = codeValue;
 
-  codeValue["from"] = "ㅍ";
-  codeValue["to"] = "---";
+  codeValue["key"] = "ㅍ";
+  codeValue["value"] = "---";
   toCode["12"] = codeValue;
 
-  codeValue["from"] = "ㅎ";
-  codeValue["to"] = ".---";
+  codeValue["key"] = "ㅎ";
+  codeValue["value"] = ".---";
   toCode["13"] = codeValue;
 
-  codeValue["from"] = "ㅏ";
-  codeValue["to"] = ".";
+  codeValue["key"] = "ㅏ";
+  codeValue["value"] = ".";
   toCode["14"] = codeValue;
 
-  codeValue["from"] = "ㅑ";
-  codeValue["to"] = "..";
+  codeValue["key"] = "ㅑ";
+  codeValue["value"] = "..";
   toCode["15"] = codeValue;
 
-  codeValue["from"] = "ㅓ";
-  codeValue["to"] = "-";
+  codeValue["key"] = "ㅓ";
+  codeValue["value"] = "-";
   toCode["16"] = codeValue;
 
-  codeValue["from"] = "ㅕ";
-  codeValue["to"] = "...";
+  codeValue["key"] = "ㅕ";
+  codeValue["value"] = "...";
   toCode["17"] = codeValue;
 
-  codeValue["from"] = "ㅗ";
-  codeValue["to"] = ".-";
+  codeValue["key"] = "ㅗ";
+  codeValue["value"] = ".-";
   toCode["18"] = codeValue;
 
-  codeValue["from"] = "ㅛ";
-  codeValue["to"] = "-.";
+  codeValue["key"] = "ㅛ";
+  codeValue["value"] = "-.";
   toCode["19"] = codeValue;
 
-  codeValue["from"] = "ㅜ";
-  codeValue["to"] = "....";
+  codeValue["key"] = "ㅜ";
+  codeValue["value"] = "....";
   toCode["20"] = codeValue;
 
-  codeValue["from"] = "ㅠ";
-  codeValue["to"] = ".-.";
+  codeValue["key"] = "ㅠ";
+  codeValue["value"] = ".-.";
   toCode["21"] = codeValue;
 
-  codeValue["from"] = "ㅡ";
-  codeValue["to"] = "-..";
+  codeValue["key"] = "ㅡ";
+  codeValue["value"] = "-..";
   toCode["22"] = codeValue;
 
-  codeValue["from"] = "ㅣ";
-  codeValue["to"] = "..-";
+  codeValue["key"] = "ㅣ";
+  codeValue["value"] = "..-";
   toCode["23"] = codeValue;
 
-  codeValue["from"] = "ㅐ";
-  codeValue["to"] = "--.-";
+  codeValue["key"] = "ㅐ";
+  codeValue["value"] = "--.-";
   toCode["24"] = codeValue;
 
-  codeValue["from"] = "ㅔ";
-  codeValue["to"] = "-.--";
+  codeValue["key"] = "ㅔ";
+  codeValue["value"] = "-.--";
   toCode["25"] = codeValue;
 
-  codeValue["from"] = "1";
-  codeValue["to"] = ".----";
+  codeValue["key"] = "1";
+  codeValue["value"] = ".----";
   toCode["26"] = codeValue;
 
-  codeValue["from"] = "2";
-  codeValue["to"] = "..---";
+  codeValue["key"] = "2";
+  codeValue["value"] = "..---";
   toCode["27"] = codeValue;
 
-  codeValue["from"] = "3";
-  codeValue["to"] = "...--";
+  codeValue["key"] = "3";
+  codeValue["value"] = "...--";
   toCode["28"] = codeValue;
 
-  codeValue["from"] = "4";
-  codeValue["to"] = "....-";
+  codeValue["key"] = "4";
+  codeValue["value"] = "....-";
   toCode["29"] = codeValue;
 
-  codeValue["from"] = "5";
-  codeValue["to"] = ".....";
+  codeValue["key"] = "5";
+  codeValue["value"] = ".....";
   toCode["30"] = codeValue;
 
-  codeValue["from"] = "6";
-  codeValue["to"] = "-....";
+  codeValue["key"] = "6";
+  codeValue["value"] = "-....";
   toCode["31"] = codeValue;
 
-  codeValue["from"] = "7";
-  codeValue["to"] = "--...";
+  codeValue["key"] = "7";
+  codeValue["value"] = "--...";
   toCode["32"] = codeValue;
 
-  codeValue["from"] = "8";
-  codeValue["to"] = "---..";
+  codeValue["key"] = "8";
+  codeValue["value"] = "---..";
   toCode["33"] = codeValue;
 
-  codeValue["from"] = "9";
-  codeValue["to"] = "----.";
+  codeValue["key"] = "9";
+  codeValue["value"] = "----.";
   toCode["34"] = codeValue;
 
-  codeValue["from"] = "0";
-  codeValue["to"] = "-----";
+  codeValue["key"] = "0";
+  codeValue["value"] = "-----";
   toCode["35"] = codeValue;
 
-  codeValue["from"] = "-";
-  codeValue["to"] = "-....-";
+  codeValue["key"] = "-";
+  codeValue["value"] = "-....-";
   toCode["36"] = codeValue;
 
-  codeValue["from"] = ".";
-  codeValue["to"] = ".-.-.-";
+  codeValue["key"] = ".";
+  codeValue["value"] = ".-.-.-";
   toCode["37"] = codeValue;
 
-  codeValue["from"] = ",";
-  codeValue["to"] = "--..--";
+  codeValue["key"] = ",";
+  codeValue["value"] = "--..--";
   toCode["38"] = codeValue;
 
-  codeValue["from"] = "(";
-  codeValue["to"] = "-.--.";
+  codeValue["key"] = "(";
+  codeValue["value"] = "-.--.";
   toCode["39"] = codeValue;
 
-  codeValue["from"] = ")";
-  codeValue["to"] = "-.--.-";
+  codeValue["key"] = ")";
+  codeValue["value"] = "-.--.-";
   toCode["40"] = codeValue;
 
-  codeValue["from"] = "?";
-  codeValue["to"] = "..--..";
+  codeValue["key"] = "?";
+  codeValue["value"] = "..--..";
   toCode["41"] = codeValue;
 
-  codeValue["from"] = "/";
-  codeValue["to"] = "-..-.";
+  codeValue["key"] = "/";
+  codeValue["value"] = "-..-.";
   toCode["42"] = codeValue;
 
-  codeValue["from"] = " ";
-  codeValue["to"] = "/";
+  codeValue["key"] = " ";
+  codeValue["value"] = "/";
   toCode["42"] = codeValue;
 
   root["fromCode"] = fromCode;
@@ -769,80 +769,80 @@ void makeKoreanConsonantLetterCodeBook()
   keyValueType["valueVariableType"] = "String";
   fromCode["variableType"] = keyValueType;
 
-  codeValue["from"] = 0xAC00;
-  codeValue["to"] = "ㄱ";
+  codeValue["key"] = 0xAC00;
+  codeValue["value"] = "ㄱ";
   fromCode["0"] = codeValue;
 
-  codeValue["from"] = 0xAE4C;
-  codeValue["to"] = "ㄱㄱ";
+  codeValue["key"] = 0xAE4C;
+  codeValue["value"] = "ㄱㄱ";
   fromCode["1"] = codeValue;
 
-  codeValue["from"] = 0xB098;
-  codeValue["to"] = "ㄴ";
+  codeValue["key"] = 0xB098;
+  codeValue["value"] = "ㄴ";
   fromCode["2"] = codeValue;
 
-  codeValue["from"] = 0xB2E4;
-  codeValue["to"] = "ㄷ";
+  codeValue["key"] = 0xB2E4;
+  codeValue["value"] = "ㄷ";
   fromCode["3"] = codeValue;
 
-  codeValue["from"] = 0xB530;
-  codeValue["to"] = "ㄷㄷ";
+  codeValue["key"] = 0xB530;
+  codeValue["value"] = "ㄷㄷ";
   fromCode["4"] = codeValue;
 
-  codeValue["from"] = 0xB77C;
-  codeValue["to"] = "ㄹ";
+  codeValue["key"] = 0xB77C;
+  codeValue["value"] = "ㄹ";
   fromCode["5"] = codeValue;
 
-  codeValue["from"] = 0xB9C8;
-  codeValue["to"] = "ㅁ";
+  codeValue["key"] = 0xB9C8;
+  codeValue["value"] = "ㅁ";
   fromCode["6"] = codeValue;
 
-  codeValue["from"] = 0xBC14;
-  codeValue["to"] = "ㅂ";
+  codeValue["key"] = 0xBC14;
+  codeValue["value"] = "ㅂ";
   fromCode["7"] = codeValue;
 
-  codeValue["from"] = 0xBE60;
-  codeValue["to"] = "ㅂㅂ";
+  codeValue["key"] = 0xBE60;
+  codeValue["value"] = "ㅂㅂ";
   fromCode["8"] = codeValue;
 
-  codeValue["from"] = 0xC0AC;
-  codeValue["to"] = "ㅅ";
+  codeValue["key"] = 0xC0AC;
+  codeValue["value"] = "ㅅ";
   fromCode["9"] = codeValue;
 
-  codeValue["from"] = 0xC2F8;
-  codeValue["to"] = "ㅅㅅ";
+  codeValue["key"] = 0xC2F8;
+  codeValue["value"] = "ㅅㅅ";
   fromCode["10"] = codeValue;
 
-  codeValue["from"] = 0xC544;
-  codeValue["to"] = "ㅇ";
+  codeValue["key"] = 0xC544;
+  codeValue["value"] = "ㅇ";
   fromCode["11"] = codeValue;
 
-  codeValue["from"] = 0xC790;
-  codeValue["to"] = "ㅈ";
+  codeValue["key"] = 0xC790;
+  codeValue["value"] = "ㅈ";
   fromCode["12"] = codeValue;
 
-  codeValue["from"] = 0xC9DC;
-  codeValue["to"] = "ㅈㅈ";
+  codeValue["key"] = 0xC9DC;
+  codeValue["value"] = "ㅈㅈ";
   fromCode["13"] = codeValue;
 
-  codeValue["from"] = 0xCC28;
-  codeValue["to"] = "ㅊ";
+  codeValue["key"] = 0xCC28;
+  codeValue["value"] = "ㅊ";
   fromCode["14"] = codeValue;
 
-  codeValue["from"] = 0xCE74;
-  codeValue["to"] = "ㅋ";
+  codeValue["key"] = 0xCE74;
+  codeValue["value"] = "ㅋ";
   fromCode["15"] = codeValue;
 
-  codeValue["from"] = 0xD0C0;
-  codeValue["to"] = "ㅌ";
+  codeValue["key"] = 0xD0C0;
+  codeValue["value"] = "ㅌ";
   fromCode["16"] = codeValue;
 
-  codeValue["from"] = 0xD30C;
-  codeValue["to"] = "ㅍ";
+  codeValue["key"] = 0xD30C;
+  codeValue["value"] = "ㅍ";
   fromCode["17"] = codeValue;
 
-  codeValue["from"] = 0xD558;
-  codeValue["to"] = "ㅎ";
+  codeValue["key"] = 0xD558;
+  codeValue["value"] = "ㅎ";
   fromCode["18"] = codeValue;
 
   Json::Value toCode;
@@ -851,80 +851,80 @@ void makeKoreanConsonantLetterCodeBook()
   keyValueType["valueVariableType"] = "Int";
   toCode["variableType"] = keyValueType;
 
-  codeValue["from"] = "ㄱ";
-  codeValue["to"] = 0xAC00;
+  codeValue["key"] = "ㄱ";
+  codeValue["value"] = 0xAC00;
   toCode["0"] = codeValue;
 
-  codeValue["from"] = "ㄱㄱ";
-  codeValue["to"] = 0xAE4C;
+  codeValue["key"] = "ㄱㄱ";
+  codeValue["value"] = 0xAE4C;
   toCode["1"] = codeValue;
 
-  codeValue["from"] = "ㄴ";
-  codeValue["to"] = 0xAE4C;
+  codeValue["key"] = "ㄴ";
+  codeValue["value"] = 0xAE4C;
   toCode["2"] = codeValue;
 
-  codeValue["from"] = "ㄷ";
-  codeValue["to"] = 0xB2E4;
+  codeValue["key"] = "ㄷ";
+  codeValue["value"] = 0xB2E4;
   toCode["3"] = codeValue;
 
-  codeValue["from"] = "ㄷㄷ";
-  codeValue["to"] = 0xB530;
+  codeValue["key"] = "ㄷㄷ";
+  codeValue["value"] = 0xB530;
   toCode["4"] = codeValue;
 
-  codeValue["from"] = "ㄹ";
-  codeValue["to"] = 0xB77C;
+  codeValue["key"] = "ㄹ";
+  codeValue["value"] = 0xB77C;
   toCode["5"] = codeValue;
 
-  codeValue["from"] = "ㅁ";
-  codeValue["to"] = 0xB9C8;
+  codeValue["key"] = "ㅁ";
+  codeValue["value"] = 0xB9C8;
   toCode["6"] = codeValue;
 
-  codeValue["from"] = "ㅂ";
-  codeValue["to"] = 0xBC14;
+  codeValue["key"] = "ㅂ";
+  codeValue["value"] = 0xBC14;
   toCode["7"] = codeValue;
 
-  codeValue["from"] = "ㅂㅂ";
-  codeValue["to"] = 0xBE60;
+  codeValue["key"] = "ㅂㅂ";
+  codeValue["value"] = 0xBE60;
   toCode["8"] = codeValue;
 
-  codeValue["from"] = "ㅅ";
-  codeValue["to"] = 0xC0AC;
+  codeValue["key"] = "ㅅ";
+  codeValue["value"] = 0xC0AC;
   toCode["9"] = codeValue;
 
-  codeValue["from"] = "ㅅㅅ";
-  codeValue["to"] = 0xC2F8;
+  codeValue["key"] = "ㅅㅅ";
+  codeValue["value"] = 0xC2F8;
   toCode["10"] = codeValue;
 
-  codeValue["from"] = "ㅇ";
-  codeValue["to"] = 0xC544;
+  codeValue["key"] = "ㅇ";
+  codeValue["value"] = 0xC544;
   toCode["11"] = codeValue;
 
-  codeValue["from"] = "ㅈ";
-  codeValue["to"] = 0xC790;
+  codeValue["key"] = "ㅈ";
+  codeValue["value"] = 0xC790;
   toCode["12"] = codeValue;
 
-  codeValue["from"] = "ㅈㅈ";
-  codeValue["to"] = 0xC9DC;
+  codeValue["key"] = "ㅈㅈ";
+  codeValue["value"] = 0xC9DC;
   toCode["13"] = codeValue;
 
-  codeValue["from"] = "ㅊ";
-  codeValue["to"] = 0xCC28;
+  codeValue["key"] = "ㅊ";
+  codeValue["value"] = 0xCC28;
   toCode["14"] = codeValue;
 
-  codeValue["from"] = "ㅋ";
-  codeValue["to"] = 0xCE74;
+  codeValue["key"] = "ㅋ";
+  codeValue["value"] = 0xCE74;
   toCode["15"] = codeValue;
 
-  codeValue["from"] = "ㅌ";
-  codeValue["to"] = 0xD0C0;
+  codeValue["key"] = "ㅌ";
+  codeValue["value"] = 0xD0C0;
   toCode["16"] = codeValue;
 
-  codeValue["from"] = "ㅍ";
-  codeValue["to"] = 0xD30C;
+  codeValue["key"] = "ㅍ";
+  codeValue["value"] = 0xD30C;
   toCode["17"] = codeValue;
 
-  codeValue["from"] = "ㅎ";
-  codeValue["to"] = 0xD558;
+  codeValue["key"] = "ㅎ";
+  codeValue["value"] = 0xD558;
   toCode["18"] = codeValue;
 
   root["fromCode"] = fromCode;
@@ -934,6 +934,200 @@ void makeKoreanConsonantLetterCodeBook()
   Json::StreamWriterBuilder builder;
   const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
   std::ofstream output_file("KoreanConsonantLetterCodeBook.json");
+  writer->write(root, &output_file);
+}
+
+void makeKoreanMiddleVowerLetterCodeBook()
+{
+  Json::Value root;
+  Json::Value fromCode;
+  Json::Value keyValueType;
+  Json::Value codeValue;
+  keyValueType["keyVariableType"] = "Int";
+  keyValueType["valueVariableType"] = "String";
+  fromCode["variableType"] = keyValueType;
+
+  codeValue["key"] = 0x00;
+  codeValue["value"] = "ㅏ";
+  fromCode["1"] = codeValue;
+
+  codeValue["key"] = 0x1C;
+  codeValue["value"] = "ㅐ";
+  fromCode["2"] = codeValue;
+		
+  codeValue["key"] = 0x38;
+  codeValue["value"] = "ㅑ";
+  fromCode["3"] = codeValue;
+
+  codeValue["key"] = 0x54;
+  codeValue["value"] = "ㅒ";
+  fromCode["3"] = codeValue;
+
+  codeValue["key"] = 0x70;
+  codeValue["value"] = "ㅓ";
+  fromCode["4"] = codeValue;
+
+  codeValue["key"] = 0x8C;
+  codeValue["value"] = "ㅔ";
+  fromCode["5"] = codeValue;
+
+  codeValue["key"] = 0xA8;
+  codeValue["value"] = "ㅕ";
+  fromCode["6"] = codeValue;
+
+  codeValue["key"] = 0xC4;
+  codeValue["value"] = "ㅖ";
+  fromCode["7"] = codeValue;
+
+  codeValue["key"] = 0xE0;
+  codeValue["value"] = "ㅗ";
+  fromCode["8"] = codeValue;
+
+  codeValue["key"] = 0xFC;
+  codeValue["value"] = "ㅗㅏ";
+  fromCode["8"] = codeValue;
+
+  codeValue["key"] = 0x118;
+  codeValue["value"] = "ㅗㅐ";
+  fromCode["9"] = codeValue;
+
+  codeValue["key"] = 0x134;
+  codeValue["value"] = "ㅗㅣ";
+  fromCode["10"] = codeValue;
+
+  codeValue["key"] = 0x150;
+  codeValue["value"] = "ㅛ";
+  fromCode["11"] = codeValue;
+
+  codeValue["key"] = 0x16C;
+  codeValue["value"] = "ㅜ";
+  fromCode["12"] = codeValue;
+
+  codeValue["key"] = 0x188;
+  codeValue["value"] = "ㅜㅓ";
+  fromCode["13"] = codeValue;
+
+  codeValue["key"] = 0x1A4;
+  codeValue["value"] = "ㅜㅔ";
+  fromCode["14"] = codeValue;
+  
+  codeValue["key"] = 0x1C0;
+  codeValue["value"] = "ㅜㅣ";
+  fromCode["15"] = codeValue;
+
+  codeValue["key"] = 0x1DC;
+  codeValue["value"] = "ㅠ";
+  fromCode["16"] = codeValue;
+
+  codeValue["key"] = 0x1F8;
+  codeValue["value"] = "ㅡ";
+  fromCode["17"] = codeValue;
+
+  codeValue["key"] = 0x214;
+  codeValue["value"] = "ㅡㅣ";
+  fromCode["18"] = codeValue;
+
+  codeValue["key"] = 0x230;
+  codeValue["value"] = "ㅣ";
+  fromCode["19"] = codeValue;
+
+  Json::Value toCode;
+
+  keyValueType["keyVariableType"] = "String";
+  keyValueType["valueVariableType"] = "Int";
+  toCode["variableType"] = keyValueType;
+
+  codeValue["key"] = "ㅏ";
+  codeValue["value"] = 0x00;
+  toCode["1"] = codeValue;
+
+  codeValue["key"] = "ㅐ";
+  codeValue["value"] = 0x1C;
+  toCode["2"] = codeValue;
+		
+  codeValue["key"] = "ㅑ";
+  codeValue["value"] = 0x38;
+  toCode["3"] = codeValue;
+
+  codeValue["key"] = "ㅒ";
+  codeValue["value"] = 0x54;
+  toCode["3"] = codeValue;
+
+  codeValue["key"] = "ㅓ";
+  codeValue["value"] = 0x70;
+  toCode["4"] = codeValue;
+
+  codeValue["key"] = "ㅔ";
+  codeValue["value"] = 0x8C;
+  toCode["5"] = codeValue;
+
+  codeValue["key"] = "ㅕ";
+  codeValue["value"] = 0xA8;
+  toCode["6"] = codeValue;
+
+  codeValue["key"] = "ㅖ";
+  codeValue["value"] = 0xC4;
+  toCode["7"] = codeValue;
+
+  codeValue["key"] = "ㅗ";
+  codeValue["value"] = 0xE0;
+  toCode["8"] = codeValue;
+
+  codeValue["key"] = "ㅗㅏ";
+  codeValue["value"] = 0xFC;
+  toCode["8"] = codeValue;
+
+  codeValue["key"] = "ㅗㅐ";
+  codeValue["value"] = 0x118;
+  toCode["9"] = codeValue;
+
+  codeValue["key"] = "ㅗㅣ";
+  codeValue["value"] = 0x134;
+  toCode["10"] = codeValue;
+
+  codeValue["key"] = "ㅛ";
+  codeValue["value"] = 0x150;
+  toCode["11"] = codeValue;
+
+  codeValue["key"] = "ㅜ";
+  codeValue["value"] = 0x16C;
+  toCode["12"] = codeValue;
+
+  codeValue["key"] = "ㅜㅓ";
+  codeValue["value"] = 0x188;
+  toCode["13"] = codeValue;
+
+  codeValue["key"] = "ㅜㅔ";
+  codeValue["value"] = 0x1A4;
+  toCode["14"] = codeValue;
+  
+  codeValue["key"] = "ㅜㅣ";
+  codeValue["value"] = 0x1C0;
+  toCode["15"] = codeValue;
+
+  codeValue["key"] = "ㅠ";
+  codeValue["value"] = 0x1DC;
+  toCode["16"] = codeValue;
+
+  codeValue["key"] = "ㅡ";
+  codeValue["value"] = 0x1F8;
+  toCode["17"] = codeValue;
+
+  codeValue["key"] = "ㅡㅣ";
+  codeValue["value"] = 0x214;
+  toCode["18"] = codeValue;
+
+  codeValue["key"] = "ㅣ";
+  codeValue["value"] = 0x230;
+  toCode["19"] = codeValue;
+
+  root["fromCode"] = fromCode;
+  root["toCode"] = toCode;
+
+  // cout << root << endl;
+  Json::StreamWriterBuilder builder;
+  const std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
+  std::ofstream output_file("KoreanMiddleVowerLetterCodeBook.json");
   writer->write(root, &output_file);
 }
 
@@ -1013,7 +1207,8 @@ int main()
   makeEnglishMorseCodeBook();
   makeKoreanMorseCodeBook();
   makeKoreanConsonantLetterCodeBook();
-
+  makeKoreanMiddleVowerLetterCodeBook();
+  
   // read_json();
 
   /*Json::Value root;
