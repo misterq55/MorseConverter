@@ -1,4 +1,6 @@
-﻿#include "HangulParserCodeBook.h"
+﻿#define _CRT_SECURE_NO_WARNINGS
+
+#include "HangulParserCodeBook.h"
 #include <fstream>
 #include <iostream>
 
@@ -23,17 +25,11 @@ FHangulParserCodeBook::FHangulParserCodeBook(const string& jsonPath)
       wstring value;
       wchar_t strUnicode[256] = L"";//{ 0, };
       char strMultibyte[256] = { 0, };
-      
-      #ifdef _WIN32
-      strcpy_s(strMultibyte, 256, str.c_str());
-      int nLen = MultiByteToWideChar(CP_ACP, 0, strMultibyte, strlen(strMultibyte), NULL, NULL);
-      MultiByteToWideChar(CP_ACP, 0, strMultibyte, strlen(strMultibyte), strUnicode, nLen);
-      #elif __linux__
+
       strcpy(strMultibyte, str.c_str());
       const int len = strlen(strMultibyte);
       setlocale(LC_ALL, "Korean");//로케일 설정
       std::mbstowcs(strUnicode, strMultibyte, 256);
-      #endif
 
       value = wstring(strUnicode);
       // std::wcout << value << std::endl;
@@ -53,38 +49,44 @@ FHangulParserCodeBook::FHangulParserCodeBook(const string& jsonPath)
       wchar_t strUnicode[256] = L"";//{ 0, };
       char strMultibyte[256] = { 0, };
 
-      #ifdef _WIN32
-      strcpy_s(strMultibyte, 256, str.c_str());
-      int nLen = MultiByteToWideChar(CP_ACP, 0, strMultibyte, strlen(strMultibyte), NULL, NULL);
-      MultiByteToWideChar(CP_ACP, 0, strMultibyte, strlen(strMultibyte), strUnicode, nLen);
-      #elif __linux__
       strcpy(strMultibyte, str.c_str());
       const int len = strlen(strMultibyte);
       setlocale(LC_ALL, "Korean");//로케일 설정
       std::mbstowcs(strUnicode, strMultibyte, 256);
-      #endif
 
       key = wstring(strUnicode);    
       // std::wcout << key << std::endl;
       ToCodeDictionary.emplace(key, value);
     }
   }
+
+  int temp = 0;
 }
 
 FHangulParserCodeBook::~FHangulParserCodeBook()
 {
 }
 
-wstring FHangulParserCodeBook::Encode(const wchar_t parsedString)
+wstring FHangulParserCodeBook::Encode(const int parsedString)
 {
   wstring encodeResult = L"";
+
+  if (FromCodeDictionary.find(parsedString) != FromCodeDictionary.end())
+  {
+    encodeResult = FromCodeDictionary.at(parsedString);
+  }
 
   return encodeResult;
 }
 
-wchar_t FHangulParserCodeBook::Decode(const int wordValue)
+int FHangulParserCodeBook::Decode(const wstring wordValue)
 {
-  wchar_t decodedResult = L' ';
+  int decodedResult = 0;
+
+  if (ToCodeDictionary.find(wordValue) != ToCodeDictionary.end())
+  {
+    decodedResult = ToCodeDictionary.at(wordValue);
+  }
 
   return decodedResult;
 }

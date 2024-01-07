@@ -3,13 +3,6 @@
 #include <string>
 #include <map>
 #include "../jsoncpp/json/json.h"
-#ifdef _WIN32
-#include <atlconv.h>
-#include <atlstr.h>
-#elif _WIN64
-#include <atlconv.h>
-#include <atlstr.h>
-#endif
 
 using std::string;
 using std::map;
@@ -25,6 +18,9 @@ public:
 public:
   virtual wstring Encode(const wchar_t parsedString);
   virtual wchar_t Decode(const int wordValue);
+
+  virtual wstring Encode(const int parsedString);
+  virtual int Decode(const wstring wordValue);
 
 protected:
   Json::Value FromCode;

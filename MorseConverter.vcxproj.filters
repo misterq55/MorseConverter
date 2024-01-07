@@ -42,6 +42,15 @@
     <Filter Include="Source\CodeBook\HangulParserCodeBook">
       <UniqueIdentifier>{0e50e2c0-3795-41ea-946c-0eab414d14a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\HangulMorseConverter">
+      <UniqueIdentifier>{2aa5c450-b75b-49d3-865b-1e85c0bf9cd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\CodeBook\MorseCodeBook\LatinAlphabetMorseCodeBook">
+      <UniqueIdentifier>{331e8b6b-334a-40af-93fd-219f5b014d89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\CodeBook\MorseCodeBook\HangulMorseCodeBook">
+      <UniqueIdentifier>{d1c05de7-c1bd-4045-a7c6-848079551e55}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CodeConverter\CodeConverter.cpp">
@@ -73,6 +82,15 @@
     </ClCompile>
     <ClCompile Include="Source\CodeBook\HangulParserCodeBook\HangulParserCodeBook.cpp">
       <Filter>Source\CodeBook\HangulParserCodeBook</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\HangulMorseConverter\HangulMorseConverter.cpp">
+      <Filter>Source\HangulMorseConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CodeBook\MorseCodeBook\LatinAlphbetMorseCodeBook\LatinAlphbetMorseCodeBook.cpp">
+      <Filter>Source\CodeBook\MorseCodeBook\LatinAlphabetMorseCodeBook</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CodeBook\MorseCodeBook\HangulMorseCodeBook\HangulMorseCodeBook.cpp">
+      <Filter>Source\CodeBook\MorseCodeBook\HangulMorseCodeBook</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +126,15 @@
     </ClInclude>
     <ClInclude Include="Source\CodeBook\HangulParserCodeBook\HangulParserCodeBook.h">
       <Filter>Source\CodeBook\HangulParserCodeBook</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\HangulMorseConverter\HangulMorseConverter.h">
+      <Filter>Source\HangulMorseConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CodeBook\MorseCodeBook\LatinAlphbetMorseCodeBook\LatinAlphbetMorseCodeBook.h">
+      <Filter>Source\CodeBook\MorseCodeBook\LatinAlphabetMorseCodeBook</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CodeBook\MorseCodeBook\HangulMorseCodeBook\HangulMorseCodeBook.h">
+      <Filter>Source\CodeBook\MorseCodeBook\HangulMorseCodeBook</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

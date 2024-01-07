@@ -2,36 +2,13 @@
 #include "../CodeBook/HangulParserCodeBook/HangulParserCodeBook.h"
 
 FHangulParser::FHangulParser()
-	: FirstConsonantCodeToLetter(nullptr)
-	, MiddleVowerCodeToLetter(nullptr)
-	, LastConsonantCodeToLetter(nullptr)
-	, JaeumOnlyCodeToLetter(nullptr)
-	, FirstConsonantLetterToCode(nullptr)
-	, MiddleVowerLetterToCode(nullptr)
-	, LastConsonantLetterToCode(nullptr)
-	, JaeumOnlyLetterCode(nullptr)
-	, MoeumOnlyLetterCode(nullptr)
+	: FirstConsonantCodeBook(nullptr)
+	, MiddleVowerCodeBook(nullptr)
+	, LastConsonantCodeBook(nullptr)
+	, JaeumOnlyCodeBook(nullptr)
+	, MoeumOnlyCodeBook(nullptr)
 {
-	
-}
-
-FHangulParser::~FHangulParser()
-{
-	delete FirstConsonantCodeBook;
-	delete MiddleVowerCodeBook;
-	delete LastConsonantCodeBook;
-	delete JaeumOnlyCodeBook;
-	delete MoeumOnlyCodeBook;
-}
-
-void FHangulParser::Initilize()
-{
-	FirstConsonantCodeBook = new FHangulParserCodeBook("Json/KoreanConsonantLetterCodeBook.json");
-	MiddleVowerCodeBook = new FHangulParserCodeBook("Json/KoreanMiddleVowerLetterCodeBook.json");
-	LastConsonantCodeBook = new FHangulParserCodeBook("Json/KoreanLastConsonantLetterCodeBook.json");
-	JaeumOnlyCodeBook = new FHangulParserCodeBook("Json/KoreanLastJaeumLetterCodeBook.json");
-	MoeumOnlyCodeBook = new FHangulParserCodeBook("Json/KoreanMoeumLetterCodeBook.json");
-	
+	/*
 	FirstConsonantCodeToLetter = new KoreanCodeToLetterDictionary({
 		{0xAC00, L"ㄱ"},
 		{0xAE4C, L"ㄱㄱ"},
@@ -90,7 +67,7 @@ void FHangulParser::Initilize()
 		{0x8, L"ㄹ"},
 		{0x9, L"ㄹㄱ"},
 		{0xA, L"ㄹㅁ"},
-		{0xB, L"ㄹㅂ"},
+		{0xB, L"ㄹㅂ"},ㄱ
 		{0xC, L"ㄹㅅ"},
 		{0xD, L"ㄹㅌ"},
 		{0xE, L"ㄹㅍ"},
@@ -274,7 +251,25 @@ void FHangulParser::Initilize()
 		{L"ㅡ", L'ㅡ'},
 		{L"ㅡㅣ", L'ㅢ'},
 		{L"ㅣ", L'ㅣ'},
-		});
+		});*/
+}
+
+FHangulParser::~FHangulParser()
+{
+	delete FirstConsonantCodeBook;
+	delete MiddleVowerCodeBook;
+	delete LastConsonantCodeBook;
+	delete JaeumOnlyCodeBook;
+	delete MoeumOnlyCodeBook;
+}
+
+void FHangulParser::Initilize()
+{
+	FirstConsonantCodeBook = new FHangulParserCodeBook("Json/KoreanConsonantLetterCodeBook.json");
+	MiddleVowerCodeBook = new FHangulParserCodeBook("Json/KoreanMiddleVowerLetterCodeBook.json");
+	LastConsonantCodeBook = new FHangulParserCodeBook("Json/KoreanLastConsonantLetterCodeBook.json");
+	JaeumOnlyCodeBook = new FHangulParserCodeBook("Json/KoreanLastJaeumLetterCodeBook.json");
+	MoeumOnlyCodeBook = new FHangulParserCodeBook("Json/KoreanMoeumLetterCodeBook.json");
 }
 
 wstring FHangulParser::Encode(const wstring& InString)
@@ -298,27 +293,25 @@ wstring FHangulParser::Encode(const wstring& InString)
 			hanguleJamoParse(int(InString[i]) - L'가', L'까' - L'가', Range, Ramnant);
 
 			Range += L'가';
-			KoreanCodeToLetterDictionary::iterator FinderIterator = FirstConsonantCodeToLetter->find(Range);
-			if (FinderIterator != FirstConsonantCodeToLetter->end())
-				Result += FirstConsonantCodeToLetter->at(Range);
+			Result += FirstConsonantCodeBook->Encode(Range);
 
 			hanguleJamoParse(int(InString[i]) - Range, L'개' - L'가', Range, Ramnant);
 
-			Result += MiddleVowerCodeToLetter->at(Range);
-			Result += LastConsonantCodeToLetter->at(Ramnant);
+			Result += MiddleVowerCodeBook->Encode(Range);
+			Result += LastConsonantCodeBook->Encode(Ramnant);
 		}
 		else if (InString[i] >= L'ㄱ' && InString[i] <= L'ㅎ')
 		{
 			hanguleJamoParse(int(InString[i]) - L'ㄱ', L'ㄲ' - L'ㄱ', Range, Ramnant);
 			Range *= (L'ㄲ' - L'ㄱ');
 			Range += L'ㄱ';
-			Result += JaeumOnlyCodeToLetter->at(Range);
+			Result += JaeumOnlyCodeBook->Encode(Range);
 		}
 		else if (InString[i] >= L'ㅏ' && InString[i] <= L'ㅣ')
 		{
 			hanguleJamoParse(int(InString[i]) - L'ㅏ', L'ㅐ' - L'ㅏ', Range, Ramnant);
 			Range *= (L'개' - L'가');
-			Result += MiddleVowerCodeToLetter->at(Range);
+			Result += MiddleVowerCodeBook->Encode(Range);
 		}
 		else
 			Result += InString[i];
@@ -361,8 +354,7 @@ wstring FHangulParser::Decode(const wstring& InParsedHangulStr)
 			while (InParsedHangulStr[SubIndex] >= L'ㄱ' && InParsedHangulStr[SubIndex] <= L'ㅎ')
 				FirstConsonantLetter += InParsedHangulStr[SubIndex++];
 
-			if (FirstConsonantLetterToCode->find(FirstConsonantLetter) != FirstConsonantLetterToCode->end())
-				FirstConsonantValue = FirstConsonantLetterToCode->at(FirstConsonantLetter);
+			FirstConsonantValue = FirstConsonantCodeBook->Decode(FirstConsonantLetter);
 
 			while (InParsedHangulStr[SubIndex] >= L'ㅏ' && InParsedHangulStr[SubIndex] <= L'ㅣ')
 				MiddleVowerLetter += InParsedHangulStr[SubIndex++];
@@ -370,8 +362,7 @@ wstring FHangulParser::Decode(const wstring& InParsedHangulStr)
 			// 초성이 없다면 중성만 입력
 			if (FirstConsonantLetter == L"")
 			{
-				if (MoeumOnlyLetterCode->find(MiddleVowerLetter) != MoeumOnlyLetterCode->end())
-					StringfiedResult += MoeumOnlyLetterCode->at(MiddleVowerLetter);
+				StringfiedResult += MoeumOnlyCodeBook->Decode(MiddleVowerLetter);
 
 				if (InParsedHangulStr[Index] == L' ')
 					StringfiedResult += L' ';
@@ -381,14 +372,12 @@ wstring FHangulParser::Decode(const wstring& InParsedHangulStr)
 				continue;
 			}
 
-			if (MiddleVowerLetterToCode->find(MiddleVowerLetter) != MiddleVowerLetterToCode->end())
-				MiddleVowerValue = MiddleVowerLetterToCode->at(MiddleVowerLetter);
+			MiddleVowerValue = MiddleVowerCodeBook->Decode(MiddleVowerLetter);
 
 			// 중성이 없다면 초성만 입력
 			if (MiddleVowerLetter == L"")
 			{
-				if (JaeumOnlyLetterCode->find(FirstConsonantLetter) != JaeumOnlyLetterCode->end())
-					StringfiedResult += JaeumOnlyLetterCode->at(FirstConsonantLetter);
+				StringfiedResult += JaeumOnlyCodeBook->Decode(FirstConsonantLetter);
 
 				if (InParsedHangulStr[Index] == L' ')
 					StringfiedResult += L' ';
@@ -401,8 +390,7 @@ wstring FHangulParser::Decode(const wstring& InParsedHangulStr)
 			while (InParsedHangulStr[SubIndex] >= L'ㄱ' && InParsedHangulStr[SubIndex] <= L'ㅎ')
 				LastConsonantLetter += InParsedHangulStr[SubIndex++];
 
-			if (LastConsonantLetterToCode->find(LastConsonantLetter) != LastConsonantLetterToCode->end())
-				LastConsonantValue = LastConsonantLetterToCode->at(LastConsonantLetter);
+			LastConsonantValue = LastConsonantCodeBook->Decode(LastConsonantLetter);
 
 			int Result = FirstConsonantValue + MiddleVowerValue + LastConsonantValue;
 

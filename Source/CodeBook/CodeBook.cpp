@@ -56,3 +56,13 @@ wchar_t FCodeBook::Decode(const int wordValue)
 {
   return L'\0';
 }
+
+wstring FCodeBook::Encode(const int parsedString)
+{
+    return wstring();
+}
+
+int FCodeBook::Decode(const wstring wordValue)
+{
+    return 0;
+}

@@ -7,6 +7,7 @@
 #include "HangulParser/HangulParser.h"
 #include "MorseConverter/MorseConverter.h"
 #include "LatinAlphabetMorseConverter/LatinAlphabetMorseConverter.h"
+#include "HangulMorseConverter/HangulMorseConverter.h"
 // #include "BinaryConverter.h"
 #include "jsoncpp/json/json.h"
 
@@ -922,15 +923,15 @@ void makeKoreanMiddleVowerLetterCodeBook()
   
   codeValue["key"] = 0x00;
   codeValue["value"] = "ㅏ";
-  fromCode["1"] = codeValue;
+  fromCode["0"] = codeValue;
 
   codeValue["key"] = 0x1C;
   codeValue["value"] = "ㅐ";
-  fromCode["2"] = codeValue;
+  fromCode["1"] = codeValue;
 		
   codeValue["key"] = 0x38;
   codeValue["value"] = "ㅑ";
-  fromCode["3"] = codeValue;
+  fromCode["2"] = codeValue;
 
   codeValue["key"] = 0x54;
   codeValue["value"] = "ㅒ";
@@ -958,65 +959,65 @@ void makeKoreanMiddleVowerLetterCodeBook()
 
   codeValue["key"] = 0xFC;
   codeValue["value"] = "ㅗㅏ";
-  fromCode["8"] = codeValue;
+  fromCode["9"] = codeValue;
 
   codeValue["key"] = 0x118;
   codeValue["value"] = "ㅗㅐ";
-  fromCode["9"] = codeValue;
+  fromCode["10"] = codeValue;
 
   codeValue["key"] = 0x134;
   codeValue["value"] = "ㅗㅣ";
-  fromCode["10"] = codeValue;
+  fromCode["11"] = codeValue;
 
   codeValue["key"] = 0x150;
   codeValue["value"] = "ㅛ";
-  fromCode["11"] = codeValue;
+  fromCode["12"] = codeValue;
 
   codeValue["key"] = 0x16C;
   codeValue["value"] = "ㅜ";
-  fromCode["12"] = codeValue;
+  fromCode["13"] = codeValue;
 
   codeValue["key"] = 0x188;
   codeValue["value"] = "ㅜㅓ";
-  fromCode["13"] = codeValue;
+  fromCode["14"] = codeValue;
 
   codeValue["key"] = 0x1A4;
   codeValue["value"] = "ㅜㅔ";
-  fromCode["14"] = codeValue;
+  fromCode["15"] = codeValue;
   
   codeValue["key"] = 0x1C0;
   codeValue["value"] = "ㅜㅣ";
-  fromCode["15"] = codeValue;
+  fromCode["16"] = codeValue;
 
   codeValue["key"] = 0x1DC;
   codeValue["value"] = "ㅠ";
-  fromCode["16"] = codeValue;
+  fromCode["17"] = codeValue;
 
   codeValue["key"] = 0x1F8;
   codeValue["value"] = "ㅡ";
-  fromCode["17"] = codeValue;
+  fromCode["18"] = codeValue;
 
   codeValue["key"] = 0x214;
   codeValue["value"] = "ㅡㅣ";
-  fromCode["18"] = codeValue;
+  fromCode["19"] = codeValue;
 
   codeValue["key"] = 0x230;
   codeValue["value"] = "ㅣ";
-  fromCode["19"] = codeValue;
+  fromCode["20"] = codeValue;
 
   Json::Value toCode;
 
   codeValue["key"] = "ㅏ";
   codeValue["value"] = 0x00;
-  toCode["1"] = codeValue;
+  toCode["0"] = codeValue;
 
   codeValue["key"] = "ㅐ";
   codeValue["value"] = 0x1C;
-  toCode["2"] = codeValue;
+  toCode["1"] = codeValue;
 		
   codeValue["key"] = "ㅑ";
   codeValue["value"] = 0x38;
-  toCode["3"] = codeValue;
+  toCode["2"] = codeValue;
 
   codeValue["key"] = "ㅒ";
   codeValue["value"] = 0x54;
@@ -1044,51 +1045,51 @@ void makeKoreanMiddleVowerLetterCodeBook()
 
   codeValue["key"] = "ㅗㅏ";
   codeValue["value"] = 0xFC;
-  toCode["8"] = codeValue;
+  toCode["9"] = codeValue;
 
   codeValue["key"] = "ㅗㅐ";
   codeValue["value"] = 0x118;
-  toCode["9"] = codeValue;
+  toCode["10"] = codeValue;
 
   codeValue["key"] = "ㅗㅣ";
   codeValue["value"] = 0x134;
-  toCode["10"] = codeValue;
+  toCode["11"] = codeValue;
 
   codeValue["key"] = "ㅛ";
   codeValue["value"] = 0x150;
-  toCode["11"] = codeValue;
+  toCode["12"] = codeValue;
 
   codeValue["key"] = "ㅜ";
   codeValue["value"] = 0x16C;
-  toCode["12"] = codeValue;
+  toCode["13"] = codeValue;
 
   codeValue["key"] = "ㅜㅓ";
   codeValue["value"] = 0x188;
-  toCode["13"] = codeValue;
+  toCode["14"] = codeValue;
 
   codeValue["key"] = "ㅜㅔ";
   codeValue["value"] = 0x1A4;
-  toCode["14"] = codeValue;
+  toCode["15"] = codeValue;
   
   codeValue["key"] = "ㅜㅣ";
   codeValue["value"] = 0x1C0;
-  toCode["15"] = codeValue;
+  toCode["16"] = codeValue;
 
   codeValue["key"] = "ㅠ";
   codeValue["value"] = 0x1DC;
-  toCode["16"] = codeValue;
+  toCode["17"] = codeValue;
 
   codeValue["key"] = "ㅡ";
   codeValue["value"] = 0x1F8;
-  toCode["17"] = codeValue;
+  toCode["18"] = codeValue;
 
   codeValue["key"] = "ㅡㅣ";
   codeValue["value"] = 0x214;
-  toCode["18"] = codeValue;
+  toCode["19"] = codeValue;
 
   codeValue["key"] = "ㅣ";
   codeValue["value"] = 0x230;
-  toCode["19"] = codeValue;
+  toCode["20"] = codeValue;
 
   root["fromCode"] = fromCode;
   root["toCode"] = toCode;
@@ -1107,7 +1108,7 @@ void makeKoreanLastConsonantLetterCodeBook()
   Json::Value codeValue;
   
   codeValue["key"] = 0x0;
-  codeValue["value"] = " ";
+  codeValue["value"] = "";
   fromCode["0"] = codeValue;
 
   codeValue["key"] = 0x1;
@@ -1760,14 +1761,15 @@ void read_json(const string& jsonPath)
 
 int main()
 {
-  // wcin.imbue(locale("korean"));
-  // wcout.imbue(locale("korean"));
+	wcin.imbue(locale("korean"));
+	wcout.imbue(locale("korean"));
 
   // FCodeConverter *CodeConverter = new FHangulParser();
   // FCodeConverter* CodeConverter = new FMorseConverter();
-  FCodeConverter* CodeConverter = new FLatinAlphabetMorseConverter();
+  // FCodeConverter* CodeConverter = new FLatinAlphabetMorseConverter();
+  FCodeConverter* CodeConverter = new FHangulMorseConverter();
   CodeConverter->Initilize();
-  CodeConverter->SetInputType(EInputType::IT_Engish);
+  // CodeConverter->SetInputType(EInputType::IT_Engish);
   // CodeConverter->SetInputType(EInputType::IT_Korean);
 
   // FCodeConverter* CodeConverter = new FBinaryConverter();

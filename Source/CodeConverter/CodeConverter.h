@@ -20,16 +20,12 @@ public:
 	virtual void Initilize() = 0;
 	virtual wstring Encode(const wstring& InString) = 0;
 	virtual wstring Decode(const wstring& InCode) = 0;
-	
-	void SetInputType(EInputType InInputType) {
-		InputType = InInputType;
-	}
 
-	EInputType GetInputType() {
-		return InputType;
-	}
+	FCodeConverter() {}
+	virtual ~FCodeConverter() {}
 
-protected:
-	EInputType InputType = IT_None;
+//protected:
+//	wstring removeBlankSpaces(wstring InCode, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval);
+//	wstring addBlankSpaces(wstring InString, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval);
 };
 

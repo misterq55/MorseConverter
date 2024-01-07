@@ -6,9 +6,6 @@ class FHangulParserCodeBook;
 class FHangulParser :
     public FCodeConverter
 {
-  typedef map<int, wstring> KoreanCodeToLetterDictionary;
-  typedef map<wstring, int> KoreanLetterToCodeDictionary;
-
 public:
   FHangulParser();
   virtual ~FHangulParser();
@@ -22,19 +19,6 @@ private:
   void hanguleJamoParse(int ConvertedNum, int Divider, int& OutRange, int& OutRamnant);
 
 private:
-  KoreanCodeToLetterDictionary* FirstConsonantCodeToLetter;
-  KoreanCodeToLetterDictionary* MiddleVowerCodeToLetter;
-  KoreanCodeToLetterDictionary* LastConsonantCodeToLetter;
-
-  KoreanCodeToLetterDictionary* JaeumOnlyCodeToLetter;
-
-  KoreanLetterToCodeDictionary* FirstConsonantLetterToCode;
-  KoreanLetterToCodeDictionary* MiddleVowerLetterToCode;
-  KoreanLetterToCodeDictionary* LastConsonantLetterToCode;
-
-  KoreanLetterToCodeDictionary* JaeumOnlyLetterCode;
-  KoreanLetterToCodeDictionary* MoeumOnlyLetterCode;
-
   FHangulParserCodeBook* FirstConsonantCodeBook;
   FHangulParserCodeBook* MiddleVowerCodeBook;
   FHangulParserCodeBook* LastConsonantCodeBook;
