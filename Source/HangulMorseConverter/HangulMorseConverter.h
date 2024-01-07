@@ -1,7 +1,6 @@
 #pragma once
 #include "../MorseConverter/MorseConverter.h"
 
-class FCodeBook;
 class FHangulParser;
 class FHangulMorseConverter :
   public FMorseConverter
