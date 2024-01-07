@@ -20,14 +20,24 @@ FHangulParserCodeBook::FHangulParserCodeBook(const string& jsonPath)
     {
       int key = codeValue["key"].asInt();
       string str = codeValue["value"].asCString();
-
-      wchar_t strUnicode[256] = { 0, };
+      wstring value;
+      wchar_t strUnicode[256] = L"";//{ 0, };
       char strMultibyte[256] = { 0, };
+      
+      #ifdef _WIN32
       strcpy_s(strMultibyte, 256, str.c_str());
       int nLen = MultiByteToWideChar(CP_ACP, 0, strMultibyte, strlen(strMultibyte), NULL, NULL);
       MultiByteToWideChar(CP_ACP, 0, strMultibyte, strlen(strMultibyte), strUnicode, nLen);
+      #elif __linux__
+      strcpy(strMultibyte, str.c_str());
+      const int len = strlen(strMultibyte);
+      setlocale(LC_ALL, "Korean");//로케일 설정
+      std::mbstowcs(strUnicode, strMultibyte, 256);
+      #endif
 
-      wstring value(strUnicode);
+      value = wstring(strUnicode);
+      // std::wcout << value << std::endl;
+      // std::cout << str << std::endl;
       FromCodeDictionary.emplace(key, value);
     }
   }
@@ -38,15 +48,24 @@ FHangulParserCodeBook::FHangulParserCodeBook(const string& jsonPath)
     if (!codeValue.empty())
     {
       string str = codeValue["key"].asCString();
-
-      wchar_t strUnicode[256] = { 0, };
+      wstring key;
+      int value = codeValue["value"].asInt();
+      wchar_t strUnicode[256] = L"";//{ 0, };
       char strMultibyte[256] = { 0, };
+
+      #ifdef _WIN32
       strcpy_s(strMultibyte, 256, str.c_str());
       int nLen = MultiByteToWideChar(CP_ACP, 0, strMultibyte, strlen(strMultibyte), NULL, NULL);
       MultiByteToWideChar(CP_ACP, 0, strMultibyte, strlen(strMultibyte), strUnicode, nLen);
+      #elif __linux__
+      strcpy(strMultibyte, str.c_str());
+      const int len = strlen(strMultibyte);
+      setlocale(LC_ALL, "Korean");//로케일 설정
+      std::mbstowcs(strUnicode, strMultibyte, 256);
+      #endif
 
-      wstring key(strUnicode);
-      int value = codeValue["value"].asInt();
+      key = wstring(strUnicode);    
+      // std::wcout << key << std::endl;
       ToCodeDictionary.emplace(key, value);
     }
   }

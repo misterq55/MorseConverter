@@ -3,8 +3,13 @@
 #include <string>
 #include <map>
 #include "../jsoncpp/json/json.h"
+#ifdef _WIN32
 #include <atlconv.h>
 #include <atlstr.h>
+#elif _WIN64
+#include <atlconv.h>
+#include <atlstr.h>
+#endif
 
 using std::string;
 using std::map;
