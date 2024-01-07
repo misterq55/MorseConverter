@@ -2,4 +2,4 @@ TARGETS = \TARGETS = \
 	MorseConverter
 
 MorseConverter: 
-	g++ -o main ./Source/main.cpp ./Source/*/*.cpp
+	g++ -o main ./Source/main.cpp ./Source/*/*.cpp ./Source/*/*/*.cpp
