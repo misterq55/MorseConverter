@@ -1778,7 +1778,7 @@ int main()
 
   wstring Code = CodeConverter->Encode(str);
   wstring ConvertedString = CodeConverter->Decode(Code);
-  // wstring ConvertedString = CodeInverter->Decode(str);
+  // wstring ConvertedString = CodeConverter->Decode(str);
 
   wcout << Code << endl;
   wcout << ConvertedString << endl;

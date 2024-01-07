@@ -20,7 +20,14 @@ FHangulParserCodeBook::FHangulParserCodeBook(const string& jsonPath)
     {
       int key = codeValue["key"].asInt();
       string str = codeValue["value"].asCString();
-      wstring value = wstring().assign(str.begin(), str.end());
+
+      wchar_t strUnicode[256] = { 0, };
+      char strMultibyte[256] = { 0, };
+      strcpy_s(strMultibyte, 256, str.c_str());
+      int nLen = MultiByteToWideChar(CP_ACP, 0, strMultibyte, strlen(strMultibyte), NULL, NULL);
+      MultiByteToWideChar(CP_ACP, 0, strMultibyte, strlen(strMultibyte), strUnicode, nLen);
+
+      wstring value(strUnicode);
       FromCodeDictionary.emplace(key, value);
     }
   }
@@ -31,13 +38,18 @@ FHangulParserCodeBook::FHangulParserCodeBook(const string& jsonPath)
     if (!codeValue.empty())
     {
       string str = codeValue["key"].asCString();
-      wstring key = wstring().assign(str.begin(), str.end());
+
+      wchar_t strUnicode[256] = { 0, };
+      char strMultibyte[256] = { 0, };
+      strcpy_s(strMultibyte, 256, str.c_str());
+      int nLen = MultiByteToWideChar(CP_ACP, 0, strMultibyte, strlen(strMultibyte), NULL, NULL);
+      MultiByteToWideChar(CP_ACP, 0, strMultibyte, strlen(strMultibyte), strUnicode, nLen);
+
+      wstring key(strUnicode);
       int value = codeValue["value"].asInt();
       ToCodeDictionary.emplace(key, value);
     }
   }
-
-  int temp = 0;
 }
 
 FHangulParserCodeBook::~FHangulParserCodeBook()
