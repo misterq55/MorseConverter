@@ -1761,13 +1761,13 @@ void read_json(const string& jsonPath)
 
 int main()
 {
-	wcin.imbue(locale("korean"));
-	wcout.imbue(locale("korean"));
+	/*wcin.imbue(locale("korean"));
+	wcout.imbue(locale("korean"));*/
 
   // FCodeConverter *CodeConverter = new FHangulParser();
   // FCodeConverter* CodeConverter = new FMorseConverter();
-  // FCodeConverter* CodeConverter = new FLatinAlphabetMorseConverter();
-  FCodeConverter* CodeConverter = new FHangulMorseConverter();
+  FCodeConverter* CodeConverter = new FLatinAlphabetMorseConverter();
+  // FCodeConverter* CodeConverter = new FHangulMorseConverter();
   CodeConverter->Initilize();
   // CodeConverter->SetInputType(EInputType::IT_Engish);
   // CodeConverter->SetInputType(EInputType::IT_Korean);
