@@ -8,7 +8,7 @@
 #include "MorseConverter/MorseConverter.h"
 #include "LatinAlphabetMorseConverter/LatinAlphabetMorseConverter.h"
 #include "HangulMorseConverter/HangulMorseConverter.h"
-// #include "BinaryConverter.h"
+#include "BinaryConverter/BinaryConverter.h"
 #include "jsoncpp/json/json.h"
 
 using namespace std;
@@ -1766,13 +1766,11 @@ int main()
 
   // FCodeConverter *CodeConverter = new FHangulParser();
   // FCodeConverter* CodeConverter = new FMorseConverter();
-  FCodeConverter* CodeConverter = new FLatinAlphabetMorseConverter();
+  // FCodeConverter* CodeConverter = new FLatinAlphabetMorseConverter();
   // FCodeConverter* CodeConverter = new FHangulMorseConverter();
-  CodeConverter->Initilize();
-  // CodeConverter->SetInputType(EInputType::IT_Engish);
-  // CodeConverter->SetInputType(EInputType::IT_Korean);
 
-  // FCodeConverter* CodeConverter = new FBinaryConverter();
+  FCodeConverter* CodeConverter = new FBinaryConverter();
+  CodeConverter->Initilize();
 
   wstring str;
 
