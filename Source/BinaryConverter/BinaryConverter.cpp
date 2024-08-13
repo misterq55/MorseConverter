@@ -13,11 +13,20 @@ wstring FBinaryConverter::Encode(const wstring& InString)
 	wstring result = L"";
 
 	wchar_t buffer[100];
+	
 	for (const wchar_t& wch : InString)
 	{
 		memset(buffer, 0, 100 * sizeof(wchar_t));
 		_itow_s(wch, buffer, 2);
-		result += (buffer + wstring(L" "));
+
+		wstring numberedBuffer(buffer);
+
+		while (numberedBuffer.length() < WORD_SIZE)
+		{
+			numberedBuffer = wstring(L"0") + numberedBuffer;
+		}
+
+		result += numberedBuffer;
 	}
 
 	result += L"\0";
@@ -27,12 +36,13 @@ wstring FBinaryConverter::Encode(const wstring& InString)
 
 wstring FBinaryConverter::Decode(const wstring& InCode)
 {
+	const int num = static_cast<int>(InCode.length() / WORD_SIZE);
+
 	vector<wstring> parsedCode;
-	wstring temp;
-	std::wstringstream wss(InCode);
-	while (std::getline(wss, temp, L' '))
+
+	for (int i = 0; i < num; i++)
 	{
-		parsedCode.push_back(temp);
+		parsedCode.emplace_back(InCode.substr(i * WORD_SIZE, WORD_SIZE));
 	}
 
 	wstring result = L"";
