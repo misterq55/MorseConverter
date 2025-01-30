@@ -14,15 +14,15 @@ enum EInputType
 	IT_None,
 };
 
-class FCodeConverter
+class ICodeConverter
 {
 public:
 	virtual void Initilize() = 0;
 	virtual wstring Encode(const wstring& InString) = 0;
 	virtual wstring Decode(const wstring& InCode) = 0;
 
-	FCodeConverter() {}
-	virtual ~FCodeConverter() {}
+	ICodeConverter() {}
+	virtual ~ICodeConverter() {}
 
 //protected:
 //	wstring removeBlankSpaces(wstring InCode, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval);

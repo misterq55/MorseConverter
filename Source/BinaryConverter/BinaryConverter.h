@@ -2,7 +2,7 @@
 #include "../CodeConverter/CodeConverter.h"
 
 class FBinaryConverter :
-    public FCodeConverter
+    public ICodeConverter
 {
 public:
   FBinaryConverter() {}

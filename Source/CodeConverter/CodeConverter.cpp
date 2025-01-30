@@ -1,6 +1,6 @@
 #include "CodeConverter.h"
 
-//wstring FCodeConverter::removeBlankSpaces(wstring InCode, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval)
+//wstring ICodeConverter::removeBlankSpaces(wstring InCode, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval)
 //{
 //	wstring BlankConvertedString;
 //
@@ -40,7 +40,7 @@
 //	return BlankConvertedString;
 //}
 //
-//wstring FCodeConverter::addBlankSpaces(wstring InString, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval)
+//wstring ICodeConverter::addBlankSpaces(wstring InString, const wstring& LetterInterval, const wstring& SyllableInterval, const wstring& WordInterval)
 //{
 //	wstring BlankConvertedCode;
 //

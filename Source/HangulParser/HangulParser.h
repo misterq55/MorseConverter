@@ -4,7 +4,7 @@
 
 class FHangulParserCodeBook;
 class FHangulParser :
-    public FCodeConverter
+    public ICodeConverter
 {
 public:
   FHangulParser();

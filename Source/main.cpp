@@ -1764,12 +1764,12 @@ int main()
 	/*wcin.imbue(locale("korean"));
 	wcout.imbue(locale("korean"));*/
 
-  // FCodeConverter *CodeConverter = new FHangulParser();
-  // FCodeConverter* CodeConverter = new FMorseConverter();
-  // FCodeConverter* CodeConverter = new FLatinAlphabetMorseConverter();
-  // FCodeConverter* CodeConverter = new FHangulMorseConverter();
+  // ICodeConverter *CodeConverter = new FHangulParser();
+  // ICodeConverter* CodeConverter = new FMorseConverter();
+  ICodeConverter* CodeConverter = new FLatinAlphabetMorseConverter();
+  // ICodeConverter* CodeConverter = new FHangulMorseConverter();
 
-  FCodeConverter* CodeConverter = new FBinaryConverter();
+  // ICodeConverter* CodeConverter = new FBinaryConverter();
   CodeConverter->Initilize();
 
   wstring str;

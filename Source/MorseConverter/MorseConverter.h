@@ -3,7 +3,7 @@
 
 class FCodeBook;
 class FMorseConverter :
-  public FCodeConverter
+  public ICodeConverter
 {
 
 public:
