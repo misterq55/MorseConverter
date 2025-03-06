@@ -1766,10 +1766,10 @@ int main()
 
   // ICodeConverter *CodeConverter = new FHangulParser();
   // ICodeConverter* CodeConverter = new FMorseConverter();
-  ICodeConverter* CodeConverter = new FLatinAlphabetMorseConverter();
+  // ICodeConverter* CodeConverter = new FLatinAlphabetMorseConverter();
   // ICodeConverter* CodeConverter = new FHangulMorseConverter();
 
-  // ICodeConverter* CodeConverter = new FBinaryConverter();
+  ICodeConverter* CodeConverter = new FBinaryConverter();
   CodeConverter->Initilize();
 
   wstring str;

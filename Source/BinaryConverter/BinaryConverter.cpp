@@ -12,56 +12,37 @@ wstring FBinaryConverter::Encode(const wstring& InString)
 {
 	wstring result = L"";
 
-	wchar_t buffer[100];
-	
 	for (const wchar_t& wch : InString)
 	{
-		memset(buffer, 0, 100 * sizeof(wchar_t));
-		_itow_s(wch, buffer, 2);
-
-		wstring numberedBuffer(buffer);
-
-		while (numberedBuffer.length() < WORD_SIZE)
+		wstring binaryString;
+		for (int i = 0; i < sizeof(wchar_t) * 8; i++)  // wchar_t의 비트 수 (16 또는 32비트)
 		{
-			numberedBuffer = wstring(L"0") + numberedBuffer;
+			binaryString = ((wch >> i) & 1 ? L"1" : L"0") + binaryString;
 		}
-
-		result += numberedBuffer;
+		result += binaryString;
 	}
-
-	result += L"\0";
 
 	return result;
 }
 
+
 wstring FBinaryConverter::Decode(const wstring& InCode)
 {
-	const int num = static_cast<int>(InCode.length() / WORD_SIZE);
-
-	vector<wstring> parsedCode;
-
-	for (int i = 0; i < num; i++)
-	{
-		parsedCode.emplace_back(InCode.substr(i * WORD_SIZE, WORD_SIZE));
-	}
-
 	wstring result = L"";
+	int bitSize = sizeof(wchar_t) * 8;
 
-	for (const wstring& parsed : parsedCode)
+	for (size_t i = 0; i < InCode.length(); i += bitSize)
 	{
-		int number = 0;
-		const int len = static_cast<int>(parsed.length());
+		wstring binarySegment = InCode.substr(i, bitSize);
+		wchar_t character = 0;
 
-		for (int i = 0; i < len; i++)
+		for (size_t j = 0; j < bitSize; j++)
 		{
-			const int powered = static_cast<int>(pow(2, i));
-			const wchar_t& wch = parsed[len - i - 1];
-			const int num = wch == 0 ? wch : wch - L'0';
-			number += num * powered;
+			character = (character << 1) | (binarySegment[j] - L'0');
 		}
 
-		result += number;
+		result += character;
 	}
-	
+
 	return result;
 }
